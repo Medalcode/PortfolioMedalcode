@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions: # <<<<<<<<<< AÑADE ESTAS LÍNEAS
+      contents: write # <<<<<<<<<< AÑADE ESTAS LÍNEAS
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,4 +31,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # Asegúrate de que esta sea la carpeta de salida de Astro
           cname: # Si tienes un dominio personalizado, ponlo aquí. Ej: midominio.com
-        
