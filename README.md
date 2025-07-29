@@ -177,7 +177,7 @@ To verify that the new language has been added correctly, check the list of avai
 
 ### 🧷 Favicon Setup
 
-To customize your site's favicon and web app icons, you can generate all the necessary variants using [favicon.io](https://favicon.io/favicon-converter/). Upload your logo or icon, and the tool will create a full set of optimized files for various devices and platforms.
+To customize your site's favicon and web app icons, you can generate all the necessary variants using [favicon.io](https://favicon.io/favicon-converter/). Upload your logo or icon, and the tool will create a full set of optimized files for various devices and platforms.   
 
 Place the generated files in the `📂 public` directory as follows:
 
