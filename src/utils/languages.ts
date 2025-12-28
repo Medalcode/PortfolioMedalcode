@@ -130,6 +130,10 @@ export const languages: Record<string, Language> = {
     name: "Google Cloud",
     iconName: "googlecloud",
   },
+  powerbi: {
+    name: "Power BI",
+    iconName: "dashboard",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
