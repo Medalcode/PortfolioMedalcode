@@ -1,33 +1,21 @@
 ---
 const allTools = [
-  "html",
+  "python",
+  "django",
   "javascript",
   "ts",
-  "angular",
+  "react",
+  "next",
   "astro",
-  
-  "node",
-
+  "html",
   "css",
   "tailwind",
-  "sass",
   "bootstrap",
-
-  "mongo",
-  "firebase",
-  "mysql",
-
-  "cloudflare",
-
-  "figma",
-  "vercel",
-  "netlify",
-  
+  "sql",
   "git",
-  "markdown",
-
-  "php",
-  "wordpress",
+  "googlecloud",
+  "vercel",
+  "powerbi",
 ];
 
 import Capsule from "../ui/Capsule.astro";
@@ -50,5 +38,9 @@ const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
 ---
 
 <div class={classes}>
-  {allTools.map((tool) => <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />)}
+  {
+    allTools.map((tool) => (
+      <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
+    ))
+  }
 </div>
