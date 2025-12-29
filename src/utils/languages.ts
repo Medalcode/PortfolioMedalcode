@@ -134,6 +134,14 @@ export const languages: Record<string, Language> = {
     name: "Power BI",
     iconName: "dashboard",
   },
+  docker: {
+    name: "Docker",
+    iconName: "docker",
+  },
+  go: {
+    name: "Go",
+    iconName: "go",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
