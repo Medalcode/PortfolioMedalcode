@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import Hobbie from "./Hobbie.astro";
 
-const [staticData] = await getCollection("staticData");
+const { lang } = Astro.params;
+const allStaticData = await getCollection("staticData");
+const staticData = allStaticData.find((entry) => entry.id === lang) || allStaticData.find((entry) => entry.id === 'es');
 const { hobbies } = staticData.data;
 
 interface Props {
