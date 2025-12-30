@@ -1,0 +1,36 @@
+{
+  "profileImage": "/images/jonatthan-profile.png",
+  "profileAlt": "Foto de Jonatthan Medalla",
+  "profileLink": "/about-me",
+  "profileTitle": "Desarrollador Full Stack",
+  "profileName": "Jonatthan Medalla",
+  "github": "https://github.com/medalcode",
+  "githubText": "Mira mis proyectos",
+  "portfolioImage": "/images/portfolio.webp",
+  "email": "jonatthan.medalla@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/medalcode/",
+  "instagram": "https://www.instagram.com/",
+  "youtube": "https://www.youtube.com/",
+  "alias": "Jonatthan",
+  "contactSectionTitle": "¿Listo para dar vida a tus ideas?",
+  "contactSectionSubtitle": "Colaboremos en tu próximo proyecto.",
+  "contactSectionButtonText": "Contáctame",
+  "contactSectionButtonIcon": "paperplane",
+  "techsTitle": "Habilidades",
+  "instagramIconName": "instagram",
+  "youtubeIconName": "youtube",
+  "githubIconName": "github",
+  "linkedinIconName": "linkedin",
+  "emailIconName": "envelope",
+  "hobbies": [
+    "Programación",
+    "Análisis de Datos",
+    "Tecnología"
+  ],
+  "pageTitle": "Portafolio de Jonatthan Medalla",
+  "pageDescription": "Portafolio de Jonatthan Medalla, Desarrollador Full Stack y Analista de Datos.",
+  "OGImage": {
+    "url": "/images/imagedefault.webp",
+    "alt": "Portafolio de Jonatthan Medalla - Desarrollador Full Stack"
+  }
+}

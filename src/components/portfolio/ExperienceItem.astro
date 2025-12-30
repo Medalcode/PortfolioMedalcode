@@ -11,31 +11,37 @@ const { title, company, description, link, date } = Astro.props;
 ---
 
 <div
-  class="relative mx-12 pb-12 grid md:grid-cols-5 md:gap-10 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-['']"
+  class="relative mx-12 pb-12 grid md:grid-cols-5 md:gap-10 group"
 >
+  <!-- Timeline Line (handled by parent or pseudo-element, but here we enforce local styling for item) -->
+  <div
+    class="absolute left-[-36px] top-0 h-full w-[2px] bg-zinc-200 dark:bg-zinc-800"
+  >
+  </div>
+
+  <!-- Timeline Dot -->
+  <div
+    class="absolute -left-[44px] top-1 size-5 rounded-full bg-gradient-to-br from-mint-400 to-mint-600 border-4 border-white dark:border-zinc-900 shadow-[0_0_10px_rgba(45,212,191,0.5)] z-10 transition-transform duration-300 group-hover:scale-125"
+  >
+  </div>
+
   <div class="pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <span
-        class="absolute -left-[42px] text-5xl text-mint-400 rounded-full drop-shadow-[0px_0px_8px_rgba(0,255,94,1)]"
-        >&bull;</span
-      >
-      <h3
-        
-        class="text-xl font-bold text-mint-400"
-      >
+    <div class="sticky top-24 flex flex-col gap-1">
+      <h3 class="text-xl font-bold text-mint-500 dark:text-mint-400 leading-tight">
         {title}
       </h3>
-      <h4 class="text-xl font-semibold text-zinc-600 dark:text-white">
+      <h4 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
         {company}
       </h4>
-      <time datetime={date} class="text-sm text-zinc-600/80 dark:text-white/80">
+      <time class="text-sm font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-full w-fit mt-2">
         {date}
       </time>
     </div>
   </div>
+  
   <div
-    class="flex flex-col gap-2 pb-4 text-zinc-00 dark:text-zinc-300 md:col-span-3"
+    class="relative flex flex-col gap-4 pb-4 text-zinc-600 dark:text-zinc-300 md:col-span-3 text-lg leading-relaxed bg-zinc-50/50 dark:bg-zinc-800/30 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-800/50 hover:border-mint-200 dark:hover:border-mint-900 transition-colors"
   >
-    {description}
+    <p>{description}</p>
   </div>
 </div>

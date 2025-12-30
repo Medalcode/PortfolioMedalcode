@@ -1,9 +1,20 @@
 ---
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
-const languages = [
-    ...new Set(allPosts.map((post) => post.frontmatter.languages).flat()),
-];
+import { getCollection } from "astro:content";
 import Capsule from "../ui/Capsule.astro";
+
+const currentPath = Astro.url.pathname;
+const urlParts = currentPath.split("/").filter(Boolean);
+const currentLang = urlParts[0] === 'en' ? 'en' : 'es';
+
+const allPosts = await getCollection("blog");
+const filteredPosts = allPosts.filter(post => {
+    const [postLang] = post.slug.split('/');
+    return postLang === currentLang;
+});
+
+const languages = [
+    ...new Set(filteredPosts.map((post) => post.data.languages || []).flat()),
+];
 
 const { variant = "default" } = Astro.props;
 

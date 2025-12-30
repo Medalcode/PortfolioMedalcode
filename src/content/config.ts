@@ -38,6 +38,52 @@ const jsonDataCollection = defineCollection({
   }),
 });
 
+const projectsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+    website: z.string().optional(),
+    github: z.string().url().optional(),
+    pubDate: z.date(),
+    languages: z.array(z.string()),
+  }),
+});
+
+const blogCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    description: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+    pubDate: z.date(),
+    tags: z.array(z.string()),
+    languages: z.array(z.string()).optional(),
+  }),
+});
+
+const experienceCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    company: z.string(),
+    date: z.string(),
+    description: z.string(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   staticData: jsonDataCollection,
+  projects: projectsCollection,
+  blog: blogCollection,
+  experience: experienceCollection,
 };

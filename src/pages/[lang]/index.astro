@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Experience from "../../components/portfolio/Experience.astro";
+import HeroIndex from "../../components/portfolio/HeroIndex.astro";
+import Contact from "../../components/portfolio/Contact.astro";
+import ListProjects from "../../components/portfolio/ListProjects.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang);
+const { pageTitle, pageDescription, OGImage } = staticDataEntry.data;
+---
+
+<Layout
+  pageTitle={pageTitle}
+  description={pageDescription}
+  ogimage={{ alt: OGImage.alt, url: OGImage.url }}
+>
+  <HeroIndex />
+  <Experience />
+  <ListProjects />
+  <Contact />
+</Layout>

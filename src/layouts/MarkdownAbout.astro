@@ -8,7 +8,9 @@ import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
+const { lang } = Astro.params;
+const allStaticData = await getCollection("staticData");
+const staticData = allStaticData.find((entry) => entry.id === lang);
 const { profileName, profileImage, profileTitle } = staticData.data;
 const { frontmatter } = Astro.props;
 ---
@@ -53,7 +55,7 @@ const { frontmatter } = Astro.props;
                   aria-label={`Photo of ${profileName}`}
                 >
                   <a
-                    href="/about-me"
+                    href={`/${lang}/about-me`}
                     class="flex h-full w-full"
                     aria-label="View about me page"></a>
                 </div>

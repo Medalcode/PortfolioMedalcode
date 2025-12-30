@@ -2,23 +2,14 @@
 import ExperienceItem from "./ExperienceItem.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 
-const EXPERIENCE = [
-  {
-    date: "Jul 2009 - Ene 2023",
-    title: "Ejecutivo Senior Soporte BackOffice",
-    company: "VTR",
-    description:
-      "Analicé el estado de los servicios, diseñando la recolección y procesamiento de datos para el monitoreo. Optimicé la presentación de KPIs y garanticé la continuidad operativa mediante monitoreo proactivo y resolución de incidentes de alto impacto.",
-  },
-  {
-    date: "Ene 2007 - Jul 2009",
-    title: "Ejecutivo de Soporte de Sistemas",
-    company: "Konecta Chile",
-    description:
-      "Diagnostiqué y resolví fallas en servicios de telecomunicaciones. Gestioné múltiples incidentes simultáneos y evalué el impacto de soluciones correctivas en hardware y software para mejorar la efectividad de las intervenciones.",
-  },
-];
+const { lang } = Astro.params;
+
+const allExperience = await getCollection("experience", ({ id }) => {
+  return id.startsWith(`${lang}/`);
+});
+allExperience.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
@@ -31,7 +22,7 @@ const EXPERIENCE = [
     <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
       <ol class="relative mt-10">
         {
-          EXPERIENCE.map((experience, index) => (
+          allExperience.map((experience, index) => (
             <li>
               <article
                 role="article"
@@ -41,7 +32,7 @@ const EXPERIENCE = [
                   class="flex flex-col gap-2  text-zinc-00 dark:text-zinc-300 md:col-span-3"
                   aria-describedby={`experience-title-${index}`}
                 >
-                  <ExperienceItem {...experience} />
+                  <ExperienceItem {...experience.data} />
                 </div>
               </article>
             </li>
