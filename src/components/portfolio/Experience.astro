@@ -5,6 +5,9 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 const { lang } = Astro.params;
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang) || staticDataCollection.find((entry) => entry.id === 'es');
+const { experienceTitle, experienceGradient } = staticDataEntry.data;
 
 const allExperience = await getCollection("experience", ({ id }) => {
   return id.startsWith(`${lang}/`);
@@ -16,7 +19,7 @@ allExperience.sort((a, b) => a.data.order - b.data.order);
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
     <div class="flex gap-4 items-center justify-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
-      <Heading text="Work" textGradient="Experience" level={2} />
+      <Heading text={experienceTitle} textGradient={experienceGradient} level={2} />
     </div>
 
     <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">

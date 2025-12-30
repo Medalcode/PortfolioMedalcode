@@ -29,8 +29,31 @@
   ],
   "pageTitle": "Portafolio de Jonatthan Medalla",
   "pageDescription": "Portafolio de Jonatthan Medalla, Desarrollador Full Stack y Analista de Datos.",
+  "availableForWork": "Disponible para trabajar",
+  "heroDescription1": "con",
+  "heroDescription2": "8 años de experiencia",
+  "heroDescription3": ", apasionado por el desarrollo, la tecnología y el café que genera ideas. Me encanta dar vida a proyectos digitales. 🚀☕",
+  "beyondCode": "Más allá del Código",
+  "designQuestion": "¿Te gusta el diseño de este sitio?",
+  "projectsDescriptionAlt": "Vista de dos interfaces de sitios web con diseño moderno y oscuro.",
   "OGImage": {
     "url": "/images/imagedefault.webp",
     "alt": "Portafolio de Jonatthan Medalla - Desarrollador Full Stack"
-  }
+  },
+  "experienceTitle": "Experiencia",
+  "experienceGradient": "Laboral",
+  "projectsTitle": "Proyectos",
+  "projectsGradient": "Completados",
+  "projectsIntro1": "Me encanta",
+  "projectsIntro2": "convertir ideas en proyectos reales.",
+  "projectsIntro3": "Aquí te muestro algunos de los",
+  "projectsIntro4": "desarrollos",
+  "projectsIntro5": "en los que he trabajado, aplicando tecnología, diseño y mucha creatividad.",
+  "projectsIntro6": "¡Echa un vistazo!",
+  "viewMoreProjects": "Ver más proyectos...",
+  "aboutTitle": "Sobre",
+  "aboutGradient": "mí",
+  "stackTitle": "Stack",
+  "stackGradient": "Tecnológico",
+  "aboutDescription": "con <b class=\"bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text\">más de 20 años de experiencia</b>, especializándome en Análisis de Datos y Soporte TI. Apasionado por crear soluciones eficientes. 🚀"
 }

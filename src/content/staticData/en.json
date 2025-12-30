@@ -29,8 +29,31 @@
   ],
   "pageTitle": "Jonatthan Medalla Portfolio",
   "pageDescription": "Portfolio of Jonatthan Medalla, a Full Stack Developer & Data Analyst.",
+  "availableForWork": "Available for work",
+  "heroDescription1": "with",
+  "heroDescription2": "8 years of experience",
+  "heroDescription3": ", passionate about development, technology, and coffee that sparks ideas. I love bringing digital projects to life. 🚀☕",
+  "beyondCode": "Beyond the Code",
+  "designQuestion": "Do you like this site's design?",
+  "projectsDescriptionAlt": "View of two website interfaces with modern and dark design.",
   "OGImage": {
     "url": "/images/imagedefault.webp",
     "alt": "Jonatthan Medalla Portfolio - Full Stack Developer"
-  }
+  },
+  "experienceTitle": "Work",
+  "experienceGradient": "Experience",
+  "projectsTitle": "Projects",
+  "projectsGradient": "Completed",
+  "projectsIntro1": "I love",
+  "projectsIntro2": "turning ideas into real projects.",
+  "projectsIntro3": "Here I show you some of the",
+  "projectsIntro4": "developments",
+  "projectsIntro5": "I've worked on, applying technology, design, and lots of creativity.",
+  "projectsIntro6": "Check them out!",
+  "viewMoreProjects": "View More Projects...",
+  "aboutTitle": "About",
+  "aboutGradient": "Me",
+  "stackTitle": "Tech",
+  "stackGradient": "Stack",
+  "aboutDescription": "with <b class=\"bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text\">over 20 years of experience</b>, specializing in Data Analysis and IT Support. Passionate about creating efficient solutions. 🚀"
 }

@@ -6,7 +6,9 @@ import { Icon } from "astro-icon/components";
 import Hobbies from "../portfolio/Hobbies.astro";
 import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
+const { lang } = Astro.params;
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang) || staticDataCollection.find((entry) => entry.id === 'es');
 const {
   profileAlt,
   profileLink,
@@ -18,7 +20,24 @@ const {
   github,
   portfolioImage,
   contactSectionButtonText,
-} = staticData.data;
+  aboutTitle,
+  projectsTitle,
+  stackTitle,
+  stackGradient,
+  projectsIntro1,
+  projectsIntro2,
+  projectsIntro3,
+  projectsIntro4,
+  projectsIntro5,
+  projectsIntro6,
+  projectsDescriptionAlt,
+  availableForWork,
+  heroDescription1,
+  heroDescription2,
+  heroDescription3,
+  beyondCode,
+  designQuestion
+} = staticDataEntry.data;
 ---
 
 <section
@@ -64,7 +83,7 @@ const {
           <span
             class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"
           ></span>
-          Available for work
+          {availableForWork}
         </span>
 
         <h1
@@ -78,11 +97,10 @@ const {
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
             >{profileTitle}</span
-          > with <span
+          > {heroDescription1} <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >8 years of experience</span
-          >, passionate about development, technology, and coffee that sparks
-          ideas. I love bringing digital projects to life. 🚀☕
+            >{heroDescription2}</span
+          >{heroDescription3}
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center">
@@ -93,7 +111,7 @@ const {
           />
           <Button
             link={profileLink}
-            text="About Me"
+            text={aboutTitle}
             iconName="person"
             variant="dark"
           />
@@ -108,7 +126,7 @@ const {
       class="col-start-2 row-start-2 flex flex-col gap-3 rounded-2xl border border-emerald-50 bg-linear-to-r from-riptide-200 to-mint-200 p-8 dark:border-zinc-800 dark:border-2 dark:bg-zinc-800 dark:bg-gradient-radial dark:from-riptide-500 dark:to-mint-500 max-md:gap-0 max-xl:p-5 max-md:p-4 max-lg:gap-1 md:col-start-4"
     >
       <div class="flex flex-col-reverse items-start gap-4 max-md:gap-2">
-        <Heading text="Beyond the Code" level={2} />
+        <Heading text={beyondCode} level={2} />
       </div>
 
       <div class="overflow-y-auto">
@@ -132,7 +150,7 @@ const {
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
             >
               <div class="z-2">
-                <Heading text="Do you like this site's design?" level={3} />
+                <Heading text={designQuestion} level={3} />
               </div>
 
               <Icon
@@ -158,7 +176,7 @@ const {
             name="dashboard"
             aria-hidden="true"
           />
-          <Heading text="Tech" textGradient="Stack" level={3} />
+          <Heading text={stackTitle} textGradient={stackGradient} level={3} />
         </div>
         <div class="overflow-y-auto">
           <Tools />
@@ -182,28 +200,28 @@ const {
             name="code"
             aria-hidden="true"
           />
-          <Heading text="Projects" level={3} />
+          <Heading text={projectsTitle} level={3} />
         </div>
         <p
           class="z-2 my-6 text-lg font-semibold leading-6 dark:text-gray-200 text-blacktext max-xl:text-base max-w-[90%] max-md:max-w-[85%]"
         >
-          I love <span
+          {projectsIntro1} <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >turning ideas into real projects.</span
+            >{projectsIntro2}</span
           >
-          <br /> Here I show you some of the <span
+          <br /> {projectsIntro3} <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >developments</span
-          > I've worked on, applying technology, design, and lots of creativity.
+            >{projectsIntro4}</span
+          > {projectsIntro5}
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 font-black bg-clip-text text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >Check them out!</span
+            >{projectsIntro6}</span
           >
         </p>
         <img
           class="relative left-0 z-0 mt-40 w-full object-cover transition-all ease-in-out duration-500 group-hover:rotate-2 group-hover:scale-185 max-xl:mt-28 max-lg:mt-10 max-sm:mt-0 max-md:scale-100 max-sm:scale-125 scale-180 max-md:group-hover:scale-105 before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:absolute before:left-30 before:-bottom-0 before:h-[80%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition"
           src={portfolioImage}
-          alt="View of two website interfaces with modern and dark design. The first screen shows the title 'Behind the Code' with a rocket and dark background, explaining the origin of a community software project. The second screen presents a platform for finding speakers, with an attractive design, expert photos, and a prominent search button."
+          alt={projectsDescriptionAlt}
           loading="lazy"
           width="480"
           height="320"

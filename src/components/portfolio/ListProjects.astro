@@ -5,6 +5,19 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 const { lang } = Astro.params;
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang) || staticDataCollection.find((entry) => entry.id === 'es');
+const {
+  projectsTitle,
+  projectsGradient,
+  projectsIntro1,
+  projectsIntro2,
+  projectsIntro3,
+  projectsIntro4,
+  projectsIntro5,
+  projectsIntro6,
+  viewMoreProjects
+} = staticDataEntry.data;
 
 const allProjects = await getCollection("projects", ({ id }) => {
   return id.startsWith(`${lang}/`);
@@ -23,23 +36,23 @@ allProjects.sort(
   <div class="mx-auto max-w-7xl py-8">
     <div class="flex gap-4 items-center justify-center text-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="code" />
-      <Heading text="Projects" textGradient="Completed" level={2} />
+      <Heading text={projectsTitle} textGradient={projectsGradient} level={2} />
     </div>
 
     <p
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
     >
-      I love <b
+      {projectsIntro1} <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >turning ideas into real projects.</b
+        >{projectsIntro2}</b
       >
-      <br /> Here I show you some of the <b
+      <br /> {projectsIntro3} <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >developments</b
-      > I've worked on, applying technology, design, and lots of creativity.
+        >{projectsIntro4}</b
+      > {projectsIntro5}
       <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >Check them out!</b
+        >{projectsIntro6}</b
       >
     </p>
     <slot />
@@ -70,7 +83,7 @@ allProjects.sort(
     <button
       class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
     >
-      View More Projects...
+      {viewMoreProjects}
     </button>
   </div>
 </section>
