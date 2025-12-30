@@ -3,7 +3,7 @@ layout: ../../../layouts/ProjectLayout.astro
 title: "MedalBlog"
 description: "Mi blog personal desarrollado para compartir conocimientos de programación y tecnología. Desplegado en Vercel y construido con modernas tecnologías web."
 image:
-  url: "/images/portfolio.webp"
+  url: "/images/projects/medalblog.png"
   alt: "MedalBlog Preview"
 website: "https://medalblog.vercel.app/blog"
 github: "https://github.com/Medalcode/medalblog"

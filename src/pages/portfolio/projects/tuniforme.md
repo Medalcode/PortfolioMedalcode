@@ -3,7 +3,7 @@ layout: ../../../layouts/ProjectLayout.astro
 title: "Tuniforme"
 description: "Tienda de uniformes escolares ficticia (Fake Store) desarrollada como proyecto académico. Simula una plataforma de e-commerce completa con catálogo y carrito de compras."
 image:
-  url: "/images/portfolio.webp"
+  url: "/images/projects/tuniforme.png"
   alt: "Tuniforme Preview"
 website: "https://tuniforme-541716295092.us-central1.run.app/raiz/index/"
 github: "https://github.com/Medalcode/Tuniforme"
