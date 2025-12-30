@@ -2,14 +2,17 @@
 import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 
-const allPosts = await Astro.glob("../../pages/portfolio/projects/*.md");
+const { lang } = Astro.params;
+
+const allProjects = await getCollection("projects", ({ id }) => {
+  return id.startsWith(`${lang}/`);
+});
 
 // Sort by descending date (most recent first)
-allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime(),
+allProjects.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -47,14 +50,14 @@ allPosts.sort(
     class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
   >
     {
-      allPosts.map((post) => (
+      allProjects.map((project) => (
         <Project
-          url={post.url}
-          title={post.frontmatter.title}
-          description={post.frontmatter.description}
-          date={post.frontmatter.pubDate}
-          languages={post.frontmatter.languages}
-          image={post.frontmatter.image}
+          url={`/${lang}/portfolio/projects/${project.slug.split('/').pop()}`}
+          title={project.data.title}
+          description={project.data.description}
+          date={project.data.pubDate}
+          languages={project.data.languages}
+          image={project.data.image}
         />
       ))
     }

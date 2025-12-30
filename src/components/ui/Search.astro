@@ -1,0 +1,190 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { lang = "es" } = Astro.params;
+
+// Translations
+const translations = {
+  es: {
+    placeholder: "Buscar...",
+    noResults: "No se encontraron resultados para",
+    clear: "Limpiar",
+  },
+  en: {
+    placeholder: "Search...",
+    noResults: "No results found for",
+    clear: "Clear",
+  },
+};
+
+const t = translations[lang as keyof typeof translations] || translations.es;
+---
+
+<div id="search-container" class="relative ml-4">
+  <button
+    id="search-btn"
+    class="flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-300 text-blacktext dark:text-zinc-300 hover:text-mint-500 dark:hover:text-mint-400"
+    aria-label="Open search"
+  >
+    <Icon name="search" class="size-5" />
+  </button>
+
+  <dialog
+    id="search-dialog"
+    class="bg-transparent p-0 w-full h-full max-w-full max-h-full m-0 backdrop:bg-zinc-950/80 backdrop:backdrop-blur-sm fixed inset-0 z-[100] open:flex items-start justify-center pt-24"
+  >
+    <div
+      class="w-full max-w-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[70vh] animate-fadeIn"
+    >
+      <div
+        class="flex items-center gap-4 px-6 py-4 border-b border-zinc-200 dark:border-zinc-800"
+      >
+        <Icon name="search" class="size-5 text-zinc-400" />
+        <input
+          id="search-input"
+          type="text"
+          placeholder={t.placeholder}
+          class="flex-1 bg-transparent outline-none text-lg text-blacktext dark:text-white placeholder-zinc-400"
+          autocomplete="off"
+        />
+        <button
+          id="close-search"
+          class="p-1 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors"
+        >
+          <kbd class="text-xs font-mono border border-zinc-300 dark:border-zinc-700 rounded px-1.5 py-0.5">ESC</kbd>
+        </button>
+      </div>
+
+      <div id="search-results" class="overflow-y-auto p-4 flex flex-col gap-2">
+        <!-- Results will be injected here -->
+      </div>
+    </div>
+  </dialog>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+</style>
+
+<script define:vars={{ lang }}>
+  // Ensure Pagefind is loaded
+  let pagefind;
+  
+  const initPagefind = async () => {
+    if (pagefind) return;
+    try {
+      // In dev mode, this might fail if not built. Handling gracefully.
+      const url = "/pagefind/pagefind.js";
+      // Check if file exists first to avoid 404 console spam in dev
+      const response = await fetch(url, { method: 'HEAD' });
+      if (response.ok) {
+        pagefind = await import(url);
+        await pagefind.options({
+           // Filter by html lang attribute automatically
+           // Pagefind does this by default if we use filters
+        });
+      } else {
+        console.warn("Pagefind not found. It will be available after build.");
+        document.getElementById("search-results").innerHTML = `
+          <div class="text-center p-4 text-zinc-500">
+            Search is available in production build.
+          </div>
+        `;
+      }
+    } catch (e) {
+      console.error("Failed to load Pagefind:", e);
+    }
+  };
+
+  const dialog = document.getElementById("search-dialog");
+  const openBtn = document.getElementById("search-btn");
+  const closeBtn = document.getElementById("close-search");
+  const input = document.getElementById("search-input");
+  const resultsContainer = document.getElementById("search-results");
+
+  // Open Search
+  openBtn?.addEventListener("click", () => {
+    dialog.showModal();
+    initPagefind(); // Load on demand
+    input.focus();
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  });
+
+  // Close Search
+  const closeSearch = () => {
+    dialog.close();
+    document.body.style.overflow = "";
+    input.value = "";
+    resultsContainer.innerHTML = "";
+  };
+
+  closeBtn?.addEventListener("click", closeSearch);
+  
+  // Close on click outside
+  dialog?.addEventListener("click", (e) => {
+    if (e.target === dialog) closeSearch();
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      if (!dialog.open) {
+        openBtn.click();
+      } else {
+        closeSearch();
+      }
+    }
+    if (e.key === "Escape" && dialog.open) {
+      closeSearch();
+    }
+  });
+
+  // Perform search
+  input?.addEventListener("input", async (e) => {
+    if (!pagefind) return;
+    
+    const query = e.target.value;
+    if (!query) {
+      resultsContainer.innerHTML = "";
+      return;
+    }
+
+    // Search with language filtering
+    // Pagefind indexes content with lang attributes. We can filter matches.
+    const search = await pagefind.search(query, {
+      filters: {
+        lang: lang // Filter matches by the current language
+      }
+    });
+
+    // Render results
+    const results = await Promise.all(search.results.slice(0, 5).map(r => r.data()));
+    
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `
+        <div class="text-center py-8 text-zinc-500 dark:text-zinc-400">
+           No results found.
+        </div>
+      `;
+      return;
+    }
+
+    resultsContainer.innerHTML = results.map(result => `
+      <a href="${result.url}" class="block group p-4 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+        <h3 class="font-bold text-mint-600 dark:text-mint-400 group-hover:underline">
+          ${result.meta.title || 'Untitled'}
+        </h3>
+         <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+          ${result.excerpt}
+        </p>
+      </a>
+    `).join("");
+  });
+</script>

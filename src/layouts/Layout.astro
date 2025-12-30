@@ -22,11 +22,12 @@ const SEO = {
 };
 
 
+const { lang = 'en' } = Astro.params;
 const twitterimage = `${siteUrl}${ogimage.url}`;
 ---
 
 <html
-  lang="en"
+  lang={lang}
   class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
 >
   <head>

@@ -11,11 +11,16 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+const { lang } = Astro.params;
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("blog", ({ id }) => {
+  return id.startsWith(`${lang}/`);
+});
+
 // Sort by date in descending order (newest first)
 allPosts.sort((a, b) => {
-  const dateA = new Date(a.frontmatter.pubDate).getTime();
-  const dateB = new Date(b.frontmatter.pubDate).getTime();
+  const dateA = new Date(a.data.pubDate).getTime();
+  const dateB = new Date(b.data.pubDate).getTime();
   return dateB - dateA;
 });
 
@@ -27,7 +32,7 @@ if (currentPostUrl) {
   postsToShow = postsToShow.filter((post) => {
     if (!post.url) return false; // If no URL, keep the post
     // Normalize URLs for comparison
-    const normalizedPostUrl = post.url.replace(/\/$/, ""); // Remove trailing slash if exists
+    const normalizedPostUrl = `/${lang}/blog/posts/${post.slug.split('/').pop()}`; // Construct URL from slug
     const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
     return normalizedPostUrl !== normalizedCurrentUrl;
   });
@@ -57,12 +62,12 @@ if (!all) {
     {
       postsToShow.map((post) => (
         <BlogPost
-          url={post.url}
-          title={post.frontmatter.title}
-          date={post.frontmatter.pubDate}
-          tags={post.frontmatter.tags}
-          languages={post.frontmatter.languages}
-          image={post.frontmatter.image}
+          url={`/${lang}/blog/posts/${post.slug.split('/').pop()}`}
+          title={post.data.title}
+          date={post.data.pubDate}
+          tags={post.data.tags}
+          languages={post.data.languages}
+          image={post.data.image}
         />
       ))
     }
@@ -71,7 +76,7 @@ if (!all) {
     !all && (
       <div id="morePosts" class="w-full flex justify-center text-center my-12">
         <a
-          href="/blog/posts/"
+          href={`/${lang}/blog/posts/`}
           class="font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
         >
           View all posts...

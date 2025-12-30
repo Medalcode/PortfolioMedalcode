@@ -4,19 +4,24 @@ import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import LanguagePicker from "../ui/LanguagePicker.astro";
+import Search from "../ui/Search.astro";
+const { lang } = Astro.params;
 
-const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang);
+const { github, githubIconName, linkedin, linkedinIconName } = staticDataEntry.data;
 
 const currentPath = Astro.url.pathname;
-const routes = ["/", "/portfolio", "/about-me"];
+// Adjust logic for active route checking if needed, dealing with /es/ or /en/ prefix
+const cleanPath = currentPath.replace(`/${lang}`, '') || '/';
 
-// Check if the current route is in the list of routes
-const isActiveRoute = routes.includes(currentPath);
+const isActiveRoute = ["/", "/portfolio", "/about-me"].includes(cleanPath);
 
 const navItems = isActiveRoute
   ? ["home", "experience", "projects", "about"]
-  : ["home", "about"]; // Change the items
+  : ["home", "about"]; 
 ---
 
 <header
@@ -27,7 +32,7 @@ const navItems = isActiveRoute
   <div
     class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6"
   >
-    <a href="/" aria-label="Go to home">
+    <a href={`/${lang}/`} aria-label="Go to home">
       <span
         class="text-2xl font-bold cursor-pointer transition-all hover:text-mint-300 tracking-tighter"
       >
@@ -45,6 +50,9 @@ const navItems = isActiveRoute
         <Social link={github} iconName={githubIconName} />
         <Social link={linkedin} iconName={linkedinIconName} />
       </div>
+      
+      <LanguagePicker />
+      <Search />
     </div>
     <div class="flex items-center gap-5 text-xl md:pl-5">
       <ThemeIcon />
@@ -62,5 +70,6 @@ const navItems = isActiveRoute
         />
       </button>
     </div>
+
   </div>
 </header>

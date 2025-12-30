@@ -2,23 +2,26 @@
 import Social from "../ui/Social.astro";
 import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+const { lang } = Astro.params;
+
+const staticDataCollection = await getCollection("staticData");
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang);
+const { github, githubIconName, linkedin, linkedinIconName } = staticDataEntry.data;
 
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
 const menu = {
-  about: { name: "About Me", path: "/about-me" },
+  about: { name: "About Me", path: `/${lang}/about-me` },
   blog: {
     name: "Blog",
-    path: "/blog/",
-    dropdown: [{ name: "All Posts", path: "/blog/posts/" }],
+    path: `/${lang}/blog/`,
+    dropdown: [{ name: "All Posts", path: `/${lang}/blog/posts/` }],
   },
-  home: { name: "Home", path: "/#home" },
-  experience: { name: "Experience", path: "/#experience" },
-  projects: { name: "Projects", path: "/#projects" },
+  home: { name: "Home", path: `/${lang}/#home` },
+  experience: { name: "Experience", path: `/${lang}/#experience` },
+  projects: { name: "Projects", path: `/${lang}/#projects` },
 };
 
 // Common base classes

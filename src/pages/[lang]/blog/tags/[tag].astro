@@ -1,0 +1,73 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import BlogPost from '../../../../components/blog/BlogPost.astro';
+import Heading from '../../../../components/ui/Heading.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("blog");
+    
+    // Get unique tags across all posts (or filter by language if desired, but tags are usually cross-language or defined per language)
+    // For simplicity, we generate pages for all tags found in all posts, for both languages.
+    // Ideally, we should filter tags by language context, but let's assume tags are universal for now or that we are fine showing all.
+    
+    // Strategy: For each language (es, en), find standard tags.
+    const languages = ['es', 'en'];
+    
+    let paths = [];
+
+    for (const lang of languages) {
+        // Filter posts for this language
+        const langPosts = allPosts.filter(post => {
+            const [postLang] = post.slug.split('/');
+            return postLang === lang;
+        });
+
+        const uniqueTags = [
+            ...new Set(langPosts.map((post) => post.data.tags).flat()),
+        ];
+        
+        const langPaths = uniqueTags.map((tag) => {
+            const filteredPosts = langPosts.filter((post) =>
+                post.data.tags.includes(tag)
+            );
+            return {
+                params: { lang, tag },
+                props: { posts: filteredPosts },
+            };
+        });
+        
+        paths = paths.concat(langPaths);
+    }
+
+    return paths;
+}
+
+const { tag, lang } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout pageTitle={tag} >
+    <section class="py-8">
+        <div class="flex flex-col gap-8 max-w-4xl mx-auto">
+            <Heading text="Posts about" textGradient={tag}/>
+            {
+                posts.map((post) => {
+                     const [ _, ...slugParts] = post.slug.split('/');
+                     const cleanSlug = slugParts.join('/');
+                     return (
+                    <BlogPost 
+                        url={`/${lang}/blog/posts/${cleanSlug}`} 
+                        title={post.data.title} 
+                        date={post.data.pubDate} 
+                        tags={post.data.tags}  
+                        languages={post.data.languages} 
+                        image={post.data.image} 
+                    />
+                )})
+            }
+        </div>
+    </section>
+
+</Layout>
+

@@ -1,0 +1,34 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Languages from "../../../../components/blog/Languages.astro";
+import Heading from "../../../../components/ui/Heading.astro";
+
+import { getCollection } from "astro:content";
+
+const pageTitle = "Technologies";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const allPosts = await getCollection("blog");
+// Filter posts by language if needed, but for techs we might want to show all available techs
+// or filter techs that appear in posts of the current language.
+const langPosts = allPosts.filter(post => post.slug.startsWith(`${lang}/`));
+const languages = [
+    ...new Set(langPosts.map((post) => post.data.languages || []).flat()),
+];
+---
+
+<Layout pageTitle={pageTitle}>
+    <section class="py-8">
+        <div class="flex flex-col gap-8 max-w-3xl mx-auto">
+            <Heading text="Technologies" />
+            <Languages variant="vertical" languages={languages} /> <!-- Fixed: Missing languages prop -->
+        </div>
+    </section>
+</Layout>
