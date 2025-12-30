@@ -19,10 +19,13 @@ Un proxy configurable diseñado para prácticas de **Chaos Engineering**, permit
 
 ## Características
 
-- **Simulación de Latencia**: Inyecta retardos configurables en las respuestas.
-- **Inyección de Errores**: Devuelve códigos de error HTTP aleatorios o específicos.
-- **Configuración Dinámica**: Soporte para identificación de configuración basada en headers.
-- **Docker Ready**: Contenerizado para despliegue y pruebas inmediatas.
+- **Latencia Controlada**: Inyecta delays precisos para probar timeouts.
+- **Simulación de Errores**: Fuerza respuestas 500, 503, 404 bajo demanda.
+- **Stealth Mode**: Funciona como un proxy transparente con overhead mínimo.
+
+## ¿Qué lo hace especial?
+
+Escrito en **Go**, es extremadamente ligero y rápido. Su diseño "Cloud Native" permite integrarlo fácilmente en pipelines de CI/CD o clusters de Kubernetes (vía Docker) para automatizar pruebas de resiliencia, algo crítico para arquitecturas de microservicios robustas.
 
 ## Uso
 

@@ -19,12 +19,15 @@ languages:
 
 Una colección de herramientas esenciales para ingenieros y administradores de red, enfocada en la usabilidad y la visualización clara de datos complejos.
 
-## Funcionalidades
+## Herramientas Incluidas
 
-- **Calculadora VLSM**: Cálculo avanzado de subredes con máscara de longitud variable.
-- **Visualización de Red**: Representación gráfica de la distribución de direcciones IP.
-- **Diseño Responsivo**: Interfaz optimizada para uso en campo (móvil/tablet).
-- **Validación en Tiempo Real**: Feedback inmediato para evitar errores de configuración.
+- **Calculadora VLSM Visual**: Diseña subredes y ve la ocupación gráfica de IPs.
+- **Conversor de Unidades**: Utilidades rápidas para ancho de banda y almacenamiento.
+- **Referencia Rápida**: Cheat-sheets para protocolos y puertos comunes.
+
+## ¿Qué lo hace especial?
+
+Transforma cálculos de red áridos y propensos a errores en una experiencia **visual e interactiva**. A diferencia de las calculadoras tradicionales basadas en texto, esta herramienta ofrece una representación gráfica inmediata de la distribución de la red, facilitando la comprensión y planificación para ingenieros de red.
 
 ## Tecnologías
 

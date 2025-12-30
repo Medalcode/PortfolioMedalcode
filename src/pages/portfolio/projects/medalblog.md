@@ -20,11 +20,15 @@ languages:
 
 Este es mi blog personal, diseñado para ser un espacio rápido y accesible donde comparto mis aprendizajes y tutoriales sobre desarrollo de software.
 
-## Características
+## Características Principales
 
-- **Despliegue Continuo**: Alojado en Vercel para máxima velocidad y disponibilidad.
-- **Diseño Moderno**: Interfaz limpia enfocada en la legibilidad.
-- **Gestión de Contenido**: Optimizado para escribir y publicar artículos técnicos fácilmente.
+- **CMS Personalizado**: Gestión de contenido markdown para una escritura fluida.
+- **Despliegue Continuo**: Alojado en Vercel para máxima velocidad y disponibilidad global.
+- **SEO Optimizado**: Estructura técnica preparada para indexación y visibilidad.
+
+## ¿Qué lo hace especial?
+
+Más que un simple blog, es una plataforma de marca personal construida desde cero. Integra un diseño **minimalista y accesible** con un rendimiento excepcional (Lighthouse 100/100), demostrando cómo un sitio de contenido puede ser visualmente atractivo sin sacrificar velocidad.
 
 ## Tecnologías
 
