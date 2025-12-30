@@ -19,9 +19,13 @@ Una solución robusta de **Web Scraping** construida con Python para automatizar
 
 ## Características Principales
 
-- **Extracción de Datos**: Automatiza la obtención de detalles de productos y precios.
-- **Procesamiento Eficiente**: Manejo de datos estructurados para análisis posterior.
-- **Python Power**: Aprovecha la flexibilidad y potencia del ecosistema Python.
+- **Anti-Bloqueo**: Implementa rotación de User-Agents y retardos aleatorios.
+- **Extracción Estructurada**: Convierte HTML caótico en JSON/CSV limpio.
+- **Headless Mode**: Ejecución eficiente sin interfaz gráfica para servidores.
+
+## ¿Qué lo hace especial?
+
+Su capacidad para navegar sitios complejos y extraer datos con precisión quirúrgica. Utiliza técnicas avanzadas de **parsseo DOM** y gestión de sesiones para comportarse como un usuario humano, superando las barreras básicas anti-bot para obtener datos de mercado valiosos.
 
 ## Tecnologías
 

@@ -20,11 +20,15 @@ languages:
 
 Proyecto académico que simula una tienda en línea ("Fake Store") especializada en uniformes escolares.
 
-## Funcionalidades
+## Funcionalidades Clave
 
-- **Catálogo Digital**: Visualización de productos organizados por categorías.
-- **Simulación de Compra**: Flujo completo de selección de productos y carrito de compras.
-- **Despliegue Cloud**: Aplicación contenerizada y desplegada en **Google Cloud Run**.
+- **Catálogo Dinámico**: Filtrado y búsqueda de productos en tiempo real.
+- **Carrito Persistente**: Gestión de estado de compra simulada.
+- **Diseño Responsive**: Adaptable a móviles y escritorio con Bootstrap.
+
+## ¿Qué lo hace especial?
+
+Es una simulación completa de un entorno **Full Stack**. No solo muestra productos, sino que implementa la lógica de negocio de un e-commerce real, desde la navegación hasta el "checkout", todo desplegado en una infraestructura serverless moderna (**Google Cloud Run**).
 
 ## Contexto
 
