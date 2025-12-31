@@ -104,9 +104,22 @@ const experienceCollection = defineCollection({
   }),
 });
 
+const aboutCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.object({
+      url: z.string(),
+      alt: z.string(),
+    }),
+  }),
+});
+
 export const collections = {
   staticData: jsonDataCollection,
   projects: projectsCollection,
   blog: blogCollection,
   experience: experienceCollection,
+  about: aboutCollection,
 };

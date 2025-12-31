@@ -12,14 +12,14 @@ const { lang } = Astro.params;
 const allStaticData = await getCollection("staticData");
 const staticData = allStaticData.find((entry) => entry.id === lang);
 const {
-    profileName,
-    profileImage,
-    profileTitle,
-    aboutTitle,
-    aboutGradient,
-    stackTitle,
-    stackGradient,
-    aboutDescription
+  profileName,
+  profileImage,
+  profileTitle,
+  aboutTitle,
+  aboutGradient,
+  stackTitle,
+  stackGradient,
+  aboutDescription,
 } = staticData.data;
 const { frontmatter } = Astro.props;
 ---
@@ -80,8 +80,7 @@ const { frontmatter } = Astro.props;
             <p
               class="text-lg max-xl:text-base text-blacktext dark:text-gray-200 mb-0 leading-8 font-semibold text-center"
               set:html={`<b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">${profileTitle}</b> ${aboutDescription}`}
-            >
-            </p>
+            />
           </div>
         </div>
       </div>
@@ -89,7 +88,7 @@ const { frontmatter } = Astro.props;
         <Heading text={aboutTitle} textGradient={aboutGradient} />
       </div>
 
-      <div class="markdown text-white" id="content">
+      <div class="markdown" id="content">
         <slot />
       </div>
     </article>
