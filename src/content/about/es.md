@@ -14,24 +14,21 @@ Comprometido con la ejecución eficiente, poseo habilidades demostradas en la in
 
 ## 🎓 Educación
 
-- **Ingeniería Informática** - Instituto Profesional Inacap (Mar 2023 - Esp. Dic 2026)
-  - _Áreas Clave:_ Inteligencia de Negocios, Minería de Datos, Seguridad de la Información, Proyectos Ágiles.
-- **Analista Programador** - Instituto Profesional Inacap (Mar 2023 - Dic 2024)
-  - _Áreas Clave:_ Gestión de Bases de Datos, Desarrollo Full Stack, Soporte TI.
-- **Técnico en Telecomunicaciones** - Liceo Industrial Hardware (Mar 1999 - Dic 2002)
-  - _Áreas Clave:_ Administración y Mantenimiento de Redes, Configuración de Sistemas de Comunicación.
+- **Analista Programador** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
+- **Técnico en Telecomunicaciones** - Liceo Industrial Hardware (Mar 1999 – Dic 2002)
 
 ## 🏆 Certificaciones
 
-- **Desarrollo Full Stack** - Inacap (2024)
-- **Diseño y Gestión de BD** - Inacap (2024)
-- **Diseño Ágil de Sistemas** - Inacap (2024)
-- **Soporte Computacional** - Inacap (2024)
+- **Certificación en Arquitectura Cloud** - Instituto Profesional INACAP (Mar 2024 – Dic 2025)
+- **Certificación en Desarrollo Full Stack** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
+- **Certificación en Diseño y Gestión de BD** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
+- **Certificación en Diseño Ágil de Sistemas** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
+- **Certificación en Administración y Soporte de Sistemas** - Instituto Profesional DUOC UC (Mar 2017 – Dic 2018)
 
 ## 🛠 Habilidades y Tecnologías
 
 - **Lenguajes:** Python, JavaScript, SQL, HTML, CSS, R.
-- **Frameworks y Tecnologías:** Django, React, Node.js, MongoDB, Power BI.
-- **Herramientas:** GitHub, VSCode, Jira, Taiga, Overleaf, Miro.
-- **Habilidades Blandas:** Trabajo en Equipo, Resolución de Problemas, Adaptabilidad, Comunicación Efectiva, Pensamiento Analítico, Aprendizaje Continuo.
-- **Idiomas:** Español (Nativo), Inglés (B1).
+- **Frameworks y Tecnologías:** Django, React, Node.js, MongoDB, Power BI, Docker.
+- **Herramientas y Plataformas:** Github, VSCode, Jira, Taiga, Overleaf, Miro.
+- **Soft Skills:** Trabajo en Equipo, Resolución de Problemas, Adaptabilidad, Comunicación Efectiva, Pensamiento Analítico, Aprendizaje Continuo.
+- **Idiomas:** Español (Nativo), Inglés (B2).
