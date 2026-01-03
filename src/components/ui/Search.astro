@@ -167,7 +167,7 @@ const t = translations[lang as keyof typeof translations] || translations.es;
     // Pagefind indexes content with lang attributes. We can filter matches.
     const search = await pagefind.search(query, {
       filters: {
-        lang: lang, // Filter matches by the current language
+        lang, // Filter matches by the current language
       },
     });
 

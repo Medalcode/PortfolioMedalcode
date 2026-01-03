@@ -156,6 +156,10 @@ npm run format:check
 # Type checking
 npm run check
 npm run type-check
+
+# Testing
+npm run test          # Run unit tests
+npm run test:coverage # Run tests with coverage
 ```
 
 ### Recommended Workflow

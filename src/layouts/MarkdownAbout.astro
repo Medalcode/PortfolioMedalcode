@@ -77,8 +77,13 @@ const { frontmatter } = Astro.props;
 
             <p
               class="text-lg max-xl:text-base text-blacktext dark:text-gray-200 mb-0 leading-8 font-semibold text-center"
-              set:html={`<b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">${profileTitle}</b> ${aboutDescription}`}
-            />
+            >
+              <b
+                class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
+                >{profileTitle}</b
+              >
+              {aboutDescription}
+            </p>
           </div>
         </div>
       </div>

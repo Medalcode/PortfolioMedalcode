@@ -1,17 +1,34 @@
 import eslintPluginAstro from "eslint-plugin-astro";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import tseslint from "typescript-eslint";
 
 export default [
   // Recommended config for Astro
   ...eslintPluginAstro.configs.recommended,
+  jsxA11y.flatConfigs.recommended,
 
   {
-    files: ["**/*.{js,mjs,cjs,ts,astro}"],
+    files: ["**/*.{js,mjs,cjs,ts,tsx}"],
     languageOptions: {
+      parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
       },
     },
+  },
+  {
+    files: ["**/*.astro"],
+    languageOptions: {
+      parser: eslintPluginAstro.parser,
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: [".astro"],
+      },
+    },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,astro}"],
     rules: {
       // General best practices
       "no-console": ["warn", { allow: ["warn", "error"] }],
