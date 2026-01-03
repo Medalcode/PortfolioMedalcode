@@ -1,7 +1,7 @@
 {
-  "date": "Jul 2009 - Ene 2023",
+  "date": "Ago 2009 – Ene 2023",
   "title": "Ejecutivo Senior Soporte BackOffice",
   "company": "VTR",
-  "description": "Analicé el estado de los servicios, diseñando la recolección y procesamiento de datos para el monitoreo. Optimicé la presentación de KPIs y garanticé la continuidad operativa mediante monitoreo proactivo y resolución de incidentes de alto impacto.",
-  "order": 1
+  "description": "• Analicé el estado de los servicios, diseñando la recolección, almacenamiento y procesamiento de datos desde diversas fuentes (data cruda) para el monitoreo de servicios.\n• Optimicé la consolidación, cálculo y presentación de KPIs utilizando tablas dinámicas y gráficos para mejorar la toma de decisiones basada en datos.\n• Garanticé la continuidad operativa a través del monitoreo proactivo de sistemas, solucionando incidencias de alto impacto para mantener la disponibilidad del servicio al cliente.\n• Contribuí a la mejora de procesos al interpretar los resultados de los indicadores operativos, reduciendo la recurrencia de fallas de infraestructura.",
+  "order": 2
 }
