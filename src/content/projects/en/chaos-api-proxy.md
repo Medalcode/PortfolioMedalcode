@@ -1,6 +1,6 @@
 ---
 title: "Chaos API Proxy"
-description: "Advanced chaos engineering tool to simulate API failures and latency. Designed to test microservice resilience through controlled error injection."
+description: "A next-generation Web Proxy for Chaos Engineering. Intercepts traffic and simulates latency, errors, and adverse conditions via dynamic TypeScript scripting."
 image:
   url: "/images/portfolio.webp"
   alt: "Chaos API Proxy Preview"
@@ -8,20 +8,22 @@ website: ""
 github: "https://github.com/Medalcode/Chaos-API-Proxy"
 pubDate: 2024-12-25
 languages:
-  - go
+  - typescript
+  - nodejs
   - docker
 ---
 
-# Chaos API Proxy
+# Chaos API Proxy (Titanium Edition)
 
-A configurable proxy designed for **Chaos Engineering** practices, allowing developers to simulate adverse network conditions and service failures.
+The evolution of the chaos proxy, completely rewritten in **TypeScript (Node.js)** to offer maximum flexibility and performance.
 
-## Features
+## Key Features
 
-- **Controlled Latency**: Injects precise delays to test timeouts.
-- **Error Simulation**: Forces 500, 503, 404 responses on demand.
-- **Stealth Mode**: Works as a transparent proxy with minimal overhead.
+- **Dynamic Scripting**: Define complex chaos rules using JavaScript/TypeScript.
+- **Latency Injection**: Simulate realistic network delays and jitter.
+- **Failure Simulation**: Force HTTP status codes (500, 503, 404) and custom payloads.
+- **Observability**: Integrated dashboard and Prometheus metrics.
 
-## What makes it special?
+## Why Node.js?
 
-Written in **Go**, it is extremely lightweight and fast. Its "Cloud Native" design allows easy integration into CI/CD pipelines or Kubernetes clusters (via Docker) to automate resilience testing, critical for robust microservices architectures.
+This "Titanium" version leverages Node.js's non-blocking event model to handle high traffic throughput with low base latency, allowing for precise chaos injections without unintentionally degrading the performance of the system under test.
