@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import Heading from "../components/ui/Heading.astro";
 import Experience from "../components/portfolio/Experience.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
+import Button from "../components/ui/Button.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 import { getCollection } from "astro:content";
@@ -20,6 +21,7 @@ const {
   stackTitle,
   stackGradient,
   aboutDescription,
+  cvButtonText,
 } = staticData.data;
 const { frontmatter } = Astro.props;
 ---
@@ -84,6 +86,15 @@ const { frontmatter } = Astro.props;
               >
               {aboutDescription}
             </p>
+            <div class="flex justify-center mt-6">
+              <Button
+                text={cvButtonText}
+                link="/files/Curriculo_Jonatthan_Medalla.pdf"
+                variant="default"
+                isExternal={true}
+                iconName="tabler:download"
+              />
+            </div>
           </div>
         </div>
       </div>

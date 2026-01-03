@@ -10,7 +10,7 @@ image:
 
 Soy **Analista Programador** y estudiante de Ingeniería Informática (6º semestre) especializándome en **Desarrollo Full Stack**, **Análisis de Datos** y **Soporte TI**.
 
-Con más de **8 años de experiencia profesional**, tengo una base sólida en la resolución de problemas complejos y la optimización de la continuidad operativa. Poseo habilidades demostradas en la integración y procesamiento de datos utilizando instrumentos estructurados, con dominio de bibliotecas de **SQL**, **Power BI** y **Python** para aplicar una visión de desarrollador y analista a los desafíos operativos.
+Con más de **20 años de experiencia profesional**, tengo una base sólida en la resolución de problemas complejos y la optimización de la continuidad operativa. Poseo habilidades demostradas en la integración y procesamiento de datos utilizando instrumentos estructurados, con dominio de bibliotecas de **SQL**, **Power BI** y **Python** para aplicar una visión de desarrollador y analista a los desafíos operativos.
 
 ## 🎓 Educación
 
