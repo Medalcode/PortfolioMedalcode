@@ -8,9 +8,9 @@ image:
 
 # ¡Hola, soy Jonatthan Medalla!
 
-Soy **Analista Programador** y estudiante de Ingeniería Informática (6º semestre) especializándome en **Desarrollo Full Stack**, **Análisis de Datos** y **Soporte TI**.
+Analista Programador especializado en Desarrollo Full Stack, Análisis de Datos y Soporte TI. Con una expertiz que se asienta sobre más de **20 años de experiencia laboral**, proporcionando una base sólida e invaluable en la resolución de problemas complejos y la optimización de la continuidad operativa de sistemas.
 
-Con más de **20 años de experiencia profesional**, tengo una base sólida en la resolución de problemas complejos y la optimización de la continuidad operativa. Poseo habilidades demostradas en la integración y procesamiento de datos utilizando instrumentos estructurados, con dominio de bibliotecas de **SQL**, **Power BI** y **Python** para aplicar una visión de desarrollador y analista a los desafíos operativos.
+Comprometido con la ejecución eficiente, poseo habilidades demostradas en la integración y procesamiento de conjuntos de datos (estructurados y no estructurados), con dominio de **SQL**, **Power BI** y librerías de **Python** para aplicar una visión de desarrollador y analista a los desafíos operativos.
 
 ## 🎓 Educación
 
