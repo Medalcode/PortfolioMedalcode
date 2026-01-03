@@ -8,9 +8,9 @@ image:
 
 # Hello, I'm Jonatthan Medalla!
 
-I am an **Analista Programador** and a Computer Engineering student (6th semester) specializing in **Full Stack Development**, **Data Analysis**, and **IT Support**.
+Programmer Analyst specializing in Full Stack Development, Data Analysis, and IT Support. With expertise grounded in over **20 years of work experience**, providing a solid and invaluable foundation in solving complex problems and optimizing system operational continuity.
 
-With over **20 years of professional experience**, I have a solid foundation in solving complex problems and optimizing operational continuity. I possess demonstrated skills in data integration and processing using structured instruments, with mastery of **SQL**, **Power BI**, and **Python** libraries to apply a developer and analyst vision to operational challenges.
+Committed to efficient execution, I possess demonstrated skills in the integration and processing of data sets (structured and unstructured), with mastery of **SQL**, **Power BI**, and **Python** libraries to apply a developer and analyst vision to operational challenges.
 
 ## 🎓 Education
 
