@@ -111,7 +111,8 @@ describe('Component Prop Validation', () => {
 
   describe('Date formatting helpers', () => {
     it('should format dates correctly', () => {
-      const testDate = new Date('2024-01-15');
+      // Use local date constructor to avoid timezone issues
+      const testDate = new Date(2024, 0, 15); // Months are 0-indexed: 0 = January
       const formatted = testDate.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
