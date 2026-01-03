@@ -22,6 +22,7 @@ const jsonDataCollection = defineCollection({
     contactSectionSubtitle: z.string(),
     contactSectionButtonText: z.string(),
     cvButtonText: z.string(),
+    aboutButtonText: z.string().optional(),
     contactSectionButtonIcon: z.string(),
     techsTitle: z.string(),
     instagramIconName: z.string(),
