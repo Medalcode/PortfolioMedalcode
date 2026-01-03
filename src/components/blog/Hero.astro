@@ -6,7 +6,9 @@ import { Icon } from "astro-icon/components";
 import Heading from "../ui/Heading.astro";
 import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
+const { lang } = Astro.params;
+const allStaticData = await getCollection("staticData");
+const staticData = allStaticData.find((entry) => entry.id === lang);
 const {
   techsTitle,
   github,
@@ -16,7 +18,10 @@ const {
   profileLink,
   profileTitle,
   profileName,
+  aboutButtonText,
 } = staticData.data;
+
+const fullProfileLink = `/${lang}${profileLink}`;
 ---
 
 <section class="py-8 px-8 max-sm:px-4 max-sm:py-2">
@@ -72,7 +77,7 @@ const {
             class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover"
             style={`background-image: url(${profileImage})`}
           >
-            <a href={profileLink} class="h-full w-full flex" aria-label={profileAlt}></a>
+            <a href={fullProfileLink} class="h-full w-full flex" aria-label={profileAlt}></a>
           </div>
         </div>
         <div class="p-4 w-7/12 flex flex-col justify-center gap-4 max-sm:w-fit max-md:gap-2">
@@ -84,7 +89,7 @@ const {
             > 🚀</span
           >
           <Heading text={profileName} level={3} />
-          <Button link={profileLink} text="About Me" iconName="person" class="drop-shadow-xl" />
+          <Button link={fullProfileLink} text={aboutButtonText || "About Me"} iconName="person" class="drop-shadow-xl" />
         </div>
       </article>
     </div>
