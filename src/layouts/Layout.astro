@@ -23,6 +23,7 @@ const SEO = {
 
 const { lang = "en" } = Astro.params;
 const twitterimage = `${siteUrl}${ogimage.url}`;
+const SpeedInsightsComponent = SpeedInsights as any;
 ---
 
 <html lang={lang} class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth">
@@ -68,7 +69,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class="overflow-x-hidden">
-    <SpeedInsights />
+    <SpeedInsightsComponent />
     <div class="blur-circle"></div>
     <div
       style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"

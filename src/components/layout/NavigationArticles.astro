@@ -26,8 +26,10 @@ const currentIndex = sortedPosts.findIndex((post) => {
 const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
 
+import type { CollectionEntry } from "astro:content";
+
 // Helper to construct URL
-const getPostUrl = (post) => {
+const getPostUrl = (post: CollectionEntry<"blog">) => {
   const [_, ...slugParts] = post.slug.split("/");
   const cleanSlug = slugParts.join("/");
   return `/${currentLang}/blog/posts/${cleanSlug}`;

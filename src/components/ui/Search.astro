@@ -79,7 +79,7 @@ const t = translations[lang as keyof typeof translations] || translations.es;
   }
 </style>
 
-<script define:vars={{ lang }}>
+<script is:inline define:vars={{ lang }}>
   // Ensure Pagefind is loaded
   let pagefind;
 

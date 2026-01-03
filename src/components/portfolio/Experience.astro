@@ -34,7 +34,12 @@ allExperience.sort((a, b) => a.data.order - b.data.order);
                   class="flex flex-col gap-2  text-zinc-00 dark:text-zinc-300 md:col-span-3"
                   aria-describedby={`experience-title-${index}`}
                 >
-                  <ExperienceItem {...experience.data} />
+                  <ExperienceItem
+                    title={experience.data.title as string}
+                    company={experience.data.company as string}
+                    description={experience.data.description as string}
+                    date={experience.data.date as string}
+                  />
                 </div>
               </article>
             </li>
