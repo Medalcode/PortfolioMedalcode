@@ -6,17 +6,14 @@ import Heading from "../../../../components/ui/Heading.astro";
 const pageTitle = "Tags";
 
 export async function getStaticPaths() {
-  return [
-    { params: { lang: "es" } },
-    { params: { lang: "en" } },
-  ];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 ---
 
-<Layout pageTitle={pageTitle} >
+<Layout pageTitle={pageTitle}>
   <section class="py-8">
     <div class="flex flex-col gap-8 max-w-3xl mx-auto">
-      <Heading text="Tags"  />
+      <Heading text="Tags" />
       <Tags variant="vertical" />
     </div>
   </section>

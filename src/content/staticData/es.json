@@ -22,11 +22,7 @@
   "githubIconName": "github",
   "linkedinIconName": "linkedin",
   "emailIconName": "envelope",
-  "hobbies": [
-    "Programación",
-    "Análisis de Datos",
-    "Tecnología"
-  ],
+  "hobbies": ["Programación", "Análisis de Datos", "Tecnología"],
   "pageTitle": "Portafolio de Jonatthan Medalla",
   "pageDescription": "Portafolio de Jonatthan Medalla, Desarrollador Full Stack y Analista de Datos.",
   "availableForWork": "Disponible para trabajar",

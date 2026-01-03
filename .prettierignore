@@ -1,0 +1,14 @@
+# Ignore build outputs
+dist/
+.astro/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore generated files
+public/pagefind/

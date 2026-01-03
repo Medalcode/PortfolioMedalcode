@@ -53,11 +53,7 @@ const getIconContainerClasses = () => {
       aria-label={`View articles about ${selectedLanguage.name}`}
       role="link"
     >
-      <span
-        class={getContainerClasses()}
-        role="presentation"
-        aria-hidden="true"
-      >
+      <span class={getContainerClasses()} role="presentation" aria-hidden="true">
         <div
           class={getIconContainerClasses()}
           role="img"
@@ -69,11 +65,7 @@ const getIconContainerClasses = () => {
       </span>
     </a>
   ) : (
-    <span
-      class={`${getContainerClasses()} cursor-default`}
-      role="presentation"
-      aria-hidden="true"
-    >
+    <span class={`${getContainerClasses()} cursor-default`} role="presentation" aria-hidden="true">
       <div
         class={getIconContainerClasses()}
         role="img"

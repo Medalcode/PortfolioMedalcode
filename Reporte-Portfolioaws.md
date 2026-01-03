@@ -39,12 +39,14 @@ Plantilla/portafolio personal creada con Astro (sitio estático) con estilo "Neo
 ## 3) package.json — scripts y dependencias (resumen)
 
 Scripts:
+
 - `dev`: `astro dev`
 - `build`: `astro build`
 - `preview`: `astro preview`
 - `astro`: `astro`
 
 Dependencias notables:
+
 - `astro` ^5.6.1
 - `@astrojs/preact`, `@astrojs/rss`, `@astrojs/sitemap`
 - `preact` ^10.26.2
@@ -53,9 +55,11 @@ Dependencias notables:
 - `astro-icon`, `prismjs`, `alpinejs`, `@vercel/speed-insights`
 
 DevDependencies:
+
 - `eslint`, `eslint-plugin-astro`, `tailwindcss-animated`
 
 Hallazgos:
+
 - El campo `name` en `package.json` está vacío.
 - No hay scripts de `lint` o `test` configurados explícitamente.
 
@@ -98,12 +102,14 @@ Componentes: BlogPost, DatePub, Hero, ListPosts, Tags, Experience, Project, Tool
 ## 6) Hallazgos, problemas y riesgos
 
 Prioridad alta:
+
 1. `package.json` tiene `name` vacío — completar metadata (name, repository, author, version).
 2. No se encontró `tailwind.config.js` — recomendable añadirlo para control de purge, theme y safelist.
 3. Falta un script de `lint` en `package.json` pese a que `eslint` está en devDependencies.
 4. No hay tests ni script de test; añadir un runner si se desea CI más robusto.
 
 Prioridad media:
+
 - Revisar compatibilidad de `tailwindcss` v4 con el resto de integraciones (si surgen errores, considerar actualizar o ajustar la configuración de Vite).
 - Considerar self-hosting de fuentes para mejorar PWA/performance si fuera necesario.
 
@@ -172,6 +178,7 @@ Estado actual: no ejecutado en este análisis (se recomienda ejecutar localmente
 ## 12) Siguientes pasos disponibles
 
 Puedo:
+
 - Crear `tailwind.config.js` mínimo y añadirlo al repo.
 - Añadir scripts `lint` y `check` a `package.json`.
 - Ejecutar `npm install` y `npm run build` en un terminal y reportar errores.

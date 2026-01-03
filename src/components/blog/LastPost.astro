@@ -7,12 +7,12 @@ import DatePub from "./DatePub.astro";
 
 const currentPath = Astro.url.pathname;
 const urlParts = currentPath.split("/").filter(Boolean);
-const currentLang = urlParts[0] === 'en' ? 'en' : 'es';
+const currentLang = urlParts[0] === "en" ? "en" : "es";
 
 const allPosts = await getCollection("blog");
-const filteredPosts = allPosts.filter(post => {
-    const [postLang] = post.slug.split('/');
-    return postLang === currentLang;
+const filteredPosts = allPosts.filter((post) => {
+  const [postLang] = post.slug.split("/");
+  return postLang === currentLang;
 });
 
 // Get the latest post using reduce or sort
@@ -29,10 +29,10 @@ const image = latestPost?.data.image.url;
 const imageAlt = latestPost?.data.image.alt || latestPost?.data.title;
 
 const getPostUrl = (post) => {
-    if (!post) return '#';
-    const [ _, ...slugParts] = post.slug.split('/');
-    const cleanSlug = slugParts.join('/');
-    return `/${currentLang}/blog/posts/${cleanSlug}`;
+  if (!post) return "#";
+  const [_, ...slugParts] = post.slug.split("/");
+  const cleanSlug = slugParts.join("/");
+  return `/${currentLang}/blog/posts/${cleanSlug}`;
 };
 ---
 
@@ -45,17 +45,8 @@ const getPostUrl = (post) => {
       aria-labelledby="post-title"
     >
       <article class="h-full flex flex-col justify-between max-sm:bg-zinc-900 max-sm:relative sm:bg-linear-to-t from-black/95 from-25% to-transparent max-sm:from-60% p-8 max-md:p-6 max-sm:mp-0 max-sm:p-0">
-        <a
-          href=""
-          class="sm:hidden relative top-0 left-0 w-full h-auto -z-0"
-          aria-hidden="true"
-        >
-          <img
-            src={image}
-            alt={imageAlt}
-            class="w-full h-auto"
-            loading="lazy"
-          />
+        <a href="" class="sm:hidden relative top-0 left-0 w-full h-auto -z-0" aria-hidden="true">
+          <img src={image} alt={imageAlt} class="w-full h-auto" loading="lazy" />
         </a>
         <div
           class="w-full flex pb-5 gap-2 flex-wrap justify-end z-10 max-sm:px-6 max-sm:pt-6"
@@ -74,10 +65,7 @@ const getPostUrl = (post) => {
         >
           <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.3)]">
             <DatePub date={latestPost.data.pubDate} class="text-mint-50" />
-            <h2
-              id="post-title"
-              class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold"
-            >
+            <h2 id="post-title" class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold">
               <span>{latestPost.data.title}</span>
             </h2>
             <ReadMore class="text-mint-50" />
@@ -90,7 +78,9 @@ const getPostUrl = (post) => {
           aria-label="Article tags"
         >
           {tags.map((tag) => (
-            <Tag tag={tag} forceDark="true">{tag}</Tag>
+            <Tag tag={tag} forceDark="true">
+              {tag}
+            </Tag>
           ))}
         </div>
       </article>

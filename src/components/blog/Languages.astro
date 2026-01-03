@@ -4,35 +4,28 @@ import Capsule from "../ui/Capsule.astro";
 
 const currentPath = Astro.url.pathname;
 const urlParts = currentPath.split("/").filter(Boolean);
-const currentLang = urlParts[0] === 'en' ? 'en' : 'es';
+const currentLang = urlParts[0] === "en" ? "en" : "es";
 
 const allPosts = await getCollection("blog");
-const filteredPosts = allPosts.filter(post => {
-    const [postLang] = post.slug.split('/');
-    return postLang === currentLang;
+const filteredPosts = allPosts.filter((post) => {
+  const [postLang] = post.slug.split("/");
+  return postLang === currentLang;
 });
 
-const languages = [
-    ...new Set(filteredPosts.map((post) => post.data.languages || []).flat()),
-];
+const languages = [...new Set(filteredPosts.map((post) => post.data.languages || []).flat())];
 
 const { variant = "default" } = Astro.props;
 
 const baseClasses = "flex flex-wrap";
 
 const variantClasses = {
-    default: "gap-3 max-lg:gap-1",
-    vertical: "gap-6 flex-col"
+  default: "gap-3 max-lg:gap-1",
+  vertical: "gap-6 flex-col",
 } as const;
 
 const classes = `${baseClasses} ${variantClasses[variant as keyof typeof variantClasses] || variantClasses.default}`;
 ---
 
 <div class={classes}>
-    {languages.map((language) => (
-        <Capsule lang={language} linkEnabled={true} size="md" />
-    ))}
+  {languages.map((language) => <Capsule lang={language} linkEnabled={true} size="md" />)}
 </div>
-
-
-

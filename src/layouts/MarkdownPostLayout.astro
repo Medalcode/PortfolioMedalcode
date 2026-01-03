@@ -9,9 +9,7 @@ import NavigationArticles from "../components/layout/NavigationArticles.astro";
 import Share from "../components/ui/Share.astro";
 const { frontmatter } = Astro.props;
 const currentUrl = `${Astro.site}${Astro.url.pathname}`;
-const tweetText = encodeURIComponent(
-  `"${frontmatter.title}" - by ${frontmatter.author} | EFEELE`
-);
+const tweetText = encodeURIComponent(`"${frontmatter.title}" - by ${frontmatter.author} | EFEELE`);
 import Heading from "../components/ui/Heading.astro";
 ---
 
@@ -66,20 +64,14 @@ import Heading from "../components/ui/Heading.astro";
   description={frontmatter.description}
   ogimage={frontmatter.image}
 >
-  <section
-    class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6"
-  >
+  <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
     <div class="w-64 max-xl:hidden"></div>
     <article
       class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
     >
       <header class="flex flex-col gap-4" id="start">
         <div class="flex gap-2 flex-wrap">
-          {
-            frontmatter.languages.map((language: string) => (
-              <Capsule lang={language} />
-            ))
-          }
+          {frontmatter.languages.map((language: string) => <Capsule lang={language} />)}
         </div>
         <div class="gap-3 flex flex-wrap justify-start items-center">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag}>{tag}</Tag>)}
@@ -88,9 +80,7 @@ import Heading from "../components/ui/Heading.astro";
 
         <Heading text={frontmatter.title} />
 
-        <div
-          class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between"
-        >
+        <div class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between">
           <div class="white flex items-center gap-4">
             <div
               aria-label="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
@@ -128,9 +118,7 @@ import Heading from "../components/ui/Heading.astro";
     </article>
     <NavArticle title={frontmatter.title} />
   </section>
-  <div
-    class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"
-  >
+  <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto">
     <div class="px-8">
       <NavigationArticles />
       <hr class="text-mint-300/50" />

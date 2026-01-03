@@ -1,16 +1,47 @@
 {
   "name": "portfolio-medalcode",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Modern portfolio template built with Astro, featuring a minimalist dark design with blue accents. Perfect for developers and digital creatives.",
+  "author": {
+    "name": "MedalCode",
+    "url": "https://github.com/Medalcode"
+  },
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "portfolio",
+    "template",
+    "blog",
+    "tailwindcss",
+    "preact",
+    "dark-mode",
+    "developer-portfolio",
+    "static-site"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Medalcode/PortfolioMedalcode.git"
   },
+  "bugs": {
+    "url": "https://github.com/Medalcode/PortfolioMedalcode/issues"
+  },
+  "homepage": "https://github.com/Medalcode/PortfolioMedalcode#readme",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+    "format": "prettier --write \"**/*.{js,ts,astro,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,astro,json,md}\"",
+    "check": "astro check",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/preact": "^4.0.8",
@@ -26,9 +57,22 @@
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/preact": "^3.2.4",
+    "@types/node": "^22.10.5",
+    "@vitest/ui": "^2.1.8",
+    "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^9.22.0",
     "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "happy-dom": "^15.11.7",
+    "jsdom": "^25.0.1",
     "pagefind": "^1.4.0",
-    "tailwindcss-animated": "^2.0.0"
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss-animated": "^2.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.8"
   }
 }

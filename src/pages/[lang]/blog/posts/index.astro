@@ -3,15 +3,11 @@ import Layout from "../../../../layouts/Layout.astro";
 import ListPosts from "../../../../components/blog/ListPosts.astro";
 
 export async function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'en' } },
-  ];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
 const pageTitle = "All Blog Posts | Fernando López | EFEELE";
-const description =
-  "Explore all my articles about web development, frontend, and technology.";
+const description = "Explore all my articles about web development, frontend, and technology.";
 ---
 
 <Layout pageTitle={pageTitle} description={description}>
