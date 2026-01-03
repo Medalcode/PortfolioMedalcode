@@ -14,24 +14,21 @@ Committed to efficient execution, I possess demonstrated skills in the integrati
 
 ## 🎓 Education
 
-- **Ingeniería Informática** - Instituto Profesional Inacap (Mar 2023 - Expected Dec 2026)
-  - _Key Areas:_ Business Intelligence, Data Mining, Information Security, Agile Projects.
-- **Analista Programador** - Instituto Profesional Inacap (Mar 2023 - Dec 2024)
-  - _Key Areas:_ Database Management, Full Stack Development, IT Support.
-- **Técnico en Telecomunicaciones** - Liceo Industrial Hardware (Mar 1999 - Dec 2002)
-  - _Key Areas:_ Network Administration & Maintenance, Communication Systems Configuration.
+- **Programmer Analyst** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
+- **Telecommunications Technician** - Liceo Industrial Hardware (Mar 1999 – Dec 2002)
 
 ## 🏆 Certifications
 
-- **Desarrollo Full Stack** - Inacap (2024)
-- **Diseño y Gestión de BD** - Inacap (2024)
-- **Diseño Ágil de Sistemas** - Inacap (2024)
-- **Soporte Computacional** - Inacap (2024)
+- **Cloud Architecture Certification** - Instituto Profesional INACAP (Mar 2024 – Dec 2025)
+- **Full Stack Development Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
+- **DB Design and Management Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
+- **Agile Systems Design Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
+- **Systems Administration and Support Certification** - Instituto Profesional DUOC UC (Mar 2017 – Dec 2018)
 
 ## 🛠 Skills & Technologies
 
 - **Languages:** Python, JavaScript, SQL, HTML, CSS, R.
-- **Frameworks & Techs:** Django, React, Node.js, MongoDB, Power BI.
-- **Tools:** GitHub, VSCode, Jira, Taiga, Overleaf, Miro.
+- **Frameworks & Techs:** Django, React, Node.js, MongoDB, Power BI, Docker.
+- **Tools & Platforms:** Github, VSCode, Jira, Taiga, Overleaf, Miro.
 - **Soft Skills:** Teamwork, Problem Solving, Adaptability, Effective Communication, Analytical Thinking, Continuous Learning.
-- **Languages:** Spanish (Native), English (B1).
+- **Languages:** Spanish (Native), English (B2).
