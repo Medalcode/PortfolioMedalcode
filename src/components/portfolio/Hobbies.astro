@@ -7,7 +7,6 @@ const allStaticData = await getCollection("staticData");
 const staticData =
   allStaticData.find((entry) => entry.id === lang) ||
   allStaticData.find((entry) => entry.id === "es");
-const { hobbies } = staticData.data;
 
 interface Props {
   variant?: "default" | "vertical";

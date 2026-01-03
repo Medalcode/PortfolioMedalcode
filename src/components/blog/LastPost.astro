@@ -28,7 +28,9 @@ const languages = latestPost ? [...new Set(latestPost.data.languages ?? [])] : [
 const image = latestPost?.data.image.url;
 const imageAlt = latestPost?.data.image.alt || latestPost?.data.title;
 
-const getPostUrl = (post) => {
+import type { CollectionEntry } from "astro:content";
+
+const getPostUrl = (post: CollectionEntry<"blog">) => {
   if (!post) return "#";
   const [_, ...slugParts] = post.slug.split("/");
   const cleanSlug = slugParts.join("/");

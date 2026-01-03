@@ -30,7 +30,6 @@ let postsToShow = allPosts;
 if (currentPostUrl) {
   // Exclude current post if its URL is provided
   postsToShow = postsToShow.filter((post) => {
-    if (!post.url) return false; // If no URL, keep the post
     // Normalize URLs for comparison
     const normalizedPostUrl = `/${lang}/blog/posts/${post.slug.split("/").pop()}`; // Construct URL from slug
     const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
