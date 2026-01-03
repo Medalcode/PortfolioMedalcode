@@ -10,7 +10,7 @@ image:
 
 I am an **Analista Programador** and a Computer Engineering student (6th semester) specializing in **Full Stack Development**, **Data Analysis**, and **IT Support**.
 
-With over **8 years of professional experience**, I have a solid foundation in solving complex problems and optimizing operational continuity. I possess demonstrated skills in data integration and processing using structured instruments, with mastery of **SQL**, **Power BI**, and **Python** libraries to apply a developer and analyst vision to operational challenges.
+With over **20 years of professional experience**, I have a solid foundation in solving complex problems and optimizing operational continuity. I possess demonstrated skills in data integration and processing using structured instruments, with mastery of **SQL**, **Power BI**, and **Python** libraries to apply a developer and analyst vision to operational challenges.
 
 ## 🎓 Education
 
