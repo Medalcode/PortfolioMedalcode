@@ -22,7 +22,6 @@ const {
   github,
   portfolioImage,
   contactSectionButtonText,
-  aboutTitle,
   projectsTitle,
   stackTitle,
   stackGradient,
@@ -39,7 +38,10 @@ const {
   heroDescription3,
   beyondCode,
   designQuestion,
+  aboutButtonText,
 } = staticDataEntry.data;
+
+const fullProfileLink = `/${lang}/${profileLink}`;
 ---
 
 <section
@@ -67,7 +69,7 @@ const {
               style={`background-image: url(${profileImage})`}
               aria-label={profileAlt}
             >
-              <a href={profileLink} class="flex h-full w-full" aria-label="View about me page"></a>
+              <a href={fullProfileLink} class="flex h-full w-full" aria-label="View about me page"></a>
             </div>
           </div>
         </div>
@@ -108,7 +110,7 @@ const {
             text={contactSectionButtonText}
             iconName={emailIconName}
           />
-          <Button link={profileLink} text={aboutTitle} iconName="person" variant="dark" />
+          <Button link={fullProfileLink} text={aboutButtonText || "About Me"} iconName="person" variant="dark" />
         </div>
       </div>
     </div>
