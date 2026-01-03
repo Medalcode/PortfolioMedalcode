@@ -1,8 +1,8 @@
 // src/content/config.ts
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const jsonDataCollection = defineCollection({
-  type: 'data',
+  type: "data",
   schema: z.object({
     //Define JSON-file structure
     profileImage: z.string(),
@@ -62,7 +62,7 @@ const jsonDataCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -78,7 +78,7 @@ const projectsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     author: z.string(),
@@ -94,7 +94,7 @@ const blogCollection = defineCollection({
 });
 
 const experienceCollection = defineCollection({
-  type: 'data',
+  type: "data",
   schema: z.object({
     title: z.string(),
     company: z.string(),
@@ -105,7 +105,7 @@ const experienceCollection = defineCollection({
 });
 
 const aboutCollection = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),

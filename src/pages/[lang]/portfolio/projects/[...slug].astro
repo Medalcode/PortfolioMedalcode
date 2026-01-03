@@ -5,9 +5,9 @@ import ProjectLayout from "../../../../layouts/ProjectLayout.astro";
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((entry) => {
-    const [lang, ...slugParts] = entry.slug.split('/');
+    const [lang, ...slugParts] = entry.slug.split("/");
     return {
-      params: { lang, slug: slugParts.join('/') },
+      params: { lang, slug: slugParts.join("/") },
       props: { entry },
     };
   });

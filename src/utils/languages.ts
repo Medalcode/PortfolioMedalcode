@@ -146,4 +146,4 @@ export const languages: Record<string, Language> = {
 
 export const getLanguage = (lang: string): Language => {
   return languages[lang] || languages.html;
-}; 
+};

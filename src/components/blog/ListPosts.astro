@@ -32,7 +32,7 @@ if (currentPostUrl) {
   postsToShow = postsToShow.filter((post) => {
     if (!post.url) return false; // If no URL, keep the post
     // Normalize URLs for comparison
-    const normalizedPostUrl = `/${lang}/blog/posts/${post.slug.split('/').pop()}`; // Construct URL from slug
+    const normalizedPostUrl = `/${lang}/blog/posts/${post.slug.split("/").pop()}`; // Construct URL from slug
     const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
     return normalizedPostUrl !== normalizedCurrentUrl;
   });
@@ -47,9 +47,7 @@ if (!all) {
 }
 ---
 
-<section
-  class="py-8 max-lg:px-4 max-md:px-8 max-sm:px-0 max-md:py-4 max-w-4xl mx-auto"
->
+<section class="py-8 max-lg:px-4 max-md:px-8 max-sm:px-0 max-md:py-4 max-w-4xl mx-auto">
   {
     all && (
       <div class="flex gap-4 pb-6 items-center text-center justify-center">
@@ -62,7 +60,7 @@ if (!all) {
     {
       postsToShow.map((post) => (
         <BlogPost
-          url={`/${lang}/blog/posts/${post.slug.split('/').pop()}`}
+          url={`/${lang}/blog/posts/${post.slug.split("/").pop()}`}
           title={post.data.title}
           date={post.data.pubDate}
           tags={post.data.tags}

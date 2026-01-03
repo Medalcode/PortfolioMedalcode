@@ -6,12 +6,8 @@ image:
   url: "/images/posts/animated-borders-tailwind.webp"
   alt: "Example of animated borders with Tailwind CSS in a dark design, featuring a vibrant color gradient background."
 pubDate: 2025-03-27
-tags:
-  [
-    "CSS", "Tailwind", "Animation", "Frontend", "UI"
-   
-  ]
-languages: ["tailwind", "html", ]
+tags: ["CSS", "Tailwind", "Animation", "Frontend", "UI"]
+languages: ["tailwind", "html"]
 ---
 
 The `border` property in CSS cannot be animated natively. However, we can simulate this effect by using a `div` with an animated background and placing the content inside a child element with `padding`, which will act as the "thickness" of the border.
@@ -38,9 +34,7 @@ For our animated border, we'll use **conic gradient**, as it allows us to create
   class="w-full max-w-lg bg-conic/[from_0deg] from-white to-white dark:from-black via-green-400 dark:to-black  rounded-2xl p-px"
 >
   <div class="p-10 rounded-2xl bg-transparent">
-    <p class="text-white text-center font-semibold ">
-      Parent container background
-    </p>
+    <p class="text-white text-center font-semibold ">Parent container background</p>
   </div>
 </div>
 ```
@@ -114,9 +108,7 @@ Now we'll implement it in our parent container classes:
   class="w-full max-w-lg bg-conic/[from_var(--border-angle)] from-white to-white dark:from-black via-green-400 dark:to-black animate-rotate-border rounded-2xl p-px"
 >
   <div class="p-10 rounded-2xl bg-transparent">
-    <p class="text-white text-center font-semibold">
-      Animated parent container background
-    </p>
+    <p class="text-white text-center font-semibold">Animated parent container background</p>
   </div>
 </div>
 ```
@@ -217,9 +209,7 @@ I'll make some small adjustments, changing the from and to colors to achieve a m
   class="w-full max-w-lg bg-conic/[from_var(--border-angle)] from-green-200/20 via-green-400 to-green-200/20 from-30% to-60% animate-rotate-border rounded-2xl p-px"
 >
   <div class="p-10 rounded-2xl dark:bg-zinc-900 bg-zinc-50">
-    <p class="text-white text-center font-semibold">
-      This is the final result
-    </p>
+    <p class="text-white text-center font-semibold">This is the final result</p>
   </div>
 </div>
 ```
@@ -236,4 +226,4 @@ I'll make some small adjustments, changing the from and to colors to achieve a m
 
 ## Conclusion
 
-I hope this guide has helped you understand how to create an animated border with Tailwind CSS and that you can implement it in your projects. Experiment with gradients and animations to get unique effects! 🎨✨ 
+I hope this guide has helped you understand how to create an animated border with Tailwind CSS and that you can implement it in your projects. Experiment with gradients and animations to get unique effects! 🎨✨

@@ -4,18 +4,20 @@ import Hobbie from "./Hobbie.astro";
 
 const { lang } = Astro.params;
 const allStaticData = await getCollection("staticData");
-const staticData = allStaticData.find((entry) => entry.id === lang) || allStaticData.find((entry) => entry.id === 'es');
+const staticData =
+  allStaticData.find((entry) => entry.id === lang) ||
+  allStaticData.find((entry) => entry.id === "es");
 const { hobbies } = staticData.data;
 
 interface Props {
-    variant?: "default" | "vertical";
+  variant?: "default" | "vertical";
 }
-    
+
 const baseClasses = "max-w-7xl gap-3 py-4 max-md:py-3";
 
 const variants = {
-    default: `${baseClasses} flex-wrap mx-auto max-md:gap-2 max-sm:gap-1 justify-start items-center flex flex-row`,
-    vertical: `${baseClasses} max-sm:gap-2 justify-start items-start flex flex-col`,
+  default: `${baseClasses} flex-wrap mx-auto max-md:gap-2 max-sm:gap-1 justify-start items-center flex flex-row`,
+  vertical: `${baseClasses} max-sm:gap-2 justify-start items-start flex flex-col`,
 } as const;
 
 const { variant = "default" } = Astro.props as Props;
@@ -23,5 +25,5 @@ const classes = variants[variant];
 ---
 
 <div id="tags" class={classes}>
-    {staticData.data.hobbies.map((hobby) => <Hobbie tag={hobby} />)}
+  {staticData.data.hobbies.map((hobby) => <Hobbie tag={hobby} />)}
 </div>

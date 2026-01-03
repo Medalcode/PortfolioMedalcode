@@ -6,7 +6,9 @@ import { getCollection } from "astro:content";
 
 const { lang } = Astro.params;
 const staticDataCollection = await getCollection("staticData");
-const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang) || staticDataCollection.find((entry) => entry.id === 'es');
+const staticDataEntry =
+  staticDataCollection.find((entry) => entry.id === lang) ||
+  staticDataCollection.find((entry) => entry.id === "es");
 const {
   projectsTitle,
   projectsGradient,
@@ -16,7 +18,7 @@ const {
   projectsIntro4,
   projectsIntro5,
   projectsIntro6,
-  viewMoreProjects
+  viewMoreProjects,
 } = staticDataEntry.data;
 
 const allProjects = await getCollection("projects", ({ id }) => {
@@ -24,9 +26,7 @@ const allProjects = await getCollection("projects", ({ id }) => {
 });
 
 // Sort by descending date (most recent first)
-allProjects.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+allProjects.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <section
@@ -42,14 +42,18 @@ allProjects.sort(
     <p
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
     >
-      {projectsIntro1} <b
+      {projectsIntro1}
+      <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
         >{projectsIntro2}</b
       >
-      <br /> {projectsIntro3} <b
+      <br />
+      {projectsIntro3}
+      <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
         >{projectsIntro4}</b
-      > {projectsIntro5}
+      >
+      {projectsIntro5}
       <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
         >{projectsIntro6}</b
@@ -65,7 +69,7 @@ allProjects.sort(
     {
       allProjects.map((project) => (
         <Project
-          url={`/${lang}/portfolio/projects/${project.slug.split('/').pop()}`}
+          url={`/${lang}/portfolio/projects/${project.slug.split("/").pop()}`}
           title={project.data.title}
           description={project.data.description}
           date={project.data.pubDate}

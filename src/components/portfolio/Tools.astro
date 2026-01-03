@@ -38,9 +38,5 @@ const classes = `${baseClasses} ${variantClasses[variant as ToolVariant]}`;
 ---
 
 <div class={classes}>
-  {
-    allTools.map((tool) => (
-      <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />
-    ))
-  }
+  {allTools.map((tool) => <Capsule lang={tool} linkEnabled={linkEnabled} size={size} />)}
 </div>

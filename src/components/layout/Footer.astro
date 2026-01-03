@@ -42,9 +42,7 @@ const {
         href={github}
         class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
         aria-label="About the website development"
-        ><Icon name="code" aria-hidden="true" /> Developed by <strong
-          >{alias}</strong
-        >, with Astro</a
+        ><Icon name="code" aria-hidden="true" /> Developed by <strong>{alias}</strong>, with Astro</a
       >
     </div>
     <div
@@ -52,31 +50,11 @@ const {
       role="group"
       aria-label="Social media links"
     >
-      <Social
-        link={`mailto:${email}`}
-        iconName={emailIconName}
-        label={`Send email to ${email}`}
-      />
-      <Social
-        link={instagram}
-        iconName={instagramIconName}
-        label={`Visit ${alias} on Instagram`}
-      />
-      <Social
-        link={youtube}
-        iconName={youtubeIconName}
-        label={`Visit ${alias} on YouTube`}
-      />
-      <Social
-        link={github}
-        iconName={githubIconName}
-        label={`Visit ${alias} on GitHub`}
-      />
-      <Social
-        link={linkedin}
-        iconName={linkedinIconName}
-        label={`Visit ${alias} on LinkedIn`}
-      />
+      <Social link={`mailto:${email}`} iconName={emailIconName} label={`Send email to ${email}`} />
+      <Social link={instagram} iconName={instagramIconName} label={`Visit ${alias} on Instagram`} />
+      <Social link={youtube} iconName={youtubeIconName} label={`Visit ${alias} on YouTube`} />
+      <Social link={github} iconName={githubIconName} label={`Visit ${alias} on GitHub`} />
+      <Social link={linkedin} iconName={linkedinIconName} label={`Visit ${alias} on LinkedIn`} />
     </div>
   </nav>
 </footer>

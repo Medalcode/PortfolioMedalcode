@@ -66,9 +66,7 @@ const baseClasses = {
 
     function updateActiveLink() {
       const currentPath = window.location.pathname;
-      const currentHash = window.location.hash
-        ? `#${window.location.hash.substring(1)}`
-        : "";
+      const currentHash = window.location.hash ? `#${window.location.hash.substring(1)}` : "";
 
       document.querySelectorAll("nav a").forEach((link) => {
         const path = link.getAttribute("data-path");
@@ -125,9 +123,7 @@ const baseClasses = {
               class={baseClasses.link}
               data-path={item.path}
               aria-label={item.name}
-              aria-current={
-                item.path === Astro.url.pathname ? "page" : undefined
-              }
+              aria-current={item.path === Astro.url.pathname ? "page" : undefined}
             >
               {item.name}
             </a>
@@ -161,11 +157,7 @@ const baseClasses = {
     })
   }
 
-  <div
-    class={baseClasses.socialContainer}
-    role="group"
-    aria-label="Social Media Links"
-  >
+  <div class={baseClasses.socialContainer} role="group" aria-label="Social Media Links">
     <Social link={github} iconName={githubIconName} />
     <Social link={linkedin} iconName={linkedinIconName} />
   </div>

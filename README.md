@@ -73,19 +73,16 @@
 ## ✨ Key Features
 
 1. **🚀 Performance Optimized**
-
    - Static site generation
    - Partial hydration with Preact
    - Optimized images and assets
 
 2. **💻 Modern Development Experience**
-
    - TypeScript support
    - Hot module replacement
    - ESLint integration
 
 3. **🔍 SEO & Analytics**
-
    - Built-in sitemap generation
    - RSS feed support
    - Vercel Speed Insights
@@ -139,6 +136,39 @@
    npm run preview
    ```
 
+## 🧰 Development Scripts
+
+### Code Quality
+
+```bash
+# Lint your code
+npm run lint
+
+# Auto-fix linting issues
+npm run lint:fix
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting
+npm run format:check
+
+# Type checking
+npm run check
+npm run type-check
+```
+
+### Recommended Workflow
+
+Before committing:
+
+```bash
+npm run format        # Format code
+npm run lint:fix      # Fix linting issues
+npm run check         # Verify types
+npm run build         # Test build
+```
+
 ## ⚙️ Configuration
 
 The project is configured through several key files:
@@ -171,7 +201,6 @@ To incorporate a new programming language or technological tool into the site's 
     ```
 
     Where:
-
     - `html`: Is the unique identifier for the language
     - `name`: Is the name that will be displayed visibly in the interface
     - `iconName`: Is the name of the SVG file without the extension (must match exactly with the file name in `src/icons`)
