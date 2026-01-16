@@ -3,22 +3,34 @@ import { Icon } from "astro-icon/components";
 
 const { lang = "es" } = Astro.params;
 
-const otherLang = lang === "es" ? "en" : "es";
-const label = lang === "es" ? "EN" : "ES";
 const currentPath = Astro.url.pathname;
 const currentPathWithoutLang = currentPath.replace(/^\/(es|en)/, "");
-const switchUrl = `/${otherLang}${currentPathWithoutLang}`;
+
+const esUrl = `/es${currentPathWithoutLang}`;
+const enUrl = `/en${currentPathWithoutLang}`;
 ---
 
-<a
-  href={switchUrl}
-  class="group relative flex items-center justify-center p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-300"
-  aria-label={`Switch to ${otherLang === "es" ? "Spanish" : "English"}`}
->
-  <div
-    class="flex items-center gap-2 font-bold text-sm text-blacktext dark:text-zinc-300 group-hover:text-mint-500 dark:group-hover:text-mint-400"
+<div class="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-800/50 rounded-full p-1 border border-zinc-200 dark:border-zinc-700/50">
+  <a
+    href={esUrl}
+    class={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+      lang === "es"
+        ? "bg-white dark:bg-zinc-700 text-mint-600 dark:text-mint-400 shadow-sm"
+        : "text-zinc-500 dark:text-zinc-400 hover:text-blacktext dark:hover:text-zinc-200"
+    }`}
+    aria-label="Cambiar a Español"
   >
-    <Icon name="language" class="size-5" />
-    <span>{label}</span>
-  </div>
-</a>
+    ES
+  </a>
+  <a
+    href={enUrl}
+    class={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
+      lang === "en"
+        ? "bg-white dark:bg-zinc-700 text-mint-600 dark:text-mint-400 shadow-sm"
+        : "text-zinc-500 dark:text-zinc-400 hover:text-blacktext dark:hover:text-zinc-200"
+    }`}
+    aria-label="Switch to English"
+  >
+    EN
+  </a>
+</div>

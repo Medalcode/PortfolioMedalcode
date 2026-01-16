@@ -91,9 +91,16 @@
 
 4. **🎨 Styling & UI**
    - TailwindCSS for utility-first styling
-   - Animated components
+   - **New**: Animated components with `tailwindcss-animated` (Scroll Reveal)
+   - **New**: Enhanced Dark Mode with anti-FOUC protection
+   - **New**: Custom 404 Error Page with auto-language detection
    - Responsive design
-   - Dark mode support
+
+5. **🌐 Internationalization**
+   - Multi-language support (English/Spanish)
+   - **New**: Intuitive Language Picker (ES | EN toggle)
+   - **New**: Smart Navigation with mobile support
+   - JSON-LD Structured Data for SEO (Person Schema)
 
 ## 🚀 Getting Started
 

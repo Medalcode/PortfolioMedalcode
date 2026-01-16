@@ -1,4 +1,16 @@
 ---
+interface Props {
+  title: string;
+  url: string;
+  image: {
+    url: string;
+    alt: string;
+  };
+  languages: string[];
+  description: string;
+  size?: "md" | "xs";
+}
+
 const { title, url, image, languages, description, size = "xs" } = Astro.props;
 
 import Capsule from "../ui/Capsule.astro";

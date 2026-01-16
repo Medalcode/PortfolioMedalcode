@@ -1,5 +1,6 @@
 ---
 import Social from "../ui/Social.astro";
+import LanguagePicker from "../ui/LanguagePicker.astro";
 import { getCollection } from "astro:content";
 
 const { lang } = Astro.params;
@@ -156,6 +157,10 @@ const baseClasses = {
       );
     })
   }
+
+  <div class="md:hidden flex justify-center py-4">
+    <LanguagePicker />
+  </div>
 
   <div class={baseClasses.socialContainer} role="group" aria-label="Social Media Links">
     <Social link={github} iconName={githubIconName} />

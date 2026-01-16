@@ -8,10 +8,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://medalcode.github.io",
-  integrations: [preact(), icon(), sitemap({
-    filter: (page) =>
-      !page.includes("/blog"),
-  }),],
+  integrations: [preact(), icon(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],
