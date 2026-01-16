@@ -17,7 +17,7 @@ const allExperience = await getCollection("experience", ({ id }) => {
 allExperience.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
+<section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16 animate-fade-up animate-once animate-duration-1000 animate-delay-300" id="experience">
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
     <div class="flex gap-4 items-center justify-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />

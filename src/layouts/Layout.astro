@@ -1,8 +1,17 @@
 ---
-import "../styles/global.css";
-import Header from "../components/layout/Header.astro";
-import Footer from "../components/layout/Footer.astro";
+import "@/styles/global.css";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+interface Props {
+  pageTitle?: string;
+  description?: string;
+  ogimage?: {
+    url: string;
+    alt: string;
+  };
+}
+
 const {
   pageTitle = "NeonMint by EFEELE 🚀",
   description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
@@ -29,6 +38,17 @@ const SpeedInsightsComponent = SpeedInsights as any;
 <html lang={lang} class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
     <!-- Favicon for different platforms -->
@@ -67,6 +87,21 @@ const SpeedInsightsComponent = SpeedInsights as any;
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Schema.org JSON-LD -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: SEO.author,
+        url: SEO.url,
+        image: twitterimage,
+        description: description,
+        sameAs: [`https://twitter.com/${SEO.twitter.replace("@", "")}`],
+      })}
+    />
   </head>
   <body class="overflow-x-hidden">
     <SpeedInsightsComponent />
