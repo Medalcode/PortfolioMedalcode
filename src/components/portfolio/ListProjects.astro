@@ -72,7 +72,7 @@ allProjects.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
           url={`/${lang}/portfolio/projects/${project.slug.split("/").pop()}`}
           title={project.data.title}
           description={project.data.description}
-          date={project.data.pubDate}
+
           languages={project.data.languages}
           image={project.data.image}
         />
