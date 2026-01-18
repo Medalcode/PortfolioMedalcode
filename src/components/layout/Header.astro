@@ -7,10 +7,11 @@ import { getCollection } from "astro:content";
 import LanguagePicker from "../ui/LanguagePicker.astro";
 import Search from "../ui/Search.astro";
 const { lang } = Astro.params;
+const currentLang = lang || "es";
 
 const staticDataCollection = await getCollection("staticData");
-const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang);
-const { github, githubIconName, linkedin, linkedinIconName } = staticDataEntry.data;
+const staticDataEntry = staticDataCollection.find((entry) => entry.id === currentLang) || staticDataCollection[0];
+const { github, githubIconName, linkedin, linkedinIconName } = staticDataEntry?.data || {};
 
 const currentPath = Astro.url.pathname;
 // Adjust logic for active route checking if needed, dealing with /es/ or /en/ prefix
