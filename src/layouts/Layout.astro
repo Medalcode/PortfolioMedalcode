@@ -112,6 +112,57 @@ const SpeedInsightsComponent = SpeedInsights as any;
     >
     </div>
     <Header />
+    
+    <!-- Reading Progress Bar -->
+    <div id="progress-container" class="fixed top-0 left-0 w-full h-1 z-[100] bg-transparent">
+        <div id="progress-bar" class="h-full bg-mint-500 w-0 transition-all duration-150 ease-out shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button
+      id="scroll-to-top"
+      aria-label="Scroll to top"
+      class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-mint-500 hover:bg-mint-600 text-white shadow-lg transition-all duration-300 opacity-0 translate-y-10 group"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+    
+    <script>
+      // Scroll Progress
+      const progressBar = document.getElementById('progress-bar');
+      
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+        
+        if (progressBar) {
+            progressBar.style.width = scrollPercent + '%';
+        }
+
+        // Scroll To Top Visibility
+        const scrollBtn = document.getElementById('scroll-to-top');
+        if (scrollBtn) {
+            if (scrollTop > 300) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10');
+                scrollBtn.classList.remove('pointer-events-none');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10');
+                scrollBtn.classList.add('pointer-events-none');
+            }
+        }
+      });
+
+      // Scroll To Top Action
+      document.getElementById('scroll-to-top')?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+      });
+    </script>
 
     <div class="min-h-[85vh]">
       <slot />
