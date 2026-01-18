@@ -8,8 +8,7 @@ import { getCollection } from "astro:content";
 const { pathname } = Astro.url;
 const lang = pathname.startsWith("/en") ? "en" : "es";
 
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang) || staticDataCollection.find((entry) => entry.id === "es");
+
 
 const translations = {
   es: {

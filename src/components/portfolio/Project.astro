@@ -3,8 +3,8 @@ interface Props {
   title: string;
   url: string;
   image: {
-    url: string;
-    alt: string;
+    url?: string;
+    alt?: string;
   };
   languages: string[];
   description: string;
@@ -26,8 +26,8 @@ import Capsule from "../ui/Capsule.astro";
     <div class="overflow-hidden rounded-xl w-full h-48 md:h-52 lg:h-60 relative">
       <img
         class="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out group-hover:scale-105"
-        src={image.url}
-        alt={image.alt}
+        src={image.url || "/images/imagedefault.webp"}
+        alt={image.alt || title}
       />
     </div>
     <div class="flex flex-col p-2">
