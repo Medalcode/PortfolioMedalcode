@@ -3,7 +3,8 @@ import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
-const [staticData] = await getCollection("staticData");
+const staticDataCollection = await getCollection("staticData");
+const staticData = staticDataCollection.find((entry) => entry.id === "en") || staticDataCollection[0];
 const {
   github,
   alias,
