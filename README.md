@@ -74,29 +74,39 @@
 
 ## ✨ Key Features
 
-1. **🚀 Performance Optimized**
-   - Static site generation
-   - Partial hydration with Preact
-   - Optimized images and assets
+1. **🚀 Pro Performance**
+   - **New**: `astro:assets` image optimization with AVIF/WebP support.
+   - **New**: Native View Transitions for smooth, app-like navigation.
+   - Static site generation (SSG) for blazing fast load times.
+   - Partial hydration with Preact.
 
-2. **💻 Modern Development Experience**
+2. **📱 PWA & Offline Ready**
+   - **New**: Full Progressive Web App (PWA) support.
+   - **New**: Service Worker for offline capabilities and caching.
+   - **New**: Installable on mobile and desktop devices.
+
+3. **💻 Modern Development Experience**
    - TypeScript support
    - Hot module replacement
-   - ESLint integration
+   - ESLint & Prettier integration
 
-3. **🔍 SEO & Analytics**
+4. **🔍 SEO & Analytics**
+   - **New**: Enhanced JSON-LD Rich Snippets (Person Schema).
+   - **New**: Dynamic RSS Feed generation using Content Collections.
    - Built-in sitemap generation
-   - RSS feed support
    - Vercel Speed Insights
 
-4. **🎨 Styling & UI**
-   - TailwindCSS for utility-first styling
-   - **New**: Animated components with `tailwindcss-animated` (Scroll Reveal)
-   - **New**: Enhanced Dark Mode with anti-FOUC protection
-   - **New**: Custom 404 Error Page with auto-language detection
-   - Responsive design
+5. **🎨 Styling & UI**
+   - TailwindCSS v4 with utility-first styling.
+   - **New**: Reading Time estimation for blog posts.
+   - **New**: AJAX Contact Form with immediate feedback and security.
+   - **New**: Copy Code functionality with visual feedback.
+   - Animated components with `tailwindcss-animated` (Scroll Reveal).
+   - Enhanced Dark Mode with anti-FOUC protection.
+   - Custom 404 Error Page with auto-language detection.
+   - Responsive design.
 
-5. **🌐 Internationalization**
+6. **🌐 Internationalization**
    - Multi-language support (English/Spanish)
    - **New**: Intuitive Language Picker (ES | EN toggle)
    - **New**: Smart Navigation with mobile support

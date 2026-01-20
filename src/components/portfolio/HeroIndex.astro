@@ -4,6 +4,7 @@ import Heading from "../ui/Heading.astro";
 import Tools from "../portfolio/Tools.astro";
 import { Icon } from "astro-icon/components";
 import Hobbies from "../portfolio/Hobbies.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const { lang } = Astro.params;
@@ -63,14 +64,16 @@ const fullProfileLink = `/${lang}/${profileLink}`;
             class="absolute inset-0 h-full w-full rounded-fullfrom-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 animate-rotate-border bg-conic/[from_var(--border-angle)]"
           >
           </div>
-          <div class="relative z-20 flex w-full rounded-full bg-mint-900">
-            <div
-              class="w-full aspect-square rounded-full bg-center bg-cover"
-              style={`background-image: url(${profileImage})`}
-              aria-label={profileAlt}
-            >
-              <a href={fullProfileLink} class="flex h-full w-full" aria-label="View about me page"></a>
-            </div>
+          <div class="relative z-20 flex w-full rounded-full bg-mint-900 overflow-hidden">
+            <a href={fullProfileLink} class="flex h-full w-full" aria-label="View about me page">
+              <Image
+                src={profileImage}
+                alt={profileAlt}
+                width={200}
+                height={200}
+                class="w-full aspect-square rounded-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -214,13 +217,13 @@ const fullProfileLink = `/${lang}/${profileLink}`;
             >{projectsIntro6}</span
           >
         </p>
-        <img
+        <Image
           class="relative left-0 z-0 mt-40 w-full object-cover transition-all ease-in-out duration-500 group-hover:rotate-2 group-hover:scale-185 max-xl:mt-28 max-lg:mt-10 max-sm:mt-0 max-md:scale-100 max-sm:scale-125 scale-180 max-md:group-hover:scale-105 before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:absolute before:left-30 before:-bottom-0 before:h-[80%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition"
           src={portfolioImage}
           alt={projectsDescriptionAlt}
           loading="lazy"
-          width="480"
-          height="320"
+          width={480}
+          height={320}
         />
       </article>
     </div>

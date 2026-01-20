@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { ViewTransitions } from "astro:transitions";
 interface Props {
   pageTitle?: string;
   description?: string;
@@ -58,6 +59,21 @@ const SpeedInsightsComponent = SpeedInsights as any;
     <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" />
     <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
 
+    <!-- Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+
     <!-- Web manifest -->
     <link rel="manifest" href="/site.webmanifest" />
 
@@ -95,13 +111,21 @@ const SpeedInsightsComponent = SpeedInsights as any;
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Person",
-        name: SEO.author,
-        url: SEO.url,
-        image: twitterimage,
-        description: description,
-        sameAs: [`https://twitter.com/${SEO.twitter.replace("@", "")}`],
+        "name": SEO.author,
+        "url": SEO.url,
+        "image": twitterimage,
+        "description": description,
+        "jobTitle": "Full Stack Developer",
+        "gender": "male",
+        "sameAs": [
+          `https://twitter.com/${SEO.twitter.replace("@", "")}`,
+          "https://github.com/Medalcode",
+          "https://www.linkedin.com/in/efeele"
+        ],
+        "knowsAbout": ["Web Development", "Astro", "TailwindCSS", "JavaScript", "TypeScript", "UI/UX Design"]
       })}
     />
+    <ViewTransitions />
   </head>
   <body class="overflow-x-hidden">
     <SpeedInsightsComponent />
@@ -130,38 +154,50 @@ const SpeedInsightsComponent = SpeedInsights as any;
     </button>
     
     <script>
-      // Scroll Progress
-      const progressBar = document.getElementById('progress-bar');
-      
-      window.addEventListener('scroll', () => {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPercent = (scrollTop / scrollHeight) * 100;
-        
-        if (progressBar) {
-            progressBar.style.width = scrollPercent + '%';
-        }
-
-        // Scroll To Top Visibility
+      const initScrollLogic = () => {
+        // Scroll Progress
+        const progressBar = document.getElementById('progress-bar');
         const scrollBtn = document.getElementById('scroll-to-top');
-        if (scrollBtn) {
-            if (scrollTop > 300) {
-                scrollBtn.classList.remove('opacity-0', 'translate-y-10');
-                scrollBtn.classList.remove('pointer-events-none');
-            } else {
-                scrollBtn.classList.add('opacity-0', 'translate-y-10');
-                scrollBtn.classList.add('pointer-events-none');
-            }
-        }
-      });
+        
+        const updateScroll = () => {
+          const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrollPercent = (scrollTop / scrollHeight) * 100;
+          
+          if (progressBar) {
+              progressBar.style.width = scrollPercent + '%';
+          }
+  
+          // Scroll To Top Visibility
+          if (scrollBtn) {
+              if (scrollTop > 300) {
+                  scrollBtn.classList.remove('opacity-0', 'translate-y-10');
+                  scrollBtn.classList.remove('pointer-events-none');
+              } else {
+                  scrollBtn.classList.add('opacity-0', 'translate-y-10');
+                  scrollBtn.classList.add('pointer-events-none');
+              }
+          }
+        };
 
-      // Scroll To Top Action
-      document.getElementById('scroll-to-top')?.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        window.removeEventListener('scroll', updateScroll);
+        window.addEventListener('scroll', updateScroll);
+        updateScroll(); // Initial check
+
+        // Scroll To Top Action
+        scrollBtn?.addEventListener('click', () => {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
         });
-      });
+      };
+
+      // Run on initial load
+      initScrollLogic();
+      
+      // Run after view transitions
+      document.addEventListener('astro:after-swap', initScrollLogic);
     </script>
 
     <div class="min-h-[85vh]">

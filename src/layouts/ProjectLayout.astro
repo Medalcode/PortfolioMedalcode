@@ -6,8 +6,14 @@ import Heading from "../components/ui/Heading.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 const { frontmatter } = Astro.props;
 ---
+
+<script>
+  import { initCopyCode } from "../scripts/copyCode.js";
+  document.addEventListener("astro:page-load", initCopyCode);
+</script>
 
 <Layout
   pageTitle={frontmatter.title}
@@ -65,10 +71,12 @@ const { frontmatter } = Astro.props;
       <figure>
         {
           frontmatter.image?.url && (
-            <img
-              class="w-full rounded-xl"
+            <Image
+              class="w-full rounded-xl object-cover h-auto"
               src={frontmatter.image.url}
               alt={frontmatter.image.alt || "Article image"}
+              width={1200}
+              height={675}
             />
           )
         }

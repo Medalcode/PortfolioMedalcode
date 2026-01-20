@@ -1,6 +1,8 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
+import getReadingTime from "reading-time";
+import { getCollection } from "astro:content";
 
 // Prop to determine whether to exclude the latest post or a specific post
 export interface Props {
@@ -12,7 +14,6 @@ export interface Props {
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
 const { lang } = Astro.params;
-import { getCollection } from "astro:content";
 const allPosts = await getCollection("blog", ({ id }) => {
   return id.startsWith(`${lang}/`);
 });
@@ -65,6 +66,7 @@ if (!all) {
           tags={post.data.tags}
           languages={post.data.languages}
           image={post.data.image}
+          readingTime={Math.ceil(getReadingTime(post.body).minutes)}
         />
       ))
     }

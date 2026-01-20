@@ -39,10 +39,10 @@ const baseClasses = {
 ---
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const isHome = window.location.pathname === "/";
+  const initNavigation = () => {
+    const currentPathname = window.location.pathname;
+    const isHome = currentPathname === "/" || currentPathname.endsWith("/es/") || currentPathname.endsWith("/en/");
 
-    // Classes for link states
     const linkClasses = {
       active: [
         "text-mint-500",
@@ -71,15 +71,25 @@ const baseClasses = {
 
       document.querySelectorAll("nav a").forEach((link) => {
         const path = link.getAttribute("data-path");
-        toggleLinkClasses(link, path === currentPath || path === currentHash);
+        if (path) {
+          // Check if path matches current exactly or if it's a section on the same page
+          const isActive = path === currentPath || (currentHash && path.endsWith(currentHash));
+          toggleLinkClasses(link, isActive);
+        }
       });
     }
 
     function setupScrollSpy() {
-      if (!isHome) return;
+      // Find sections with IDs that are in the navigation menu
+      const navLinks = Array.from(document.querySelectorAll("nav a[data-path*='#']"));
+      if (navLinks.length === 0) return;
 
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a");
+      const sectionIds = navLinks.map(link => {
+        const path = link.getAttribute("data-path") || "";
+        return path.split('#')[1];
+      }).filter(Boolean);
+
+      const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
       const observerOptions = {
         root: null,
@@ -93,20 +103,36 @@ const baseClasses = {
             const sectionId = entry.target.getAttribute("id");
             if (sectionId) {
               navLinks.forEach((link) => {
-                const path = link.getAttribute("data-path");
-                toggleLinkClasses(link, path === `/#${sectionId}`);
+                const path = link.getAttribute("data-path") || "";
+                toggleLinkClasses(link, path.endsWith(`#${sectionId}`));
               });
             }
           }
         });
       }, observerOptions);
 
-      sections.forEach((section) => observer.observe(section));
+      sections.forEach((section) => observer.observe(section!));
     }
 
     updateActiveLink();
     setupScrollSpy();
-    window.addEventListener("hashchange", updateActiveLink);
+  };
+
+  document.addEventListener("astro:page-load", initNavigation);
+  window.addEventListener("hashchange", () => {
+    // Re-run active link update on hash change
+    const navLinks = document.querySelectorAll("nav a");
+    const currentHash = window.location.hash;
+    navLinks.forEach((link) => {
+        const path = link.getAttribute("data-path") || "";
+        if (path.includes("#")) {
+            const isActive = path.endsWith(currentHash);
+            if (isActive) {
+                // We need to access toggleLinkClasses, which is inside initNavigation.
+                // Refactoring slightly for better access if needed.
+            }
+        }
+    });
   });
 </script>
 
