@@ -4,6 +4,9 @@ import Tag from "../ui/Tag.astro";
 import ReadMore from "../ui/ReadMore.astro";
 import Capsule from "../ui/Capsule.astro";
 import DatePub from "./DatePub.astro";
+import { Image } from "astro:assets";
+import getReadingTime from "reading-time";
+import { Icon } from "astro-icon/components";
 
 const currentPath = Astro.url.pathname;
 const urlParts = currentPath.split("/").filter(Boolean);
@@ -36,24 +39,35 @@ const getPostUrl = (post: CollectionEntry<"blog">) => {
   const cleanSlug = slugParts.join("/");
   return `/${currentLang}/blog/posts/${cleanSlug}`;
 };
+
+const readingTimeValue = latestPost ? Math.ceil(getReadingTime(latestPost.body).minutes) : 0;
+const readingTimeLabel = currentLang === "en" ? "min read" : "min de lectura";
 ---
 
 {
   latestPost && (
     <div
-      style={{ backgroundImage: `url(${image})` }}
-      class="h-full hover:shadow-[0_20px_50px_rgba(13,188,130,0.2)] flex flex-col overflow-hidden rounded-2xl bg-linear-to-br bg-center bg-cover transition-all ease-in-out duration-200"
+      class="h-full hover:shadow-[0_20px_50px_rgba(13,188,130,0.2)] relative flex flex-col overflow-hidden rounded-2xl transition-all ease-in-out duration-200 group/last"
       role="article"
       aria-labelledby="post-title"
     >
-      <article class="h-full flex flex-col justify-between max-sm:bg-zinc-900 max-sm:relative sm:bg-linear-to-t from-black/95 from-25% to-transparent max-sm:from-60% p-8 max-md:p-6 max-sm:mp-0 max-sm:p-0">
+      <div class="absolute inset-0 z-0">
+        <Image 
+          src={image} 
+          alt={imageAlt} 
+          width={1200}
+          height={675}
+          class="w-full h-full object-cover transition-transform duration-500 group-hover/last:scale-105"
+        />
+      </div>
+      <article class="h-full relative flex flex-col justify-between max-sm:bg-zinc-900/80 sm:bg-linear-to-t from-black/95 from-25% to-transparent max-sm:from-60% p-8 max-md:p-6 max-sm:mp-0 max-sm:p-0 z-10 backdrop-blur-[2px] sm:backdrop-blur-none">
         <a
           href={getPostUrl(latestPost)}
           class="sm:hidden relative top-0 left-0 w-full h-auto -z-0"
           aria-hidden="true"
           tabindex="-1"
         >
-          <img src={image} alt={imageAlt} class="w-full h-auto" loading="lazy" />
+          <Image src={image} alt={imageAlt} width={800} height={450} class="w-full h-auto" loading="lazy" />
         </a>
         <div
           class="w-full flex pb-5 gap-2 flex-wrap justify-end z-10 max-sm:px-6 max-sm:pt-6"
@@ -70,8 +84,14 @@ const getPostUrl = (post: CollectionEntry<"blog">) => {
           class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6  rounded-lg transition-all"
           aria-label={`Read article: ${latestPost.data.title}`}
         >
-          <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.3)]">
-            <DatePub date={latestPost.data.pubDate} class="text-mint-50" />
+          <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.5)]">
+            <div class="flex items-center gap-4 text-mint-100 font-medium">
+              <DatePub date={latestPost.data.pubDate} />
+              <span class="flex items-center gap-1 text-sm">
+                <Icon name="clock" class="size-4" />
+                {readingTimeValue} {readingTimeLabel}
+              </span>
+            </div>
             <h2 id="post-title" class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold">
               <span>{latestPost.data.title}</span>
             </h2>

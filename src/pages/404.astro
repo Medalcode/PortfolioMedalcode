@@ -1,0 +1,59 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/ui/Heading.astro";
+import Button from "@/components/ui/Button.astro";
+import { Icon } from "astro-icon/components";
+
+// SEO Metadata
+const pageTitle = "404 - Página no encontrada | Page Not Found";
+const description =
+  "La página que buscas no existe. | The page you are looking for does not exist.";
+---
+
+<Layout pageTitle={pageTitle} description={description}>
+  <main
+    class="flex flex-col items-center justify-center min-h-[80vh] px-4 relative overflow-hidden"
+  >
+    <!-- Decorative background elements -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-20 pointer-events-none"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-mint-500/20 rounded-full blur-[120px]"
+      >
+      </div>
+    </div>
+
+    <div class="text-center animate-fade-up">
+      <div class="relative inline-block mb-8">
+        <h1
+          class="text-[12rem] max-md:text-[8rem] font-bold text-zinc-100 dark:text-zinc-900/50 leading-none select-none tracking-tighter"
+        >
+          404
+        </h1>
+        <div class="absolute inset-0 flex items-center justify-center translate-y-4">
+          <Icon name="rocket" class="size-24 max-md:size-16 text-mint-500 animate-bounce" />
+        </div>
+      </div>
+
+      <div class="space-y-4 mb-12">
+        <Heading text="¿Te has perdido en el espacio?" level={2} />
+        <p class="text-zinc-600 dark:text-zinc-400 text-lg max-w-lg mx-auto leading-relaxed">
+          Parece que la página que buscas ha sido transportada a otra dimensión o nunca existió en
+          esta línea temporal.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button link="/es/" text="Volver al inicio (ES)" iconName="arrow-left" />
+        <Button link="/en/" text="Back to home (EN)" iconName="rocket" variant="dark" />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    text-shadow: 0 0 40px rgba(96, 250, 155, 0.1);
+  }
+</style>

@@ -9,6 +9,8 @@ import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 import { getCollection } from "astro:content";
 
+import { Image } from "astro:assets";
+
 const { lang } = Astro.params;
 const allStaticData = await getCollection("staticData");
 const staticData = allStaticData.find((entry) => entry.id === lang);
@@ -27,10 +29,13 @@ const { frontmatter } = Astro.props;
 ---
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
-      header.classList.add("scroll-m-28");
-    });
+  // Add copy code init logic here if needed, or rely on Layout
+  import { initCopyCode } from "../scripts/copyCode.js";
+  document.addEventListener("astro:page-load", () => {
+       initCopyCode();
+       document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
+         header.classList.add("scroll-m-28");
+       });
   });
 </script>
 
@@ -57,17 +62,19 @@ const { frontmatter } = Astro.props;
                 class="absolute inset-0 h-full w-full rounded-fullfrom-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 animate-rotate-border bg-conic/[from_var(--border-angle)]"
               >
               </div>
-              <div class="relative z-20 flex w-full rounded-full bg-mint-900">
-                <div
-                  class="w-full aspect-square rounded-full bg-center bg-cover"
-                  style={{ backgroundImage: `url(${profileImage})` }}
-                  aria-label={`Photo of ${profileName}`}
-                >
-                  <a
-                    href={`/${lang}/about-me`}
-                    class="flex h-full w-full"
-                    aria-label="View about me page"></a>
-                </div>
+              <div class="relative z-20 flex w-full rounded-full bg-mint-900 overflow-hidden">
+                <a
+                  href={`/${lang}/about-me`}
+                  class="flex h-full w-full"
+                  aria-label="View about me page">
+                  <Image
+                    src={profileImage}
+                    alt={`Photo of ${profileName}`}
+                    width={300}
+                    height={300}
+                    class="w-full h-full object-cover"
+                  />
+                </a>
               </div>
             </div>
           </div>
