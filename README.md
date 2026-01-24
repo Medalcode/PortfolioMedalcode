@@ -1,7 +1,5 @@
 # PortfolioMedalcode
 
-![neonmint](https://github.com/user-attachments/assets/ae539704-2292-492f-882c-c90595b34717)
-
 [![Deploy Status](https://github.com/Medalcode/PortfolioMedalcode/actions/workflows/deploy.yml/badge.svg)](https://github.com/Medalcode/PortfolioMedalcode/actions)
 
 ## 🎯 Overview
