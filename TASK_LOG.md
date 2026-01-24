@@ -1,0 +1,50 @@
+# 📋 Bitácora de Desarrollo - PortfolioMedalcode
+
+## ✅ Tareas Realizadas
+
+### 1. Consolidación de Documentación
+
+- [x] Unificación de historiales de Sprints 1 y 2 en `CHANGELOG.md`.
+- [x] Creación de `ROADMAP.md` para planificación futura.
+- [x] Eliminación de archivos temporales y redundantes (`SPRINT*_SUMMARY.md`, etc.).
+
+### 2. Refactorización de Arquitectura (Escalabilidad)
+
+- [x] Implementación de **Feature-Sliced Design**.
+- [x] Reestructuración de directorios:
+  - `src/features/` (blog, portfolio, about).
+  - `src/shared/` (components, utils, icons, styles).
+  - `src/layouts/` (Layout global).
+- [x] Configuración de **Path Aliases** en `tsconfig.json` (`@features`, `@shared`, `@assets`).
+- [x] Actualización masiva de importaciones en todo el proyecto.
+
+### 3. Actualización de Portafolio
+
+- [x] Eliminación del proyecto **BuyScraper**.
+- [x] Incorporación del nuevo proyecto **Myna**:
+  - Archivos de contenido en inglés y español.
+  - Generación de imagen de portada (`myna.png`) con IA.
+  - Descripción de tecnologías (FastAPI, Vanilla JS, Hexagonal Arch).
+
+### 4. Corrección de Errores de Despliegue (Build Fixes)
+
+- [x] **Error 404/Navegación**: Corrección de lógica de idioma por defecto en `Navigation.astro`.
+- [x] **Iconos**: Configuración explícita de `iconDir` en `astro.config.mjs` para `src/shared/icons`.
+- [x] **Rutas Rotas**: Corrección de importaciones relativas profundas en páginas dinámicas.
+- [x] **Deprecaciones**: Migración de `<ViewTransitions />` a `<ClientRouter />` (Astro 5).
+- [x] **Linting**: Limpieza de variables no utilizadas y advertencias de TypeScript.
+
+## ⏳ Tareas Pendientes (Roadmap)
+
+### Sprint 3 - Performance y SEO
+
+- [ ] **Optimización de Imágenes**: Implementar estrategias avanzadas de carga.
+- [ ] **Fuentes Locales**: Self-hosting de tipografías para mejorar privacidad y velocidad.
+- [ ] **SEO Avanzado**: Schema.org estructurado y Open Graph dinámico optimizado.
+- [ ] **PWA Completa**: Finalizar configuración de Service Workers y Manifest.
+
+### Sprint 4 - CI/CD y Automatización
+
+- [ ] **GitHub Actions**: Workflows para testing y despliegue automático.
+- [ ] **Dependabot**: Configuración de actualizaciones automáticas.
+- [ ] **Tests E2E**: Implementación de pruebas end-to-end con Playwright o Cypress.

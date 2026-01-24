@@ -19,7 +19,7 @@ export function remarkReadingTime() {
 // https://astro.build/config
 export default defineConfig({
   site: "https://medalcode.github.io",
-  integrations: [preact(), icon(), sitemap()],
+  integrations: [preact(), icon({ iconDir: "src/shared/icons" }), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],

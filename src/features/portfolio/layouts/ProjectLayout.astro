@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import DatePub from "@features/blog/components/DatePub.astro";
+import Capsule from "@shared/components/ui/Capsule.astro";
+import Heading from "@shared/components/ui/Heading.astro";
+import NavArticle from "@shared/components/layout/NavArticle.astro";
+import Contact from "@features/portfolio/components/Contact.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+const { frontmatter } = Astro.props;
+---
+
+<script>
+  import { initCopyCode } from "@/scripts/copyCode.js";
+  document.addEventListener("astro:page-load", initCopyCode);
+</script>
+
+<Layout
+  pageTitle={frontmatter.title}
+  description={frontmatter.description}
+  ogimage={frontmatter.image}
+>
+  <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
+    <div class="w-64 max-xl:hidden"></div>
+    <article
+      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
+    >
+      <header class="flex flex-col gap-4" id="start">
+        <div class="flex gap-2 flex-wrap">
+          {
+            frontmatter.languages.map((language: string) => (
+              <Capsule linkEnabled={false} lang={language} />
+            ))
+          }
+        </div>
+
+        <DatePub date={frontmatter.pubDate} />
+
+        <Heading text={frontmatter.title} />
+
+        <div class="flex gap-4 mt-2 flex-wrap">
+          {
+            frontmatter.github && (
+              <a
+                href={frontmatter.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors text-sm font-medium border border-zinc-200 dark:border-zinc-700 dark:text-zinc-300"
+              >
+                <Icon name="github" class="size-5" />
+                <span>Repository</span>
+              </a>
+            )
+          }
+          {
+            frontmatter.website && (
+              <a
+                href={frontmatter.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-4 py-2 rounded-lg bg-mint-600 text-white hover:bg-mint-700 transition-colors text-sm font-medium shadow-sm shadow-mint-500/20"
+              >
+                <Icon name="link" class="size-5" />
+                <span>Live Demo</span>
+              </a>
+            )
+          }
+        </div>
+      </header>
+
+      <figure>
+        {
+          frontmatter.image?.url && (
+            <Image
+              class="w-full rounded-xl object-cover h-auto"
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt || "Article image"}
+              width={1200}
+              height={675}
+            />
+          )
+        }
+      </figure>
+
+      <div class="markdown" id="content">
+        <slot />
+      </div>
+    </article>
+    <NavArticle title={frontmatter.title} />
+  </section>
+  <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"></div>
+  <Contact />
+</Layout>
