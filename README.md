@@ -1,7 +1,5 @@
 # PortfolioMedalcode
 
-[![Deploy Status](https://github.com/Medalcode/PortfolioMedalcode/actions/workflows/deploy.yml/badge.svg)](https://github.com/Medalcode/PortfolioMedalcode/actions)
-
 ## 🎯 Overview
 
 **PortfolioMedalcode** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
