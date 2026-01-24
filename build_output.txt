@@ -1,0 +1,83 @@
+
+> portfolio-medalcode@1.0.0 build
+> astro check && astro build && pagefind --site dist
+
+19:45:48 [content] Syncing content
+19:45:48 [content] Synced content
+19:45:48 [types] Generated 340ms
+19:45:48 [check] Getting diagnostics for Astro files in /home/medalcode/Documentos/GitHub/PortfolioMedalcode...
+[96msrc/shared/components/layout/Navigation.astro[0m:[93m44[0m:[93m11[0m - [93mwarning[0m[90m ts(6133): [0m'currentPathname' is declared but its value is never read.
+
+[7m44[0m     const currentPathname = window.location.pathname;
+[7m  [0m [93m          ~~~~~~~~~~~~~~~[0m
+
+[96msrc/shared/components/ui/Search.astro[0m:[93m82[0m:[93m9[0m - [93mwarning[0m[90m astro(4000): [0mThis script will be treated as if it has the `is:inline` directive because it contains an attribute. Therefore, features that require processing (e.g. using TypeScript or npm packages in the script) are unavailable.
+
+See docs for more details: https://docs.astro.build/en/guides/client-side-scripts/#script-processing.
+
+Add the `is:inline` directive explicitly to silence this hint.
+
+[7m82[0m <script define:vars={{ lang }}>
+[7m  [0m [93m        ~~~~~~~~~~~[0m
+
+Result (56 files): 
+- 0 errors
+- 0 warnings
+- 2 hints
+
+19:45:54 [content] Syncing content
+19:45:54 [content] Synced content
+19:45:54 [types] Generated 325ms
+19:45:54 [build] output: "static"
+19:45:54 [build] mode: "static"
+19:45:54 [build] directory: /home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/
+19:45:54 [build] Collecting build info...
+19:45:54 [build] ✓ Completed in 349ms.
+19:45:54 [build] Building static entrypoints...
+19:45:56 [vite] ✓ built in 1.71s
+19:45:56 [build] ✓ Completed in 1.74s.
+
+ building client (vite) 
+19:45:56 [vite] transforming...
+19:45:56 [vite] ✓ 32 modules transformed.
+19:45:56 [vite] rendering chunks...
+19:45:56 [vite] computing gzip size...
+19:45:56 [vite] dist/_astro/client.C0NuW06N.js                                                0.06 kB │ gzip: 0.08 kB
+19:45:56 [vite] dist/_astro/BlogPostLayout.astro_astro_type_script_index_0_lang.BPyQZE5E.js   0.09 kB │ gzip: 0.11 kB
+19:45:56 [vite] dist/_astro/ProjectLayout.astro_astro_type_script_index_0_lang.BPyQZE5E.js    0.09 kB │ gzip: 0.11 kB
+19:45:56 [vite] dist/_astro/AboutLayout.astro_astro_type_script_index_0_lang.CJZdhQNy.js      0.20 kB │ gzip: 0.18 kB
+19:45:56 [vite] dist/_astro/copyCode.BYOhSUbs.js                                              3.31 kB │ gzip: 1.41 kB
+19:45:56 [vite] dist/_astro/signals.module.BeegKNaG.js                                        8.50 kB │ gzip: 3.22 kB
+19:45:56 [vite] dist/_astro/client.D0OV1hUM.js                                               12.34 kB │ gzip: 5.31 kB
+19:45:56 [vite] dist/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js    14.65 kB │ gzip: 5.03 kB
+19:45:56 [vite] ✓ built in 174ms
+
+ generating static routes 
+19:45:56 ▶ src/pages/404.astro
+19:45:56   └─ /404.htmlUnable to load the "local" icon set!
+  Stack trace:
+    at file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/Heading_DbvcFKxN.mjs:38:19
+    at AstroComponentInstance.init (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1207:29)
+    at Object.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1738:23)
+    at file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:917:18
+    at createBufferedRenderer (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:846:10)
+    at Array.map (<anonymous>)
+    at renderChild (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1115:18)
+    at AstroComponentInstance.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1221:17)
+    at renderChild (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1115:18)
+    at new BufferedRenderer (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:822:26)
+    at file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:915:14
+    at RenderTemplateResult.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:914:39)
+    at AstroComponentInstance.renderImpl (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1227:14)
+    at Object.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1738:23)
+    at file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:917:18
+    at createBufferedRenderer (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:846:10)
+    at Array.map (<anonymous>)
+    at renderChild (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1115:18)
+    at AstroComponentInstance.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1221:17)
+    at renderChild (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1115:18)
+    at new BufferedRenderer (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:822:26)
+    at file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:915:14
+    at RenderTemplateResult.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:914:39)
+    at AstroComponentInstance.renderImpl (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1227:14)
+    at Object.render (file:///home/medalcode/Documentos/GitHub/PortfolioMedalcode/dist/chunks/astro/server_B84_yjKO.mjs:1738:23)

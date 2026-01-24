@@ -1,6 +1,6 @@
 ---
-import Layout from "../../../../layouts/Layout.astro";
-import ListPosts from "../../../../components/blog/ListPosts.astro";
+import Layout from "@/layouts/Layout.astro";
+import ListPosts from "@features/blog/components/ListPosts.astro";
 
 export async function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];

@@ -1,0 +1,104 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import DatePub from "@features/blog/components/DatePub.astro";
+import Tag from "@shared/components/ui/Tag.astro";
+import Capsule from "@shared/components/ui/Capsule.astro";
+import NavArticle from "@shared/components/layout/NavArticle.astro";
+import ListPosts from "@features/blog/components/ListPosts.astro";
+import NavigationArticles from "@shared/components/layout/NavigationArticles.astro";
+import Share from "@shared/components/ui/Share.astro";
+const { frontmatter } = Astro.props;
+const { lang = "es" } = Astro.params;
+const currentUrl = `${Astro.site}${Astro.url.pathname}`;
+const tweetText = encodeURIComponent(`"${frontmatter.title}" - by ${frontmatter.author} | EFEELE`);
+const readingTimeLabel = lang === "en" ? "min read" : "min de lectura";
+import Heading from "@shared/components/ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+---
+
+<script>
+  import { initCopyCode } from "@/scripts/copyCode.js";
+  document.addEventListener("astro:page-load", initCopyCode);
+</script>
+
+<Layout
+  pageTitle={frontmatter.title}
+  description={frontmatter.description}
+  ogimage={frontmatter.image}
+>
+  <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
+    <div class="w-64 max-xl:hidden"></div>
+    <article
+      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
+    >
+      <header class="flex flex-col gap-4" id="start">
+        <div class="flex gap-2 flex-wrap">
+          {frontmatter.languages.map((language: string) => <Capsule lang={language} />)}
+        </div>
+        <div class="gap-3 flex flex-wrap justify-start items-center">
+          {frontmatter.tags.map((tag: string) => <Tag tag={tag}>{tag}</Tag>)}
+        </div>
+        <div class="flex items-center gap-4">
+          <DatePub date={frontmatter.pubDate} />
+          {frontmatter.readingTime && (
+            <span class="flex items-center gap-1 text-zinc-500 dark:text-zinc-400 text-sm font-medium">
+              <Icon name="clock" class="size-4" />
+              {frontmatter.readingTime} {readingTimeLabel}
+            </span>
+          )}
+        </div>
+
+        <Heading text={frontmatter.title} />
+
+        <div class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between">
+          <div class="white flex items-center gap-4">
+            <Image
+              src="/images/efeeleprofile.webp"
+              alt="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
+              width={80}
+              height={80}
+              class="size-10 rounded-full drop-shadow-lg object-cover"
+            />
+            <a
+              id={frontmatter.title}
+              class="leading-0 text-sm font-semibold items-center gap-3 text-blacktext dark:text-riptide-50"
+              href="/blog"
+              >{frontmatter.author}
+            </a>
+          </div>
+          <Share currentUrl={currentUrl} tweetText={tweetText} />
+        </div>
+      </header>
+
+      <figure>
+        {
+          frontmatter.image?.url && (
+            <Image
+              class="w-full rounded-xl object-cover h-auto"
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt || "Article image"}
+              width={1200}
+              height={675}
+            />
+          )
+        }
+      </figure>
+
+      <div class="markdown" id="content">
+        <slot />
+      </div>
+      <Share currentUrl={currentUrl} tweetText={tweetText} />
+    </article>
+    <NavArticle title={frontmatter.title} />
+  </section>
+  <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto">
+    <div class="px-8">
+      <NavigationArticles />
+      <hr class="text-mint-300/50" />
+    </div>
+    <div class="px-8 max-sm:px-4">
+      <ListPosts currentPostUrl={Astro.url.pathname} />
+    </div>
+  </div>
+</Layout>

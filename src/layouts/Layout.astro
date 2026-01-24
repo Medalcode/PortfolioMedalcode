@@ -1,9 +1,9 @@
 ---
-import "@/styles/global.css";
-import Header from "@/components/layout/Header.astro";
-import Footer from "@/components/layout/Footer.astro";
+import "@shared/styles/global.css";
+import Header from "@shared/components/layout/Header.astro";
+import Footer from "@shared/components/layout/Footer.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 interface Props {
   pageTitle?: string;
   description?: string;
@@ -125,7 +125,7 @@ const SpeedInsightsComponent = SpeedInsights as any;
         "knowsAbout": ["Web Development", "Astro", "TailwindCSS", "JavaScript", "TypeScript", "UI/UX Design"]
       })}
     />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="overflow-x-hidden">
     <SpeedInsightsComponent />

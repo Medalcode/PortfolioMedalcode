@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getLanguage, languages } from '../utils/languages';
+import { getLanguage, languages } from '@shared/utils/languages';
 
 describe('languages utility', () => {
   describe('languages object', () => {
