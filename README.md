@@ -4,6 +4,8 @@
 
 **PortfolioMedalcode** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
 
+> 📋 **Development Log**: Check out the [TASK_LOG.md](TASK_LOG.md) to see the latest updates and roadmap.
+
 ## 📁 Project Structure
 
 └── 📁PortfolioMedalcode

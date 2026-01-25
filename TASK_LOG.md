@@ -25,6 +25,10 @@
   - Archivos de contenido en inglés y español.
   - Generación de imagen de portada (`myna.png`) con IA.
   - Descripción de tecnologías (FastAPI, Vanilla JS, Hexagonal Arch).
+- [x] Sustitución del proyecto **Tuniforme** por **Toallaalacarta**:
+  - Implementación de contenido para **Storeplate** (Astro + Shopify).
+  - Actualización de URL de producción (Netlify).
+  - Integración de captura real de la tienda como portada.
 
 ### 4. Corrección de Errores de Despliegue (Build Fixes)
 
