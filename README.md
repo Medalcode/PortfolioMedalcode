@@ -256,5 +256,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🧾 Proyectos añadidos recientemente
 
-- **GitSpy** — API intermedia para GitHub con sistema de caché (Redis), cola de eventos (BullMQ), control de rate limits y una suite de tests completa. Ficha de contenido añadida en `src/content/projects/en/gitspy.md` y `src/content/projects/es/gitspy.md`. Repositorio: https://github.com/Medalcode/GitSpy
-
+- **GitSpy** — API intermedia para GitHub con sistema de caché (Redis), cola de eventos (BullMQ), control de rate limits y una suite de tests completa. Ficha de contenido añadida en `src/content/projects/en/gitspy.md` y `src/content/projects/es/gitspy.md`. Repositorio: [GitHub](https://github.com/Medalcode/GitSpy)
