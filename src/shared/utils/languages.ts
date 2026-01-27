@@ -142,6 +142,22 @@ export const languages: Record<string, Language> = {
     name: "Go",
     iconName: "go",
   },
+  cpp: {
+    name: "C++",
+    iconName: "code",
+  },
+  linux: {
+    name: "Linux",
+    iconName: "code",
+  },
+  ai: {
+    name: "Artificial Intelligence",
+    iconName: "code",
+  },
+  cmake: {
+    name: "CMake",
+    iconName: "code",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {

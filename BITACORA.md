@@ -36,6 +36,11 @@
   - Imagen de portada: Generada con IA y alojada en `/public/images/projects/gitspy.png`.
   - Tecnologías: TypeScript, Node.js (Express), Redis, BullMQ, SQLite, Docker.
 
+- [x] Incorporación del proyecto **Colabb** (27/01/2026):
+  - Archivos de contenido añadidos en `src/content/projects/en/colabb.md` y `src/content/projects/es/colabb.md`.
+  - Definición de nuevas tecnologías en `languages.ts` (C++, Linux, AI, CMake) mapeadas a icono genérico `code` temporalmente.
+  - Imagen de portada: Mockup conceptual generado con IA y alojado en `/public/images/projects/colabb.png`.
+
 ### 4. Corrección de Errores de Despliegue (Build Fixes)
 
 - [x] **Error 404/Navegación**: Corrección de lógica de idioma por defecto en `Navigation.astro`.
