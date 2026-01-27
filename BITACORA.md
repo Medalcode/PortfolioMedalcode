@@ -43,6 +43,7 @@
 - [x] **Rutas Rotas**: Corrección de importaciones relativas profundas en páginas dinámicas.
 - [x] **Deprecaciones**: Migración de `<ViewTransitions />` a `<ClientRouter />` (Astro 5).
 - [x] **Linting**: Limpieza de variables no utilizadas y advertencias de TypeScript.
+- [x] **Configuración**: Corrección de error de tipo implícito `any` en `astro.config.mjs` (plugin `remarkReadingTime`).
 
 ### 5. UI/UX & Component Refactoring
 
