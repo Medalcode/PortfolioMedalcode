@@ -30,6 +30,12 @@
   - Actualización de URL de producción (Netlify).
   - Integración de captura real de la tienda como portada.
 
+- [x] Incorporación del proyecto **GitSpy** (27/01/2026):
+  - Archivos de contenido añadidos en `src/content/projects/en/gitspy.md` y `src/content/projects/es/gitspy.md`.
+  - Descripción basada en README del repositorio https://github.com/Medalcode/GitSpy.
+  - Imagen de portada pendiente — placeholder recomendado en `/public/files/images/projects/gitspy.png`.
+  - Tecnologías: TypeScript, Node.js (Express), Redis, BullMQ, SQLite, Docker.
+
 ### 4. Corrección de Errores de Despliegue (Build Fixes)
 
 - [x] **Error 404/Navegación**: Corrección de lógica de idioma por defecto en `Navigation.astro`.

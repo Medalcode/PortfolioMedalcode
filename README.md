@@ -251,3 +251,10 @@ The site is configured for deployment on Vercel, but can be deployed to any stat
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## 🧾 Proyectos añadidos recientemente
+
+- **GitSpy** — API intermedia para GitHub con sistema de caché (Redis), cola de eventos (BullMQ), control de rate limits y una suite de tests completa. Ficha de contenido añadida en `src/content/projects/en/gitspy.md` y `src/content/projects/es/gitspy.md`. Repositorio: https://github.com/Medalcode/GitSpy
+
