@@ -44,6 +44,11 @@
 - [x] **Deprecaciones**: Migración de `<ViewTransitions />` a `<ClientRouter />` (Astro 5).
 - [x] **Linting**: Limpieza de variables no utilizadas y advertencias de TypeScript.
 
+### 5. UI/UX & Component Refactoring
+
+- [x] **ChatInput**: Extracción a componente independiente con control imperativo de foco y estado.
+- [x] **Diseño**: Generación de mockup UI conceptual para proyecto GITSPY (Dark/Mint aesthetic).
+
 ## ⏳ Tareas Pendientes (Roadmap)
 
 ### Sprint 3 - Performance y SEO
