@@ -4,6 +4,9 @@
 
 **PortfolioMedalcode** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
 
+[![AutoKanban Compatible](https://img.shields.io/badge/AutoKanban-Compatible-blueviolet?style=flat-square&logo=github)](https://auto-kanban.vercel.app/?owner=Medalcode&repo=PortfolioMedalcode)
+This repository adheres to the **Meta Project Standard**. All development progress is tracked automatically via the `Bitacora.md` file.
+
 > 📋 **Development Log**: Check out the [Bitacora.md](Bitacora.md) to see the latest updates and roadmap.
 
 ## 📁 Project Structure
