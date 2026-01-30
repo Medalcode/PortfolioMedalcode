@@ -41,6 +41,13 @@
   - Definición de nuevas tecnologías en `languages.ts` (C++, Linux, AI, CMake) mapeadas a icono genérico `code` temporalmente.
   - Imagen de portada: Mockup conceptual generado con IA y alojado en `/public/images/projects/colabb.png`.
 
+- [x] Gestión de Proyectos en Portafolio (30/01/2026):
+  - **Eliminación**: Chaos API Proxy (obsoleto).
+  - **Incorporación**: AutoKanban (Visualizador de Bitácoras).
+    - Archivos de contenido en `src/content/projects/en/autokanban.md` y `es/autokanban.md`.
+    - Mockup generado con IA (`/public/images/projects/autokanban.png`).
+    - Tecnologías: Vanilla JS, HTML, CSS, Markdown.
+
 ### 4. Corrección de Errores de Despliegue (Build Fixes)
 
 - [x] **Error 404/Navegación**: Corrección de lógica de idioma por defecto en `Navigation.astro`.
