@@ -4,7 +4,7 @@ description: "Herramienta inteligente de minería de datos diseñada para realiz
 image:
   url: "/images/projects/myna.png"
   alt: "Vista previa de Myna"
-website: ""
+website: "https://myna-gamma.vercel.app/"
 github: "https://github.com/Medalcode/Myna"
 pubDate: 2026-01-24
 languages:
