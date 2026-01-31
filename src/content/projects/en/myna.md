@@ -4,7 +4,7 @@ description: "Intelligent Data Mining Tool designed to perform descriptive stati
 image:
   url: "/images/projects/myna.png"
   alt: "Myna Preview"
-website: ""
+website: "https://myna-gamma.vercel.app/"
 github: "https://github.com/Medalcode/Myna"
 pubDate: 2026-01-24
 languages:
