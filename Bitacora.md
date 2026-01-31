@@ -62,6 +62,16 @@ Started: 2026-01-27
 
 Completed: 2026-01-27
 
+### [DONE] rebranding-pathwise — Rebranding Panoptes a Pathwise
+
+Description: Actualización completa de nombre, contenido e imagen del proyecto Panoptes a "Pathwise".
+
+Tags: content, rebranding, design
+
+Started: 2026-01-31
+
+Completed: 2026-01-31
+
 ### [TODO] performance-seo — Sprint 3: Performance y SEO
 
 Description: Optimización de imágenes, self-hosting de fuentes, SEO avanzado (Schema/OG) y PWA completa.
