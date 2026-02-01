@@ -97,3 +97,13 @@ Description: Implementación de GitHub Actions, Dependabot y pruebas E2E con Pla
 Tags: ci-cd, testing, automation
 
 Priority: medium
+
+### [DONE] senior-docs-refinement — Refinamiento de Documentación Nivel Senior
+
+Description: Auditoría y reescritura técnica de la documentación de proyectos (GitSpy, FinLogic, Pathwise, Colabb). Se explicitan estrategias de fallo (Fail-open, Spill-to-disk), límites duros y manejo de seguridad para comunicar madurez de ingeniería "Staff-level".
+
+Tags: documentation, refinement, branding
+
+Started: 2026-02-01
+
+Completed: 2026-02-01

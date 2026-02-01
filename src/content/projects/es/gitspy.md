@@ -22,9 +22,12 @@ GitSpy es una API intermedia que centraliza y optimiza llamadas al API de GitHub
 
 - Servidor Express con endpoints para webhooks, repositorios y métricas.
 - Integración con GitHub mediante adaptador y control de rate limits.
-- Caché con Redis y persistencia opcional en SQLite.
+- Caché con Redis y estrategia **Fail-open**: Bypassea Redis transparente en caso de fallo de conexión para mantener disponibilidad.
+- **Invalidación Proactiva**: Elimina claves obsoletas tras mutaciones exitosas, priorizando consistencia eventual.
+- **Limites Duros**: Payload de Webhooks limitado a 1MB para proteger estabilidad de memoria.
 - Cola de eventos con BullMQ y workers para procesamiento asíncrono.
 - Métricas y monitoreo (Prometheus) y estrategia de testing con 70+ tests.
+- **Arquitectura No-Custodia**: Los tokens viajan en headers cifrados y nunca se persisten en disco.
 
 ## Tecnologías
 

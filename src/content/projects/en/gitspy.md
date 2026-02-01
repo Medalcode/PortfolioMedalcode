@@ -14,17 +14,20 @@ languages:
   - docker
 ---
 
-# GitSpy — API middleware para GitHub
+# GitSpy — GitHub API Middleware
 
-GitSpy es una API intermedia que centraliza y optimiza llamadas al API de GitHub mediante un sistema multi-capa de caché, cola de eventos y control inteligente de rate limits. Incluye handlers para webhooks, métricas Prometheus y una suite de tests amplia.
+GitSpy is an intermediary API that centralizes and optimizes GitHub API calls through a multi-layer caching system, event queue, and intelligent rate limit control. It includes webhook handlers, Prometheus metrics, and a comprehensive test suite.
 
-## Destacado
+## Highlights
 
-- Servidor Express con endpoints para webhooks, repositorios y métricas.
-- Integración con GitHub usando un adaptador con manejo de rate limits.
-- Caché con Redis y persistencia opcional en SQLite.
-- Cola de eventos con BullMQ y workers para procesamiento asíncrono.
-- Métricas y monitoreo (Prometheus) y estrategia de testing con 70+ tests.
+- Express Server with endpoints for webhooks, repositories, and metrics.
+- GitHub Integration via adapter with rate limit handling.
+- Redis Caching with **Fail-open Strategy**: Transparently bypasses Redis on connection failure to maintain availability.
+- **Proactive Invalidation**: Removes stale keys after successful mutations, prioritizing eventual consistency.
+- **Hard Limits**: Webhook payloads capped at 1MB to protect memory stability.
+- Event Queue with BullMQ and workers for asynchronous processing.
+- Metrics and monitoring (Prometheus) and 70+ tests strategy.
+- **Non-Custodial Architecture**: Auth tokens are passed via encrypted headers and never persisted to disk.
 
 ## Tecnologías
 

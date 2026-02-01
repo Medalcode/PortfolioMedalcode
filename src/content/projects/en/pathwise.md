@@ -21,10 +21,13 @@ languages:
 
 ## Key Features
 
-- **Deep Extract Engine**: Layout-aware parsing of resumes and job descriptions.
+- **Resilient Extraction Engine**: Heuristic parsing prioritizes structure over brittle CSS selectors, with fallback to raw text extraction if the DOM changes.
+- **Security & Throttling**: Extraction rate strictly limited (X profiles/min) to comply with ToS and prevent blocking.
+- **Content Sanitization**: HTML cleaning upon ingestion to prevent stored XSS attacks.
 - **Visual Career Timeline**: Interactive chart visualizing your professional trajectory.
 - **ATS Compatibility Score**: Real-time analysis of how well your profile matches job requirements.
 - **Job Tracking Kanban**: Organize applications with status tracking (Saved, Applied, Interview).
+- **Eventual Consistency**: Background synchronization strategy to avoid blocking the browser UI.
 - **Premium Strategy**: AI-generated career personas and salary market value estimation.
 
 ## Tech Stack
