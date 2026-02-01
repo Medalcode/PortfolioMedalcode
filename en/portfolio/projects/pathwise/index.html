@@ -198,10 +198,13 @@ EN
 <p><strong>Pathwise</strong> (formerly Panoptes) is a comprehensive ecosystem designed to navigate the complexity of modern job searching. It integrates a Chrome Extension for data capture with a premium Web Dashboard for strategy and analysis.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
-<li><strong>Deep Extract Engine</strong>: Layout-aware parsing of resumes and job descriptions.</li>
+<li><strong>Resilient Extraction Engine</strong>: Heuristic parsing prioritizes structure over brittle CSS selectors, with fallback to raw text extraction if the DOM changes.</li>
+<li><strong>Security &#x26; Throttling</strong>: Extraction rate strictly limited (X profiles/min) to comply with ToS and prevent blocking.</li>
+<li><strong>Content Sanitization</strong>: HTML cleaning upon ingestion to prevent stored XSS attacks.</li>
 <li><strong>Visual Career Timeline</strong>: Interactive chart visualizing your professional trajectory.</li>
 <li><strong>ATS Compatibility Score</strong>: Real-time analysis of how well your profile matches job requirements.</li>
 <li><strong>Job Tracking Kanban</strong>: Organize applications with status tracking (Saved, Applied, Interview).</li>
+<li><strong>Eventual Consistency</strong>: Background synchronization strategy to avoid blocking the browser UI.</li>
 <li><strong>Premium Strategy</strong>: AI-generated career personas and salary market value estimation.</li>
 </ul>
 <h2 id="tech-stack">Tech Stack</h2>

@@ -198,7 +198,10 @@ EN
 <p>Colabb es un emulador de terminal de alto rendimiento construido desde cero en <strong>C++</strong> utilizando <strong>GTK3</strong> y <strong>VTE</strong>. Integra Inteligencia Artificial directamente en la experiencia del shell, ofreciendo sugerencias conscientes del contexto, explicaciones de errores y generación de comandos en lenguaje natural a través de su sistema único <strong>“Totem”</strong>.</p>
 <h2 id="características-principales">Características Principales</h2>
 <ul>
-<li><strong>🚀 Rendimiento Nativo</strong>: Construido con C++ para un inicio instantáneo y bajo consumo de recursos.</li>
+<li><strong>🚀 Rendimiento Nativo</strong>: Construido con C++ para un inicio instantáneo y bajo consumo (<strong>&#x3C;30MB vs 400MB Electron</strong>).</li>
+<li><strong>Inferencia No Bloqueante</strong>: Las consultas de IA se ejecutan en hilos secundarios (std::async), garantizando <strong>cero impacto</strong> en la respuesta del shell durante la latencia de red.</li>
+<li><strong>Eficiencia de Memoria</strong>: Buffer de scrollback limitado (Ring Buffer) para garantizar una huella de memoria predecible.</li>
+<li><strong>Núcleo Estable</strong>: Construido sobre <strong>libvte</strong> (motor de Gnome Terminal), aislando la lógica experimental de IA de la estabilidad del shell.</li>
 <li><strong>🤖 Totem AI</strong>: Invoca asistencia de IA con <code>?</code> o obtén análisis automático de errores.</li>
 <li><strong>🧠 Conciencia de Contexto</strong>: La IA “lee” tus comandos y salidas anteriores para brindar ayuda relevante.</li>
 <li><strong>🎨 Perfiles Visuales</strong>: Temas y fuentes personalizables por pestaña.</li>
