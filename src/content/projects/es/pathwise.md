@@ -21,10 +21,13 @@ languages:
 
 ## Características Principales
 
-- **Motor de Extracción Profunda**: Parsing inteligente de currículums y descripciones de empleo.
+- **Motor de Extracción Resiliente**: Parsing heurístico que prioriza la estructura sobre selectores CSS frágiles, con fallback a extracción de texto crudo si el DOM cambia.
+- **Seguridad y Throttling**: Tasa de extracción limitada estrictamente (X perfiles/min) para cumplir con términos de servicio y evitar bloqueos.
+- **Sanitización de Contenido**: Limpieza de HTML en la ingesta para prevenir ataques XSS almacenados.
 - **Línea de Tiempo Visual**: Gráfico interactivo que visualiza tu trayectoria profesional.
 - **Puntaje de Compatibilidad ATS**: Análisis en tiempo real de la coincidencia entre tu perfil y los requisitos.
 - **Kanban de Seguimiento**: Organiza postulaciones con estados (Guardado, Aplicado, Entrevista).
+- **Consistencia Eventual**: Estrategia de sincronización background para no bloquear la UI del navegador.
 - **Estrategia Premium**: Generación de "career personas" y estimación de valor de mercado salarial con IA.
 
 ## Tecnologías

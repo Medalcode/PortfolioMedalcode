@@ -84,6 +84,22 @@ This repository adheres to the **Meta Project Standard**. All development progre
    - **New**: Smart Navigation with mobile support
    - JSON-LD Structured Data for SEO (Person Schema)
 
+## 🛡️ Reliability & Security Standards
+
+All projects in this portfolio adhere to strict engineering constraints to ensure production readiness:
+
+### 🏗️ Quality Assurance
+
+- **Type Safety**: 100% TypeScript codebase preventing runtime type errors.
+- **Input Validation**: Runtime schema validation (Zod) on all API boundaries to reject malformed payloads early.
+- **CI/CD Ready**: Automated pipelines ensure build integrity on every push.
+
+### 🔒 Security & Limits
+
+- **Non-Custodial Design**: No sensitive tokens (GitHub/AWS) are persisted on disk; everything is injected via process environment.
+- **Hard Limits**: All gateways force payload caps (e.g., 1MB) and timeout enforcement (30s) to prevent resource exhaustion.
+- **Fail-Open Strategy**: Critical services (like Cache) are designed to bypass silently on failure to maintain availability.
+
 ## 🚀 Getting Started
 
 1. **📦 Installation**

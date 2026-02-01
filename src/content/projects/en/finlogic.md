@@ -21,8 +21,9 @@ FinLogic is a specialized platform that streamlines financial data pipelines. It
 
 ## Key Features
 
-- **Scalable Ingestion**: Normalizes market price streams from various sources.
-- **Embedded Analytics**: Uses **DuckDB** for lightning-fast OLAP queries on local files.
+- **Decoupled Ingestion**: Normalizes price streams from multiple sources, supporting offline processing of 'Bronze Layer' archives if live feeds fail.
+- **Embedded Analytics**: Uses **DuckDB** for lightning-fast OLAP queries on local files with zero network overhead.
+- **Optimized Execution**: **Spill-to-disk** support for datasets exceeding RAM and strict **30s timeouts** to ensure fair resource allocation.
 - **Financial Engine**: Optimized API endpoints for vectorized calculations (NPV, IRR, Volatility/VaR).
 - **Audit Trail**: Preserves raw data (Bronze Layer) for full traceability.
 

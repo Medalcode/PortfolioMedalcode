@@ -20,7 +20,10 @@ Colabb es un emulador de terminal de alto rendimiento construido desde cero en *
 
 ## Características Principales
 
-- **🚀 Rendimiento Nativo**: Construido con C++ para un inicio instantáneo y bajo consumo de recursos.
+- **🚀 Rendimiento Nativo**: Construido con C++ para un inicio instantáneo y bajo consumo (**<30MB vs 400MB Electron**).
+- **Inferencia No Bloqueante**: Las consultas de IA se ejecutan en hilos secundarios (std::async), garantizando **cero impacto** en la respuesta del shell durante la latencia de red.
+- **Eficiencia de Memoria**: Buffer de scrollback limitado (Ring Buffer) para garantizar una huella de memoria predecible.
+- **Núcleo Estable**: Construido sobre **libvte** (motor de Gnome Terminal), aislando la lógica experimental de IA de la estabilidad del shell.
 - **🤖 Totem AI**: Invoca asistencia de IA con `?` o obtén análisis automático de errores.
 - **🧠 Conciencia de Contexto**: La IA "lee" tus comandos y salidas anteriores para brindar ayuda relevante.
 - **🎨 Perfiles Visuales**: Temas y fuentes personalizables por pestaña.
