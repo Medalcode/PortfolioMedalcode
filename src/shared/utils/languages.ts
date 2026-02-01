@@ -160,15 +160,27 @@ export const languages: Record<string, Language> = {
   },
   duckdb: {
     name: "DuckDB",
-    iconName: "database",
+    iconName: "mongo", // Using mongo/database icon as fallback
   },
   kafka: {
     name: "Apache Kafka",
-    iconName: "server",
+    iconName: "server", // Using server generic icon if available, or fallback
   },
   fastapi: {
     name: "FastAPI",
     iconName: "python",
+  },
+  redis: {
+    name: "Redis",
+    iconName: "database", // Fallback
+  },
+  typescript: {
+    name: "TypeScript",
+    iconName: "typescript", // Fixed mapping
+  },
+  nodejs: {
+    name: "Node.js",
+    iconName: "node",
   },
 };
 
