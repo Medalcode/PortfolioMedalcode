@@ -263,3 +263,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Colabb** — Terminal Linux moderna escrita en C++ con GTK3, integrando asistencia de IA (Totem) para sugerencias contextuales y explicación de errores en tiempo real. Ficha de contenido añadida. Repositorio: [GitHub](https://github.com/Medalcode/Colabb)
 - **AutoKanban** — Visualizador estático que transforma archivos `Bitacora.md` de GitHub en tableros Kanban interactivos usando la API de GitSpy. Repositorio: [GitHub](https://github.com/Medalcode/AutoKanban)
 - **Pathwise** — (Ex-Panoptes) Ecosistema de navegación profesional inteligente con Dashboard Web, Extensión y Motor IA para optimizar la búsqueda de empleo. Repositorio: [GitHub](https://github.com/Medalcode/Pathwise)
+- **FinLogic** — Plataforma de ingeniería de datos financieros con arquitectura "Lightweight Ingest, Heavy Analysis" usando DuckDB y FastAPI. Repositorio: [GitHub](https://github.com/Medalcode/FinLogic)

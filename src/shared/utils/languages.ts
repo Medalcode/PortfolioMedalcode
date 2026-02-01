@@ -158,6 +158,18 @@ export const languages: Record<string, Language> = {
     name: "CMake",
     iconName: "code",
   },
+  duckdb: {
+    name: "DuckDB",
+    iconName: "database",
+  },
+  kafka: {
+    name: "Apache Kafka",
+    iconName: "server",
+  },
+  fastapi: {
+    name: "FastAPI",
+    iconName: "python",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {

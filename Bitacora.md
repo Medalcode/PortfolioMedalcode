@@ -72,6 +72,16 @@ Started: 2026-01-31
 
 Completed: 2026-01-31
 
+### [DONE] project-finlogic — Incorporación de FinLogic
+
+Description: Adición del proyecto FinLogic (Ingeniería de Datos Financieros) al portafolio con mockup generado y nuevas definiciones de tecnología (DuckDB, FastAPI).
+
+Tags: content, portfolio, data-engineering
+
+Started: 2026-02-01
+
+Completed: 2026-02-01
+
 ### [TODO] performance-seo — Sprint 3: Performance y SEO
 
 Description: Optimización de imágenes, self-hosting de fuentes, SEO avanzado (Schema/OG) y PWA completa.
