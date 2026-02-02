@@ -110,9 +110,9 @@ Completed: 2026-02-01
 
 ### [DONE] project-argos — Incorporación de Argos
 
-Description: Adición del proyecto Argos (Vigilancia Web Inteligente) al portafolio. Stack: Node.js, Playwright.
+Description: Adición del proyecto Argos (Trading Algorítmico Binance) al portafolio. Stack: Python, Docker, Watchdog. Se ha generado mockup de dashboard y documentación técnica detallada sobre estrategia Triple Filtro.
 
-Tags: content, portfolio, automation
+Tags: content, portfolio, fintech
 
 Started: 2026-02-01
 

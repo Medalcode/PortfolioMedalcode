@@ -1,32 +1,32 @@
 ---
 title: "Argos"
-description: "Motor de monitorización inteligente que permite vigilar cambios en sitios web utilizando selectores CSS personalizados y notificaciones en tiempo real."
+description: "Bot de trading algorítmico profesional para Binance Spot con estrategia de Triple Filtro, Trailing Stop dinámico y Dashboard Web integrado."
 image:
   url: "/images/projects/argos.png"
-  alt: "Dashboard de Argos"
-website: "https://argos-three.vercel.app/"
+  alt: "Dashboard Analítico Argos"
+website: ""
 github: "https://github.com/Medalcode/Argos"
 pubDate: 2026-02-01
 languages:
-  - node
-  - javascript
+  - python
+  - docker
   - html
   - ai
-  - playwright
+  - linux
 ---
 
-# Argos — Vigilancia Web Inteligente
+# Argos — Trading Algorítmico de Alta Frecuencia
 
-Argos es un sistema de monitorización automatizada diseñado para rastrear cambios visuales y de contenido en sitios web arbitrarios. Permite definir selectores CSS específicos para vigilar precios, disponibilidad de stock o actualizaciones de noticias, enviando alertas inmediatas cuando se detectan modificaciones relevantes.
+Argos es una suite de trading automatizado diseñada para operar en **Binance Spot** bajo condiciones de mercado volátiles. Implementa una estrategia de "Triple Filtro" matemática para minimizar falsos positivos y maximizar el Sharpe Ratio, combinada con un sistema de ejecución resiliente que soporta caídas de red y re-conexión automática.
 
 ## Características Principales
 
-- **Selectores Personalizados**: Define exactamente qué parte de la página vigilar (e.g., `.price`, `#stock-status`).
-- **Motor Headless**: Utiliza Playwright para renderizar páginas dinámicas (SPA) que requieren ejecución de JavaScript.
-- **Historial de Cambios**: Almacena snapshots de los cambios detectados para auditoría visual.
-- **Alertas en Tiempo Real**: Notificaciones vía Email/Webhook cuando se cumple una condición de cambio.
-- **Modo Anti-Bloqueo**: Estrategias básicas de rotación de User-Agent para evitar detección simple.
+- **Estrategia Triple Filtro**: Algoritmo propietario que cruza indicadores de tendencia y momento antes de ejecutar.
+- **Gestión de Riesgo Dinámica**: Trailing Stop inteligente que ajusta la salida según la volatilidad del activo en tiempo real.
+- **Soporte Edge**: Capacidad de despliegue en hardware limitado (incluyendo dispositivos Android/Termux) mediante "Modo Degradado".
+- **Optimizador Genético**: Script de optimización (`optimize.py`) para encontrar parámetros ideales mediante backtesting.
+- **Watchdog System**: Proceso guardián que reinicia automáticamente el motor en caso de crash inesperado.
 
 ## Tecnologías
 
-Construido con **Node.js**, **Playwright** para la navegación headless, y orquestado mediante **GitHub Actions/Cron Jobs** para la ejecución periódica.
+Construido con **Python 3.13** (optimizado para async), **Docker** para despliegue containerizado, y **SQLite** para persistencia transaccional ligera.
