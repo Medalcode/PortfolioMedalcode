@@ -182,6 +182,10 @@ export const languages: Record<string, Language> = {
     name: "Node.js",
     iconName: "node",
   },
+  playwright: {
+    name: "Playwright",
+    iconName: "code", // Using generic code icon
+  },
 };
 
 export const getLanguage = (lang: string): Language => {

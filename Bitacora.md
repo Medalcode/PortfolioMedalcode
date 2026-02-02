@@ -107,3 +107,13 @@ Tags: documentation, refinement, branding
 Started: 2026-02-01
 
 Completed: 2026-02-01
+
+### [DONE] project-argos — Incorporación de Argos
+
+Description: Adición del proyecto Argos (Vigilancia Web Inteligente) al portafolio. Stack: Node.js, Playwright.
+
+Tags: content, portfolio, automation
+
+Started: 2026-02-01
+
+Completed: 2026-02-01
