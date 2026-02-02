@@ -1,32 +1,32 @@
 ---
 title: "Argos"
-description: "Intelligent monitoring engine that tracks website changes using custom CSS selectors, delivering real-time notifications upon detection."
+description: "Professional algorithmic trading bot for Binance Spot featuring Triple Filter strategy, dynamic Trailing Stop, and integrated Web Dashboard."
 image:
   url: "/images/projects/argos.png"
-  alt: "Argos Dashboard Interface"
-website: "https://argos-three.vercel.app/"
+  alt: "Argos Analytics Dashboard"
+website: ""
 github: "https://github.com/Medalcode/Argos"
 pubDate: 2026-02-01
 languages:
-  - node
-  - javascript
+  - python
+  - docker
   - html
   - ai
-  - playwright
+  - linux
 ---
 
-# Argos — Intelligent Web Surveillance
+# Argos — High-Frequency Algorithmic Trading
 
-Argos is an automated monitoring system designed to track visual and content changes on arbitrary websites. It allows users to define specific CSS selectors to monitor prices, stock availability, or news updates, sending immediate alerts when relevant modifications are detected.
+Argos is an automated trading suite designed for **Binance Spot** operations under volatile market conditions. It implements a proprietary "Triple Filter" mathematical strategy to minimize false positives and maximize Sharpe Ratio, combined with a resilient execution system that supports network drops and automatic reconnection.
 
 ## Key Features
 
-- **Custom Selectors**: Define exactly which part of the page to watch (e.g., `.price`, `#stock-status`).
-- **Headless Engine**: Uses Playwright to render dynamic pages (SPAs) that require JavaScript execution.
-- **Change History**: Stores snapshots of detected changes for visual auditing.
-- **Real-Time Alerts**: Notifications via Email/Webhook when a change condition is met.
-- **Anti-Blocking Mode**: Basic User-Agent rotation strategies to evade simple detection.
+- **Triple Filter Strategy**: Proprietary algorithm crossing trend and momentum indicators before execution.
+- **Dynamic Risk Management**: Intelligent Trailing Stop adjusting exit points based on real-time asset volatility.
+- **Edge Support**: Deployment capability on limited hardware (including Android/Termux devices) via "Degraded Mode".
+- **Genetic Optimizer**: Optimization script (`optimize.py`) to find ideal parameters through extensive backtesting.
+- **Watchdog System**: Guardian process that automatically restarts the engine upon unexpected crashes.
 
 ## Tech Stack
 
-Built with **Node.js**, **Playwright** for headless navigation, and orchestrated via **GitHub Actions/Cron Jobs** for periodic execution.
+Built with **Python 3.13** (async optimized), **Docker** for containerized deployment, and **SQLite** for lightweight transactional persistence.
