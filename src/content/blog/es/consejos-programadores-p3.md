@@ -1,13 +1,13 @@
 ---
 title: 'Consejos para Nuevos Programadores – Parte 3: Aprende a Buscar Soluciones'
-pubDate: '2025-12-26'
+pubDate: 2025-12-26
 tags: ['programación', 'aprendizaje', 'desarrollo', 'debugging']
 description: 'Nadie programa de memoria. Te enseño las técnicas avanzadas para usar Google, Stack Overflow y leer documentación técnica sin perderte en el intento.'
 image:
   url: "/images/posts/blog/search-solutions-banner.png"
   alt: "Consejos para Nuevos Programadores – Parte 3: Aprende a Buscar Soluciones"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 Una verdad incómoda: **El 70% de mi tiempo como programador Senior lo paso leyendo, no escribiendo.**

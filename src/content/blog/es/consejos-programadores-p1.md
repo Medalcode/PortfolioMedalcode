@@ -1,13 +1,13 @@
 ---
 title: 'Consejos para Nuevos Programadores – Parte 1: ¡Enfócate!'
-pubDate: '2025-11-21'
+pubDate: 2025-11-21
 tags: ['programación', 'aprendizaje', 'desarrollo']
 description: 'Si estás empezando en programación, el enfoque es clave. Aprende por qué evitar la dispersión te hará avanzar más rápido y cómo mantener la concentración en tu camino como programador.'
 image:
   url: "/images/posts/focus/banner.jpg"
   alt: "Consejos para Nuevos Programadores – Parte 1: ¡Enfócate!"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 ![Enfócate en Programación](/static/images/focus/banner.jpg)

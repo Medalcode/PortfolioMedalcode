@@ -1,13 +1,13 @@
 ---
 title: 'Integración de Transbank en tu Tienda Online: Caso Práctico Tuniforme'
-pubDate: '2025-12-23'
+pubDate: 2025-12-23
 tags: ['ecommerce', 'transbank', 'pagos', 'chile', 'django', 'desarrollo-web']
 description: 'Aprende a integrar la pasarela de pagos Transbank en tu tienda online. Tutorial paso a paso basado en un caso real de e-commerce en Chile.'
 image:
   url: "/images/posts/transbank-tutorial/banner.jpg"
   alt: "Integración de Transbank en tu Tienda Online: Caso Práctico Tuniforme"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 # Integración de Transbank en tu Tienda Online: Caso Práctico Tuniforme

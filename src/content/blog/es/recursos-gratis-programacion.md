@@ -1,13 +1,13 @@
 ---
 title: 'Recursos Gratuitos para Aprender Programación en Español'
-pubDate: '2025-12-23'
+pubDate: 2025-12-23
 tags: ['aprendizaje', 'recursos', 'español', 'gratis', 'educación', 'programación']
 description: 'Guía completa de los mejores recursos gratuitos en español para aprender programación: cursos, canales de YouTube, blogs, comunidades y más.'
 image:
   url: "/images/posts/recursos-gratis/banner.jpg"
   alt: "Recursos Gratuitos para Aprender Programación en Español"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 # Recursos Gratuitos para Aprender Programación en Español

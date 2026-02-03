@@ -1,13 +1,13 @@
 ---
 title: "¿Qué es una API? Explicación para Principiantes"
-pubDate: "2025-12-19"
+pubDate: 2025-12-19
 tags: ["APIs", "desarrollo-web", "backend", "REST", "GraphQL", "SOAP"]
 description: "Descubre qué es una API, cómo funciona y los diferentes tipos que existen. Aprende a hacer peticiones a APIs públicas con Postman."
 image:
   url: "/images/posts/apis/what-is-an-api.jpg"
   alt: "¿Qué es una API?"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 ![¿Qué es una API?](/static/images/apis/what-is-an-api.jpg)

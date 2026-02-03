@@ -1,13 +1,13 @@
 ---
 title: 'Herramientas que Uso para Mejorar en Programación – Parte 2: GitHub y Control de Versiones'
-pubDate: '2025-12-23'
+pubDate: 2025-12-23
 tags: ['programación', 'github', 'git', 'desarrollo', 'herramientas']
 description: 'GitHub es mucho más que un lugar para guardar código. Descubre cómo usar Git y GitHub para mejorar tu flujo de trabajo, colaborar en proyectos y construir tu portafolio.'
 image:
   url: "/images/posts/github-guide/banner.jpg"
   alt: "Herramientas que Uso para Mejorar en Programación – Parte 2: GitHub y Control de Versiones"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 # Herramientas que Uso para Mejorar en Programación – Parte 2: GitHub y Control de Versiones
