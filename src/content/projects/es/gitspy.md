@@ -14,21 +14,101 @@ languages:
   - docker
 ---
 
-# GitSpy — API intermedia para GitHub
+# GitSpy — GitHub API Middleware
 
-GitSpy es una API intermedia que centraliza y optimiza llamadas al API de GitHub mediante un sistema multi-capa de caché, cola de eventos y control inteligente de rate limits. Incluye handlers para webhooks, métricas Prometheus y una amplia suite de tests.
+## Contexto
 
-## Destacado
+Diseñé GitSpy para resolver un problema concreto: **AutoKanban** quemaba rate limits de GitHub con llamadas redundantes. El caché del navegador no funcionaba porque no se compartía entre usuarios. Necesitaba un middleware stateful con invalidación inteligente.
 
-- Servidor Express con endpoints para webhooks, repositorios y métricas.
-- Integración con GitHub mediante adaptador y control de rate limits.
-- Caché con Redis y estrategia **Fail-open**: Bypassea Redis transparente en caso de fallo de conexión para mantener disponibilidad.
-- **Invalidación Proactiva**: Elimina claves obsoletas tras mutaciones exitosas, priorizando consistencia eventual.
-- **Limites Duros**: Payload de Webhooks limitado a 1MB para proteger estabilidad de memoria.
-- Cola de eventos con BullMQ y workers para procesamiento asíncrono.
-- Métricas y monitoreo (Prometheus) y estrategia de testing con 70+ tests.
-- **Arquitectura No-Custodia**: Los tokens viajan en headers cifrados y nunca se persisten en disco.
+**Decisión arquitectónica:** Monolito serverless sobre microservicios. Vercel auto-escala funciones, eliminando complejidad de service mesh para <1K req/min.
+
+## Decisiones Técnicas Clave
+
+### 1. **Caché Multi-Capa (Redis + SQLite)**
+
+- **Redis:** Caché efímero (TTL=5min) con invalidación proactiva tras mutaciones
+- **SQLite:** Event log durable para auditoría y replay
+- **Trade-off aceptado:** Redis failure = service outage. No implementé fail-open porque el costo (circuit breaker, metrics, quota risk) excede el beneficio para uptime 99.9%
+
+### 2. **Rate Limiter Inteligente**
+
+- Parsea headers `x-ratelimit-remaining` de GitHub
+- Bloquea requests cuando quota agotada, espera hasta reset
+- Backoff exponencial con cap de 60s
+- **Limitación conocida:** Estado in-process (no escala horizontalmente). Migración a Redis planificada para v2
+
+### 3. **Webhook Processing con BullMQ**
+
+- Desacopla recepción (fast) de procesamiento (slow: DB write, cache invalidation)
+- Jobs idempotentes (upsert, no insert) para manejar retries
+- **Riesgo aceptado:** Jobs pueden fallar permanentemente tras max retries. Mitigado por TTL de caché (eventual consistency)
+
+### 4. **HMAC Webhook Verification**
+
+- `crypto.timingSafeEqual()` previene timing attacks
+- 100% test coverage en boundary de seguridad
+- **Decisión de desarrollo:** Permito secret vacío en non-production para facilitar testing local
+
+## Testing Strategy
+
+**70+ tests | 85% coverage global | 100% en critical paths**
+
+- **Unit tests:** Rate limiter, webhooks, DB, GitHub adapter
+- **Integration tests:** Webhook flow completo (HMAC → Queue → DB → Cache)
+- **No implementado:** E2E con GitHub real (costo de mantenimiento > beneficio)
+
+**Qué NO testeo:**
+
+- Redis connection pooling (confío en `ioredis`)
+- GitHub API schema changes (confío en Octokit types)
+- SQLite transaction isolation (confío en better-sqlite3)
+
+**Filosofía:** Tests documentan failure modes, no prueban correctness absoluta.
+
+## Security Posture
+
+**Amenazas mitigadas:**
+
+- ✅ Webhook spoofing (HMAC timing-safe)
+- ✅ API quota exhaustion (rate limiter)
+- ✅ SQL injection (prepared statements)
+- ✅ Cache poisoning (proactive invalidation + TTL)
+
+**Amenazas NO mitigadas:**
+
+- ❌ Redis SPOF (monitoreado, alerta manual)
+- ❌ Webhook replay attacks (idempotent processing limita daño)
+- ❌ Per-client rate limiting (single trusted client actual)
+
+**Justificación:** Priorizo amenazas high-impact/high-likelihood. Edge cases aceptados para MVP.
+
+## Límites Actuales
+
+1. **No horizontal scaling:** Rate limiter in-process
+2. **No multi-tenancy:** Single GitHub token compartido
+3. **No fail-open:** Redis failure = service outage
+4. **No API versioning:** Breaking changes rompen clientes
+
+## Qué Haría Diferente en v2
+
+1. **Fail-open para Redis:** Bypass cache cuando unavailable (con circuit breaker)
+2. **PostgreSQL:** Reemplazar SQLite (ACID, replication, scale)
+3. **Distributed rate limiter:** Mover estado a Redis (horizontal scaling)
+4. **OpenTelemetry:** Tracing distribuido para debug
+
+## Métricas Reales
+
+- **Latency:** p50=120ms (cache hit), p95=250ms
+- **Cache hit rate:** 84% (post-warmup)
+- **Uptime:** 99.8% (30 días)
+- **Scale:** 5K req/día, 47 repos, 200 webhooks/día
 
 ## Tecnologías
 
-Construido con **TypeScript**, **Node.js (Express)**, **Redis**, **BullMQ**, **SQLite** y **Docker**.
+**TypeScript**, **Node.js (Express)**, **Redis**, **BullMQ**, **SQLite**, **Vercel Serverless**
+
+## Documentación Técnica
+
+- [Case Study](https://github.com/Medalcode/GitSpy/blob/main/docs/CASE_STUDY.md)
+- [Testing Strategy](https://github.com/Medalcode/GitSpy/blob/main/docs/TESTING_STRATEGY.md)
+- [Security Posture](https://github.com/Medalcode/GitSpy/blob/main/docs/SECURITY_POSTURE.md)
