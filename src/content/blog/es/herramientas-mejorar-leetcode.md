@@ -1,13 +1,13 @@
 ---
 title: "Herramientas que Uso para Mejorar en Programación – Parte 1: LeetCode"
-pubDate: "2025-12-04"
+pubDate: 2025-12-04
 tags: ["programación", "leetcode", "desarrollo", "aprendizaje"]
 description: "LeetCode es una de las mejores plataformas para mejorar en programación competitiva y entrevistas técnicas. Descubre cómo sacarle el máximo provecho."
 image:
   url: "/images/posts/leetcode/banner.jpg"
   alt: "Herramientas que Uso para Mejorar en Programación – Parte 1: LeetCode"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 ![LeetCode](/static/images/leetcode/banner.jpg)

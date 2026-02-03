@@ -1,13 +1,13 @@
 ---
 title: '¿Por qué Todo Programador Debería Tener un Blog?'
-pubDate: '2025-11-14'
+pubDate: 2025-11-14
 tags: ['blogging', 'programación', 'desarrollo-web', 'carrera']
 description: 'Un blog de programación no solo te ayuda a aprender más, sino que también puede abrirte muchas puertas en la industria tech. Descubre por qué deberías tener uno.'
 image:
   url: "/images/posts/blog-programacion/banner.jpg"
   alt: "¿Por qué Todo Programador Debería Tener un Blog?"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 ![Blog de Programación](/static/images/blog-programacion/banner.jpg)

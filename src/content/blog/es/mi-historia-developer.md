@@ -1,13 +1,13 @@
 ---
 title: 'De Técnico en Telecomunicaciones a Full Stack Developer: Mi Historia'
-pubDate: '2025-12-23'
+pubDate: 2025-12-23
 tags: ['carrera', 'desarrollo', 'aprendizaje', 'motivación', 'historia-personal']
 description: 'Mi transición de Técnico en Telecomunicaciones a Full Stack Developer. Desafíos, aprendizajes y consejos para quienes están haciendo un cambio de carrera en tech.'
 image:
   url: "/images/posts/mi-historia/banner.jpg"
   alt: "De Técnico en Telecomunicaciones a Full Stack Developer: Mi Historia"
 
-author: "Medalcode"
+author: Medalcode
 ---
 
 # De Técnico en Telecomunicaciones a Full Stack Developer: Mi Historia
