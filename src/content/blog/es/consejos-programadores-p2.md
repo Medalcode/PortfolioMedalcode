@@ -2,6 +2,7 @@
 title: 'Consejos para Nuevos Programadores – Parte 2: ¡Practica!'
 pubDate: 2025-11-28
 tags: ['programación', 'aprendizaje', 'desarrollo']
+languages: []
 description: 'Saber teoría no es suficiente. Si quieres mejorar como programador, tienes que escribir código todos los días. En esta entrada te cuento cómo practicar de manera efectiva para mejorar rápido.'
 image:
   url: "/images/posts/practice/banner.jpg"
