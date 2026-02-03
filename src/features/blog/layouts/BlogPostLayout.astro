@@ -34,19 +34,21 @@ import { Image } from "astro:assets";
     >
       <header class="flex flex-col gap-4" id="start">
         <div class="flex gap-2 flex-wrap">
-          {frontmatter.languages.map((language: string) => <Capsule lang={language} />)}
+          {frontmatter.languages?.map((language: string) => <Capsule lang={language} />)}
         </div>
         <div class="gap-3 flex flex-wrap justify-start items-center">
           {frontmatter.tags.map((tag: string) => <Tag tag={tag}>{tag}</Tag>)}
         </div>
         <div class="flex items-center gap-4">
           <DatePub date={frontmatter.pubDate} />
-          {frontmatter.readingTime && (
-            <span class="flex items-center gap-1 text-zinc-500 dark:text-zinc-400 text-sm font-medium">
-              <Icon name="clock" class="size-4" />
-              {frontmatter.readingTime} {readingTimeLabel}
-            </span>
-          )}
+          {
+            frontmatter.readingTime && (
+              <span class="flex items-center gap-1 text-zinc-500 dark:text-zinc-400 text-sm font-medium">
+                <Icon name="clock" class="size-4" />
+                {frontmatter.readingTime} {readingTimeLabel}
+              </span>
+            )
+          }
         </div>
 
         <Heading text={frontmatter.title} />
