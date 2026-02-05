@@ -72,18 +72,23 @@ import { Icon } from "astro-icon/components";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  // Esperar a que el DOM esté completamente cargado
+  // Función para inicializar el theme toggle
   function initThemeToggle() {
     const themeToggle = document.getElementById("themeToggle");
     if (themeToggle) {
+      // Remover listener previo si existe para evitar duplicados
+      themeToggle.removeEventListener("click", handleToggleClick);
       themeToggle.addEventListener("click", handleToggleClick);
     }
   }
 
-  // Si el documento ya está cargado, inicializar inmediatamente
+  // Inicializar en la carga inicial
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initThemeToggle);
   } else {
     initThemeToggle();
   }
+
+  // Re-inicializar después de cada navegación con View Transitions
+  document.addEventListener("astro:page-load", initThemeToggle);
 </script>
