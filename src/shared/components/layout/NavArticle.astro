@@ -31,7 +31,7 @@ const { title } = Astro.props;
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("astro:page-load", function () {
     const tocList = document.getElementById("toc-list");
     const content = document.getElementById("content");
 
