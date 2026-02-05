@@ -195,20 +195,25 @@ EN
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  // Esperar a que el DOM esté completamente cargado
+  // Función para inicializar el theme toggle
   function initThemeToggle() {
     const themeToggle = document.getElementById("themeToggle");
     if (themeToggle) {
+      // Remover listener previo si existe para evitar duplicados
+      themeToggle.removeEventListener("click", handleToggleClick);
       themeToggle.addEventListener("click", handleToggleClick);
     }
   }
 
-  // Si el documento ya está cargado, inicializar inmediatamente
+  // Inicializar en la carga inicial
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initThemeToggle);
   } else {
     initThemeToggle();
   }
+
+  // Re-inicializar después de cada navegación con View Transitions
+  document.addEventListener("astro:page-load", initThemeToggle);
 </script> <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"> <svg width="1em" height="1em" class="hamburger-icon bars-icon" aria-hidden="true" data-icon="bars">   <symbol id="ai:local:bars" viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="M1.5 3a.5.5 0 0 0 0 1h12a.5.5 0 0 0 0-1zM1 7.5a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5m0 4a.5.5 0 0 1 .5-.5h12a.5.5 0 0 1 0 1h-12a.5.5 0 0 1-.5-.5" clip-rule="evenodd"/></symbol><use href="#ai:local:bars"></use>  </svg> <svg width="1em" height="1em" class="hamburger-icon xmark-icon" aria-hidden="true" data-icon="xmark">   <symbol id="ai:local:xmark" viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="M12.854 2.854a.5.5 0 0 0-.708-.708L7.5 6.793 2.854 2.146a.5.5 0 1 0-.708.708L6.793 7.5l-4.647 4.646a.5.5 0 0 0 .708.708L7.5 8.207l4.646 4.647a.5.5 0 0 0 .708-.708L8.207 7.5z" clip-rule="evenodd"/></symbol><use href="#ai:local:xmark"></use>  </svg> </button> </div> </div> </header> <!-- Reading Progress Bar --> <div id="progress-container" class="fixed top-0 left-0 w-full h-1 z-[100] bg-transparent"> <div id="progress-bar" class="h-full bg-mint-500 w-0 transition-all duration-150 ease-out shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div> </div> <!-- Scroll To Top Button --> <button id="scroll-to-top" aria-label="Scroll to top" class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-mint-500 hover:bg-mint-600 text-white shadow-lg transition-all duration-300 opacity-0 translate-y-10 group"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <script type="module">const n=()=>{const e=document.querySelector(".hamburger"),t=document.querySelector(".nav-links");e?.addEventListener("click",()=>{t?.classList.toggle("expanded"),e?.classList.toggle("active")})};document.addEventListener("astro:page-load",n);</script> <div class="min-h-[85vh]">  <main class="flex flex-col items-center justify-center min-h-[80vh] px-4 relative overflow-hidden" data-astro-cid-zetdm5md> <!-- Decorative background elements --> <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-20 pointer-events-none" data-astro-cid-zetdm5md> <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-mint-500/20 rounded-full blur-[120px]" data-astro-cid-zetdm5md></div> </div> <div class="text-center animate-fade-up" data-astro-cid-zetdm5md> <div class="relative inline-block mb-8" data-astro-cid-zetdm5md> <h1 class="text-[12rem] max-md:text-[8rem] font-bold text-zinc-100 dark:text-zinc-900/50 leading-none select-none tracking-tighter" data-astro-cid-zetdm5md>
 404
 </h1> <div class="absolute inset-0 flex items-center justify-center translate-y-4" data-astro-cid-zetdm5md> <svg width="1em" height="1em" class="size-24 max-md:size-16 text-mint-500 animate-bounce" data-astro-cid-zetdm5md="true" data-icon="rocket">   <symbol id="ai:local:rocket" viewBox="0 0 15 15"><path fill="currentColor" fill-rule="evenodd" d="m6.854 3.854.8-.8c.644-.645 1.775-1.092 2.898-1.253a5.3 5.3 0 0 1 1.504-.02c.443.066.714.196.84.323.127.126.257.397.323.84.064.427.059.95-.02 1.504-.16 1.123-.608 2.254-1.253 2.898L7.5 11.793l-1.146-1.146a.5.5 0 1 0-.708.707l1.5 1.5a.5.5 0 0 0 .708 0l.547-.548 1.17 1.951a.5.5 0 0 0 .783.097l2-2a.5.5 0 0 0 .141-.425l-.465-3.252.624-.623c.855-.856 1.358-2.225 1.535-3.465.09-.627.1-1.25.019-1.794-.08-.528-.256-1.05-.604-1.399-.349-.348-.871-.525-1.4-.604a6.3 6.3 0 0 0-1.793.02C9.17.987 7.8 1.49 6.946 2.345l-.623.624-3.252-.465a.5.5 0 0 0-.425.141l-2 2a.5.5 0 0 0 .097.783l1.95 1.17-.547.547a.5.5 0 0 0 0 .708l1.5 1.5a.5.5 0 1 0 .708-.708L3.207 7.5l.647-.646zm3.245 9.34-.97-1.617 2.017-2.016.324 2.262zM3.423 5.87l2.016-2.016-2.262-.324-1.37 1.37zm-1.07 4.484a.5.5 0 1 0-.707-.708l-1 1a.5.5 0 1 0 .708.707zm1.5 1.5a.5.5 0 1 0-.707-.707l-2 2a.5.5 0 0 0 .708.707zm1.5 1.5a.5.5 0 1 0-.707-.708l-1 1a.5.5 0 1 0 .708.707zM9.5 6.749a1.249 1.249 0 1 0 0-2.498 1.249 1.249 0 0 0 0 2.498" clip-rule="evenodd"/></symbol><use href="#ai:local:rocket"></use>  </svg> </div> </div> <div class="space-y-4 mb-12" data-astro-cid-zetdm5md> <h2 class="font-extrabold text-4xl max-xl:text-3xl max-md:text-3xl  dark:text-white text-blacktext">¿Te has perdido en el espacio?</h2> <p class="text-zinc-600 dark:text-zinc-400 text-lg max-w-lg mx-auto leading-relaxed" data-astro-cid-zetdm5md>
