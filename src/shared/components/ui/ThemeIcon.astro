@@ -72,5 +72,18 @@ import { Icon } from "astro-icon/components";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
-  document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  // Esperar a que el DOM esté completamente cargado
+  function initThemeToggle() {
+    const themeToggle = document.getElementById("themeToggle");
+    if (themeToggle) {
+      themeToggle.addEventListener("click", handleToggleClick);
+    }
+  }
+
+  // Si el documento ya está cargado, inicializar inmediatamente
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
 </script>
