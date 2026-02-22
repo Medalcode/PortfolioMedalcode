@@ -12,27 +12,19 @@ This repository adheres to the **Meta Project Standard**. All development progre
 ## 📁 Project Structure
 
 └── 📁PortfolioMedalcode
-└── 📁src
-├── 📁features # Feature modules (Domain logic)
-│ ├── 📁blog # Blog feature (components, layouts)
-│ ├── 📁portfolio # Portfolio feature (components, layouts)
-│ └── 📁about # About feature
-├── 📁shared # Shared resources (Core)
-│ ├── 📁components # Reusable UI components
-│ ├── 📁utils # Shared utilities
-│ ├── 📁styles # Global styles
-│ └── 📁icons # SVG Icons
-├── 📁layouts # Global App Layouts
-│ └── Layout.astro # Main wrapper
-├── 📁pages # Astro Routing
-│ ├── 📁blog # Blog routes
-│ ├── 📁portfolio # Portfolio routes
-│ └── index.astro # Home
-└── 📁content # Content Collections
-├── .gitignore
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+    └── 📁src
+        ├── 📁features       # Feature modules (Domain logic)
+        ├── 📁shared         # Shared resources (Core UI/Utils)
+        ├── 📁layouts        # Global App Layouts
+        ├── 📁pages          # Astro Routing
+        └── 📁content        # Content Collections
+    └── 📁docs               # Architecture & AI Governance
+        ├── 📄 agents.md     # AI Agent Roles
+        ├── 📄 skills.md     # Parametric AI Skills
+        └── 📄 ARCHITECTURE.md
+    ├── astro.config.mjs
+    ├── package.json
+    └── tsconfig.json
 
 ## 🛠️ Technology Stack
 
