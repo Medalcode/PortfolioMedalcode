@@ -3,9 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 import DatePub from "@features/blog/components/DatePub.astro";
 import Tag from "@shared/components/ui/Tag.astro";
 import Capsule from "@shared/components/ui/Capsule.astro";
-import NavArticle from "@shared/components/layout/NavArticle.astro";
+import TableOfContents from "@shared/components/ui/TableOfContents.astro";
 import ListPosts from "@features/blog/components/ListPosts.astro";
-import NavigationArticles from "@shared/components/layout/NavigationArticles.astro";
+import PostPagination from "@features/blog/components/PostPagination.astro";
 import Share from "@shared/components/ui/Share.astro";
 const { frontmatter } = Astro.props;
 const { lang = "es" } = Astro.params;
@@ -92,11 +92,11 @@ import { Image } from "astro:assets";
       </div>
       <Share currentUrl={currentUrl} tweetText={tweetText} />
     </article>
-    <NavArticle title={frontmatter.title} />
+    <TableOfContents title={frontmatter.title} />
   </section>
   <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto">
     <div class="px-8">
-      <NavigationArticles />
+      <PostPagination />
       <hr class="text-mint-300/50" />
     </div>
     <div class="px-8 max-sm:px-4">

@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import DatePub from "@features/blog/components/DatePub.astro";
 import Capsule from "@shared/components/ui/Capsule.astro";
 import Heading from "@shared/components/ui/Heading.astro";
-import NavArticle from "@shared/components/layout/NavArticle.astro";
+import TableOfContents from "@shared/components/ui/TableOfContents.astro";
 import Contact from "@features/portfolio/components/Contact.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
@@ -86,7 +86,7 @@ const { frontmatter } = Astro.props;
         <slot />
       </div>
     </article>
-    <NavArticle title={frontmatter.title} />
+    <TableOfContents title={frontmatter.title} />
   </section>
   <div class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"></div>
   <Contact />

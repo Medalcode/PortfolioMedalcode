@@ -1,5 +1,5 @@
 ---
-import Navigation from "./Navigation.astro";
+import Navbar from "./Navbar.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
@@ -36,7 +36,7 @@ const navItems = isActiveRoute ? ["home", "experience", "projects", "blog", "abo
       </span>
     </a>
 
-    <Navigation items={navItems} />
+    <Navbar items={navItems} />
 
     <div class="flex items-center justify-between gap-5 text-xl">
       <div class="max-md:hidden flex items-center justify-center gap-5" role="group">
