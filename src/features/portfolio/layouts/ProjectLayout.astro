@@ -7,7 +7,12 @@ import TableOfContents from "@shared/components/ui/TableOfContents.astro";
 import Contact from "@features/portfolio/components/Contact.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-const { frontmatter } = Astro.props;
+import type { ProjectFrontmatter } from "@shared/utils/types";
+import { getStaticData } from "@shared/utils/getStaticData";
+const { frontmatter } = Astro.props as { frontmatter: ProjectFrontmatter };
+const { lang = "es" } = Astro.params;
+const { OGImage } = await getStaticData(lang);
+const ogImage = frontmatter.image ?? OGImage;
 ---
 
 <script>
@@ -18,7 +23,7 @@ const { frontmatter } = Astro.props;
 <Layout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
-  ogimage={frontmatter.image}
+  ogimage={ogImage}
 >
   <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
     <div class="w-64 max-xl:hidden"></div>
