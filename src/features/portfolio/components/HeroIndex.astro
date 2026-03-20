@@ -5,13 +5,10 @@ import Tools from "./Tools.astro";
 import { Icon } from "astro-icon/components";
 import Hobbies from "./Hobbies.astro";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
-const { lang } = Astro.params;
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry =
-  staticDataCollection.find((entry) => entry.id === lang) ||
-  staticDataCollection.find((entry) => entry.id === "es");
+const { lang = "es" } = Astro.params;
+const staticDataEntry = await getStaticData(lang);
 const {
   profileAlt,
   profileLink,
@@ -26,12 +23,7 @@ const {
   projectsTitle,
   stackTitle,
   stackGradient,
-  projectsIntro1,
-  projectsIntro2,
-  projectsIntro3,
-  projectsIntro4,
-  projectsIntro5,
-  projectsIntro6,
+  projectsIntro,
   projectsDescriptionAlt,
   availableForWork,
   heroDescription1,
@@ -40,7 +32,7 @@ const {
   beyondCode,
   designQuestion,
   aboutButtonText,
-} = staticDataEntry.data;
+} = staticDataEntry;
 
 const fullProfileLink = `/${lang}/${profileLink}`;
 ---
@@ -200,21 +192,21 @@ const fullProfileLink = `/${lang}/${profileLink}`;
         <p
           class="z-2 my-6 text-lg font-semibold leading-6 dark:text-gray-200 text-blacktext max-xl:text-base max-w-[90%] max-md:max-w-[85%]"
         >
-          {projectsIntro1}
+          {projectsIntro[0]}
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >{projectsIntro2}</span
+            >{projectsIntro[1]}</span
           >
           <br />
-          {projectsIntro3}
+          {projectsIntro[2]}
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >{projectsIntro4}</span
+            >{projectsIntro[3]}</span
           >
-          {projectsIntro5}
+          {projectsIntro[4]}
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 font-black bg-clip-text text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >{projectsIntro6}</span
+            >{projectsIntro[5]}</span
           >
         </p>
         <Image

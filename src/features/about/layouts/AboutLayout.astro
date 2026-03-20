@@ -11,9 +11,11 @@ import { getCollection } from "astro:content";
 
 import { Image } from "astro:assets";
 
+import type { AboutFrontmatter } from "@shared/utils/types";
+import { getStaticData } from "@shared/utils/getStaticData";
+
 const { lang } = Astro.params;
-const allStaticData = await getCollection("staticData");
-const staticData = allStaticData.find((entry) => entry.id === lang);
+const staticData = await getStaticData(lang);
 const {
   profileName,
   profileImage,
@@ -24,8 +26,8 @@ const {
   stackGradient,
   aboutDescription,
   cvButtonText,
-} = staticData.data;
-const { frontmatter } = Astro.props;
+} = staticData;
+const { frontmatter } = Astro.props as { frontmatter: AboutFrontmatter };
 ---
 
 <script>
@@ -112,7 +114,7 @@ const { frontmatter } = Astro.props;
     <TableOfContents title={frontmatter.title} />
   </section>
   <Experience />
-  <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="sttack">
+  <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="stack">
     <div class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
       <div class="flex gap-4 items-center justify-center">
         <Icon class="text-3xl text-white" name="dashboard" />

@@ -3,23 +3,16 @@ import Project from "./Project.astro";
 import Heading from "@shared/components/ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
-const { lang } = Astro.params;
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry =
-  staticDataCollection.find((entry) => entry.id === lang) ||
-  staticDataCollection.find((entry) => entry.id === "es");
+const { lang = "es" } = Astro.params;
+const staticDataEntry = await getStaticData(lang);
 const {
   projectsTitle,
   projectsGradient,
-  projectsIntro1,
-  projectsIntro2,
-  projectsIntro3,
-  projectsIntro4,
-  projectsIntro5,
-  projectsIntro6,
+  projectsIntro,
   viewMoreProjects,
-} = staticDataEntry.data;
+} = staticDataEntry;
 
 const allProjects = await getCollection("projects", ({ id }) => {
   return id.startsWith(`${lang}/`);
@@ -42,21 +35,21 @@ allProjects.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     <p
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
     >
-      {projectsIntro1}
+      {projectsIntro[0]}
       <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >{projectsIntro2}</b
+        >{projectsIntro[1]}</b
       >
       <br />
-      {projectsIntro3}
+      {projectsIntro[2]}
       <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >{projectsIntro4}</b
+        >{projectsIntro[3]}</b
       >
-      {projectsIntro5}
+      {projectsIntro[4]}
       <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >{projectsIntro6}</b
+        >{projectsIntro[5]}</b
       >
     </p>
     <slot />

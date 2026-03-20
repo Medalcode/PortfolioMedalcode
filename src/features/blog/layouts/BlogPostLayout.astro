@@ -7,14 +7,31 @@ import TableOfContents from "@shared/components/ui/TableOfContents.astro";
 import ListPosts from "@features/blog/components/ListPosts.astro";
 import PostPagination from "@features/blog/components/PostPagination.astro";
 import Share from "@shared/components/ui/Share.astro";
-const { frontmatter } = Astro.props;
-const { lang = "es" } = Astro.params;
-const currentUrl = `${Astro.site}${Astro.url.pathname}`;
-const tweetText = encodeURIComponent(`"${frontmatter.title}" - by ${frontmatter.author} | EFEELE`);
-const readingTimeLabel = lang === "en" ? "min read" : "min de lectura";
 import Heading from "@shared/components/ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { getStaticData } from "@shared/utils/getStaticData";
+import type { BlogFrontmatter } from "@shared/utils/types";
+
+const { frontmatter } = Astro.props as { frontmatter: BlogFrontmatter };
+const { lang = "es" } = Astro.params;
+
+const staticData = await getStaticData(lang);
+const {
+  profileImage,
+  profileAlt,
+  profileName,
+  OGImage,
+} = staticData;
+
+const currentUrl = `${Astro.site}${Astro.url.pathname}`;
+const tweetText = encodeURIComponent(
+  `"${frontmatter.title}" - by ${frontmatter.author} | MEDALCODE`
+);
+const readingTimeLabel = lang === "en" ? "min read" : "min de lectura";
+
+// OG image fallback: use staticData default if frontmatter has no image
+const ogImage = frontmatter.image ?? OGImage;
 ---
 
 <script>
@@ -25,7 +42,7 @@ import { Image } from "astro:assets";
 <Layout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
-  ogimage={frontmatter.image}
+  ogimage={ogImage}
 >
   <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
     <div class="w-64 max-xl:hidden"></div>
@@ -56,8 +73,8 @@ import { Image } from "astro:assets";
         <div class="flex items-center max-sm:flex-col gap-2 max-sm:items-start justify-between">
           <div class="white flex items-center gap-4">
             <Image
-              src="/images/efeeleprofile.webp"
-              alt="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
+              src={profileImage}
+              alt={profileAlt}
               width={80}
               height={80}
               class="size-10 rounded-full drop-shadow-lg object-cover"
@@ -65,11 +82,10 @@ import { Image } from "astro:assets";
             <a
               id={frontmatter.title}
               class="leading-0 text-sm font-semibold items-center gap-3 text-blacktext dark:text-riptide-50"
-              href="/blog"
+              href={`/${lang}/blog`}
               >{frontmatter.author}
             </a>
           </div>
-          <Share currentUrl={currentUrl} tweetText={tweetText} />
         </div>
       </header>
 
