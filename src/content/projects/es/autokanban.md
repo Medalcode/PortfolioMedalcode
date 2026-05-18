@@ -2,7 +2,7 @@
 title: "AutoKanban"
 description: "Visualizador avanzado que transforma archivos Bitacora.md alojados en GitHub en tableros Kanban interactivos. Adhiere al Viewer Pattern y consume la API de GitSpy."
 image:
-  url: "/images/projects/autokanban.png"
+  url: "/images/projects/autokanban.webp"
   alt: "Interfaz de Tablero AutoKanban"
 website: "https://auto-kanban.vercel.app"
 github: "https://github.com/Medalcode/AutoKanban"

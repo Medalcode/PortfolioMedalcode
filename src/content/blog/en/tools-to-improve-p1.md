@@ -5,13 +5,13 @@ tags: ["programming", "leetcode", "development", "learning"]
 languages: []
 description: "LeetCode is one of the best platforms to improve at competitive programming and technical interviews. Discover how to get the most out of it."
 image:
-  url: "/images/posts/leetcode/banner.jpg"
+  url: "/images/posts/leetcode/banner.webp"
   alt: "Tools I Use to Improve at Programming – Part 1: LeetCode"
 
 author: Medalcode
 ---
 
-![LeetCode - Improve Your Programming](/static/images/leetcode/banner.jpg)
+![LeetCode - Improve Your Programming](/static/images/leetcode/banner.webp)
 
 # Tools I Use to Improve at Programming – Part 1: LeetCode
 

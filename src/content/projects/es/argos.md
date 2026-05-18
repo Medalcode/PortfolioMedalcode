@@ -2,7 +2,7 @@
 title: "Argos"
 description: "Bot de trading algorítmico profesional para Binance Spot con estrategia de Triple Filtro, Trailing Stop dinámico y Dashboard Web integrado."
 image:
-  url: "/images/projects/argos.png"
+  url: "/images/projects/argos.webp"
   alt: "Dashboard Analítico Argos"
 website: ""
 github: "https://github.com/Medalcode/Argos"

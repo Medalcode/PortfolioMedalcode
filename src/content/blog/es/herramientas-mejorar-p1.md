@@ -5,13 +5,13 @@ tags: ['programación', 'leetcode', 'desarrollo', 'aprendizaje']
 languages: []
 description: 'LeetCode es una de las mejores plataformas para mejorar en programación competitiva y entrevistas técnicas. Descubre cómo sacarle el máximo provecho.'
 image:
-  url: "/images/posts/leetcode/banner.jpg"
+  url: "/images/posts/leetcode/banner.webp"
   alt: "Herramientas que Uso para Mejorar en Programación – Parte 1: LeetCode"
 
 author: Medalcode
 ---
 
-![LeetCode - Mejora tu Programación](/static/images/leetcode/banner.jpg)
+![LeetCode - Mejora tu Programación](/static/images/leetcode/banner.webp)
 
 # Herramientas que Uso para Mejorar en Programación – Parte 1: LeetCode
 

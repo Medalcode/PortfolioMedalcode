@@ -2,7 +2,7 @@
 title: "About Me"
 description: "Get to know Jonatthan Medalla, a Full Stack Developer & Data Analyst."
 image:
-  url: "/images/jonatthan-profile.png"
+  url: "/images/jonatthan-profile.webp"
   alt: "Jonatthan Medalla Profile"
 ---
 

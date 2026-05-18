@@ -5,7 +5,7 @@ tags: ['programación', 'aprendizaje', 'desarrollo', 'debugging']
 languages: []
 description: 'Nadie programa de memoria. Te enseño las técnicas avanzadas para usar Google, Stack Overflow y leer documentación técnica sin perderte en el intento.'
 image:
-  url: "/images/posts/blog/search-solutions-banner.png"
+  url: "/images/posts/blog/search-solutions-banner.webp"
   alt: "Consejos para Nuevos Programadores – Parte 3: Aprende a Buscar Soluciones"
 
 author: Medalcode

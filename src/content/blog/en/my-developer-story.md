@@ -5,7 +5,7 @@ tags: ["career", "development", "learning", "motivation", "personal-story"]
 languages: []
 description: "My transition from Telecommunications Technician to Full Stack Developer. Challenges, learnings, and advice for those making a career change in tech."
 image:
-  url: "/images/posts/mi-historia/banner.jpg"
+  url: "/images/posts/mi-historia/banner.webp"
   alt: "From Telecommunications Technician to Full Stack Developer: My Story"
 
 author: Medalcode

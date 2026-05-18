@@ -5,7 +5,7 @@ tags: ["programming", "learning", "development", "debugging"]
 languages: []
 description: "Nobody programs from memory. I teach you advanced techniques to use Google, Stack Overflow, and read technical documentation without getting lost in the attempt."
 image:
-  url: "/images/posts/blog/search-solutions-banner.png"
+  url: "/images/posts/blog/search-solutions-banner.webp"
   alt: "Tips for New Programmers – Part 3: Learn to Search for Solutions"
 
 author: Medalcode

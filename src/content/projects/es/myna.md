@@ -2,7 +2,7 @@
 title: "Myna"
 description: "Herramienta inteligente de minería de datos diseñada para realizar estadística descriptiva, limpieza de datos, detección de valores atípicos, clustering y visualización interactiva."
 image:
-  url: "/images/projects/myna.png"
+  url: "/images/projects/myna.webp"
   alt: "Vista previa de Myna"
 website: "https://myna-gamma.vercel.app/"
 github: "https://github.com/Medalcode/Myna"

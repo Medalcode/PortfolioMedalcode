@@ -5,7 +5,7 @@ tags: ["power-automate", "power-bi", "automation", "reports"]
 languages: []
 description: "Learn to automatically generate PDF reports using Power BI and Power Automate. Optimize report creation and distribution without manual intervention."
 image:
-  url: "/images/posts/power-automate/banner.jpg"
+  url: "/images/posts/power-automate/banner.webp"
   alt: "PDF Report Automation with Power BI and Power Automate"
 
 author: Medalcode

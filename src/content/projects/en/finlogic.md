@@ -2,7 +2,7 @@
 title: "FinLogic"
 description: "High-performance financial data engineering platform designed to eliminate friction between market data ingestion and quantitative analysis."
 image:
-  url: "/images/projects/finlogic.png"
+  url: "/images/projects/finlogic.webp"
   alt: "FinLogic Analytics Dashboard"
 website: ""
 github: "https://github.com/Medalcode/FinLogic"

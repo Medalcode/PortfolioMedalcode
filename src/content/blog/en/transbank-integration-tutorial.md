@@ -5,7 +5,7 @@ tags: ["ecommerce", "transbank", "payments", "chile", "django", "web-development
 languages: []
 description: "Learn how to integrate the Transbank payment gateway into your online store. Step-by-step tutorial based on a real e-commerce case in Chile."
 image:
-  url: "/images/posts/transbank-tutorial/banner.jpg"
+  url: "/images/posts/transbank-tutorial/banner.webp"
   alt: "Transbank Integration in Your Online Store: Tuniforme Case Study"
 
 author: Medalcode

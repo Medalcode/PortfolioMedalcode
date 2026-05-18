@@ -5,13 +5,13 @@ tags: ["APIs", "desarrollo-web", "backend", "REST", "GraphQL", "SOAP"]
 languages: []
 description: "Descubre qué es una API, cómo funciona y los diferentes tipos que existen. Aprende a hacer peticiones a APIs públicas con Postman."
 image:
-  url: "/images/posts/apis/what-is-an-api.jpg"
+  url: "/images/posts/apis/what-is-an-api.webp"
   alt: "¿Qué es una API?"
 
 author: Medalcode
 ---
 
-![¿Qué es una API?](/static/images/apis/what-is-an-api.jpg)
+![¿Qué es una API?](/static/images/apis/what-is-an-api.webp)
 
 # 🚀 ¿Qué es una API? Explicación para Principiantes
 

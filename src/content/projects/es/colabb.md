@@ -2,7 +2,7 @@
 title: "Colabb"
 description: "Una terminal moderna para Linux potenciada con Inteligencia Artificial, escrita en C++ para máximo rendimiento. Incluye asistente 'Totem', sugerencias contextuales y perfiles visuales."
 image:
-  url: "/images/projects/colabb.png"
+  url: "/images/projects/colabb.webp"
   alt: "Interfaz de Terminal Colabb"
 website: ""
 github: "https://github.com/Medalcode/Colabb"

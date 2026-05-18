@@ -5,7 +5,7 @@ tags: ['python', 'django', 'flask', 'backend', 'desarrollo-web', 'comparación']
 languages: []
 description: 'Comparación completa entre Django y Flask. Descubre las diferencias, ventajas y desventajas de cada framework para que elijas el mejor para tu proyecto.'
 image:
-  url: "/images/posts/django-vs-flask/banner.jpg"
+  url: "/images/posts/django-vs-flask/banner.webp"
   alt: "Django vs Flask: ¿Cuál Framework de Python Elegir para tu Proyecto?"
 
 author: Medalcode

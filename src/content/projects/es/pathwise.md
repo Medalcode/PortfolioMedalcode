@@ -2,7 +2,7 @@
 title: "Pathwise"
 description: "Ecosistema inteligente de navegación profesional que combina extensión de Chrome, Dashboard Web y motor de IA para automatizar el seguimiento de empleos y optimizar estrategias."
 image:
-  url: "/images/projects/pathwise.png"
+  url: "/images/projects/pathwise.webp"
   alt: "Interfaz Dashboard Pathwise"
 website: "https://pathwise-theta.vercel.app/"
 github: "https://github.com/Medalcode/Pathwise"

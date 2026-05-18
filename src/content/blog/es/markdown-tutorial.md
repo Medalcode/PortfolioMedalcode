@@ -65,7 +65,7 @@ _Italic text_ or _Italic text_
 
 ```markdown
 [Link text](https://www.example.com)
-![Alt text](image.jpg)
+![Alt text](image.webp)
 ```
 
 ### Code

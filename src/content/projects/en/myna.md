@@ -2,7 +2,7 @@
 title: "Myna"
 description: "Intelligent Data Mining Tool designed to perform descriptive statistics, data cleaning, outlier detection, clustering, and interactive visualization."
 image:
-  url: "/images/projects/myna.png"
+  url: "/images/projects/myna.webp"
   alt: "Myna Preview"
 website: "https://myna-gamma.vercel.app/"
 github: "https://github.com/Medalcode/Myna"

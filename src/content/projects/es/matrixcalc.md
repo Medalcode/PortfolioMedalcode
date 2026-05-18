@@ -2,7 +2,7 @@
 title: "MatrixCalc"
 description: "Una calculadora de matrices en línea robusta y funcional. Permite realizar operaciones complejas de álgebra lineal directamente desde el navegador."
 image:
-  url: "/images/projects/matrixcalc.png"
+  url: "/images/projects/matrixcalc.webp"
   alt: "MatrixCalc Preview"
 website: "https://matrixcalc-frontend-541716295092.us-central1.run.app/"
 github: "https://github.com/Medalcode/Matrixcalc"

@@ -5,7 +5,7 @@ tags: ["programming", "github", "git", "development", "tools"]
 languages: []
 description: "GitHub is much more than a place to store code. Discover how to use Git and GitHub to improve your workflow, collaborate on projects, and build your portfolio."
 image:
-  url: "/images/posts/github-guide/banner.jpg"
+  url: "/images/posts/github-guide/banner.webp"
   alt: "Tools I Use to Improve at Programming – Part 2: GitHub and Version Control"
 
 author: Medalcode

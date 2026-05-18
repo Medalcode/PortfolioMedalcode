@@ -2,7 +2,7 @@
 title: "Kitsune API Template"
 description: "A professional, production-ready implementation of a FastAPI application. Includes JWT authentication, async database support, and Docker configuration."
 image:
-  url: "/images/projects/kitsune.png"
+  url: "/images/projects/kitsune.webp"
   alt: "Kitsune API Template Preview"
 website: ""
 github: "https://github.com/Medalcode/Kitsune"

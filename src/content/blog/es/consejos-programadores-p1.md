@@ -5,13 +5,13 @@ tags: ['programación', 'aprendizaje', 'desarrollo']
 languages: []
 description: 'Si estás empezando en programación, el enfoque es clave. Aprende por qué evitar la dispersión te hará avanzar más rápido y cómo mantener la concentración en tu camino como programador.'
 image:
-  url: "/images/posts/focus/banner.jpg"
+  url: "/images/posts/focus/banner.webp"
   alt: "Consejos para Nuevos Programadores – Parte 1: ¡Enfócate!"
 
 author: Medalcode
 ---
 
-![Enfócate en Programación](/static/images/focus/banner.jpg)
+![Enfócate en Programación](/static/images/focus/banner.webp)
 
 # Consejos para Nuevos Programadores – Parte 1: ¡Enfócate!
 

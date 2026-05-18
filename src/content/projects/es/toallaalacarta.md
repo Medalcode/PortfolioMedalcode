@@ -2,7 +2,7 @@
 title: "Toallaalacarta"
 description: "Solución de comercio electrónico modular de alto rendimiento construida con Storeplate (Astro + Shopify). Cuenta con gestión dinámica de productos, pago seguro y diseño moderno."
 image:
-  url: "/images/projects/toallaalacarta.png"
+  url: "/images/projects/toallaalacarta.webp"
   alt: "Vista previa de Toallaalacarta"
 website: "https://toallaalacarta.netlify.app/"
 github: "https://github.com/Medalcode/Toallaalacarta"

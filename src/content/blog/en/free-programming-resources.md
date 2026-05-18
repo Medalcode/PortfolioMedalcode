@@ -5,7 +5,7 @@ tags: ["learning", "resources", "free", "education", "programming"]
 languages: []
 description: "Complete guide of the best free resources to learn programming: courses, YouTube channels, blogs, communities, and more."
 image:
-  url: "/images/posts/recursos-gratis/banner.jpg"
+  url: "/images/posts/recursos-gratis/banner.webp"
   alt: "Free Resources to Learn Programming"
 
 author: Medalcode

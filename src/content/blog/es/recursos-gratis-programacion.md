@@ -5,7 +5,7 @@ tags: ['aprendizaje', 'recursos', 'español', 'gratis', 'educación', 'programac
 languages: []
 description: 'Guía completa de los mejores recursos gratuitos en español para aprender programación: cursos, canales de YouTube, blogs, comunidades y más.'
 image:
-  url: "/images/posts/recursos-gratis/banner.jpg"
+  url: "/images/posts/recursos-gratis/banner.webp"
   alt: "Recursos Gratuitos para Aprender Programación en Español"
 
 author: Medalcode

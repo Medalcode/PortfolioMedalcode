@@ -2,7 +2,7 @@
 title: "NetOps Toolkit"
 description: "Suite de herramientas para operaciones de red (NetOps). Incluye una calculadora VLSM avanzada y utilidades para administradores de red, con una interfaz moderna y visualización de datos."
 image:
-  url: "/images/projects/netops-toolkit.png"
+  url: "/images/projects/netops-toolkit.webp"
   alt: "NetOps Toolkit Preview"
 website: "https://netops-toolkit.netlify.app/"
 github: "https://github.com/Medalcode/NetOpsToolkit"

@@ -2,7 +2,7 @@
 title: "Sobre Mí"
 description: "Conoce a Jonatthan Medalla, Desarrollador Full Stack y Analista de Datos."
 image:
-  url: "/images/jonatthan-profile.png"
+  url: "/images/jonatthan-profile.webp"
   alt: "Perfil de Jonatthan Medalla"
 ---
 

@@ -5,13 +5,13 @@ tags: ["programming", "learning", "development"]
 languages: []
 description: "If you are starting in programming, focus is key. Learn why avoiding dispersion will make you progress faster and how to maintain concentration on your path as a programmer."
 image:
-  url: "/images/posts/focus/banner.jpg"
+  url: "/images/posts/focus/banner.webp"
   alt: "Tips for New Programmers – Part 1: Stay Focused!"
 
 author: Medalcode
 ---
 
-![Focus on Programming](/static/images/focus/banner.jpg)
+![Focus on Programming](/static/images/focus/banner.webp)
 
 # Tips for New Programmers – Part 1: Stay Focused!
 

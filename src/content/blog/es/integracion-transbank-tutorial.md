@@ -5,7 +5,7 @@ tags: ['ecommerce', 'transbank', 'pagos', 'chile', 'django', 'desarrollo-web']
 languages: []
 description: 'Aprende a integrar la pasarela de pagos Transbank en tu tienda online. Tutorial paso a paso basado en un caso real de e-commerce en Chile.'
 image:
-  url: "/images/posts/transbank-tutorial/banner.jpg"
+  url: "/images/posts/transbank-tutorial/banner.webp"
   alt: "Integración de Transbank en tu Tienda Online: Caso Práctico Tuniforme"
 
 author: Medalcode

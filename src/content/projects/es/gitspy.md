@@ -2,7 +2,7 @@
 title: "GitSpy"
 description: "Middleware API que centraliza y optimiza llamadas a GitHub con caché, colas y rate limiting inteligente. Incluye testing y métricas para observabilidad."
 image:
-  url: "/images/projects/gitspy.png"
+  url: "/images/projects/gitspy.webp"
   alt: "Vista previa de GitSpy"
 website: ""
 github: "https://github.com/Medalcode/GitSpy"

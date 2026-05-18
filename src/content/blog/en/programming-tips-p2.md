@@ -5,13 +5,13 @@ tags: ["programming", "learning", "development"]
 languages: []
 description: "Knowing theory is not enough. If you want to improve as a programmer, you have to write code every day. In this post I tell you how to practice effectively to improve quickly."
 image:
-  url: "/images/posts/practice/banner.jpg"
+  url: "/images/posts/practice/banner.webp"
   alt: "Tips for New Programmers – Part 2: Practice!"
 
 author: Medalcode
 ---
 
-![Practice Programming](/static/images/practice/banner.jpg)
+![Practice Programming](/static/images/practice/banner.webp)
 
 # Tips for New Programmers – Part 2: Practice!
 

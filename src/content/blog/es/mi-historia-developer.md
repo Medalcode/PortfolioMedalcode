@@ -5,7 +5,7 @@ tags: ['carrera', 'desarrollo', 'aprendizaje', 'motivación', 'historia-personal
 languages: []
 description: 'Mi transición de Técnico en Telecomunicaciones a Full Stack Developer. Desafíos, aprendizajes y consejos para quienes están haciendo un cambio de carrera en tech.'
 image:
-  url: "/images/posts/mi-historia/banner.jpg"
+  url: "/images/posts/mi-historia/banner.webp"
   alt: "De Técnico en Telecomunicaciones a Full Stack Developer: Mi Historia"
 
 author: Medalcode

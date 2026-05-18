@@ -2,7 +2,7 @@
 title: "Colabb"
 description: "A modern, AI-powered Linux terminal written in C++ for maximum performance. Features context-aware suggestions, 'Totem' AI assistant, and distinct tab profiles."
 image:
-  url: "/images/projects/colabb.png"
+  url: "/images/projects/colabb.webp"
   alt: "Colabb Terminal Interface"
 website: ""
 github: "https://github.com/Medalcode/Colabb"

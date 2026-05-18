@@ -5,13 +5,13 @@ tags: ["blogging", "programming", "web-development", "career"]
 languages: []
 description: "A programming blog not only helps you learn more, but can also open many doors in the tech industry. Discover why you should have one."
 image:
-  url: "/images/posts/blog-programacion/banner.jpg"
+  url: "/images/posts/blog-programacion/banner.webp"
   alt: "Why Every Programmer Should Have a Blog?"
 
 author: Medalcode
 ---
 
-![Programming Blog](/static/images/blog-programacion/banner.jpg)
+![Programming Blog](/static/images/blog-programacion/banner.webp)
 
 # Introduction
 

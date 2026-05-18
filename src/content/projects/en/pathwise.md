@@ -2,7 +2,7 @@
 title: "Pathwise"
 description: "Intelligent career navigation ecosystem combining a Chrome Extension, Web Dashboard, and AI Engine to automate job tracking and optimize application strategies."
 image:
-  url: "/images/projects/pathwise.png"
+  url: "/images/projects/pathwise.webp"
   alt: "Pathwise Dashboard Interface"
 website: "https://pathwise-theta.vercel.app/"
 github: "https://github.com/Medalcode/Pathwise"

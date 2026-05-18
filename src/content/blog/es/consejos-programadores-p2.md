@@ -5,13 +5,13 @@ tags: ['programación', 'aprendizaje', 'desarrollo']
 languages: []
 description: 'Saber teoría no es suficiente. Si quieres mejorar como programador, tienes que escribir código todos los días. En esta entrada te cuento cómo practicar de manera efectiva para mejorar rápido.'
 image:
-  url: "/images/posts/practice/banner.jpg"
+  url: "/images/posts/practice/banner.webp"
   alt: "Consejos para Nuevos Programadores – Parte 2: ¡Practica!"
 
 author: Medalcode
 ---
 
-![Practica Programación](/static/images/practice/banner.jpg)
+![Practica Programación](/static/images/practice/banner.webp)
 
 # Consejos para Nuevos Programadores – Parte 2: ¡Practica!
 
