@@ -8,6 +8,8 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         opensans: ['Open Sans', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
       },
       colors: {
         blacktext: '#171717',

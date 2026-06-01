@@ -38,7 +38,7 @@ const fullProfileLink = `/${lang}/${profileLink}`;
 ---
 
 <section
-  class="scroll-m-16 px-8 max-sm:px-4 py-8 animate-fade-up animate-once animate-duration-1000 animate-delay-200"
+  class="scroll-m-16 px-8 max-sm:px-4 py-8 reveal-on-scroll"
   id="home"
   aria-label="Professional profile and introduction"
 >
@@ -63,6 +63,8 @@ const fullProfileLink = `/${lang}/${profileLink}`;
                 alt={profileAlt}
                 width={200}
                 height={200}
+                fetchpriority="high"
+                loading="eager"
                 class="w-full aspect-square rounded-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </a>
@@ -213,7 +215,8 @@ const fullProfileLink = `/${lang}/${profileLink}`;
           class="relative left-0 z-0 mt-40 w-full object-cover transition-all ease-in-out duration-500 group-hover:rotate-2 group-hover:scale-185 max-xl:mt-28 max-lg:mt-10 max-sm:mt-0 max-md:scale-100 max-sm:scale-125 scale-180 max-md:group-hover:scale-105 before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:absolute before:left-30 before:-bottom-0 before:h-[80%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition"
           src={portfolioImage}
           alt={projectsDescriptionAlt}
-          loading="lazy"
+          fetchpriority="high"
+          loading="eager"
           width={480}
           height={320}
         />

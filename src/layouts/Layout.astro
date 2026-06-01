@@ -2,6 +2,7 @@
 import "@shared/styles/global.css";
 import Header from "@shared/components/layout/Header.astro";
 import Footer from "@shared/components/layout/Footer.astro";
+import TerminalEasterEgg from "@shared/components/ui/TerminalEasterEgg.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ClientRouter } from "astro:transitions";
 interface Props {
@@ -36,7 +37,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
 const SpeedInsightsComponent = SpeedInsights as any;
 ---
 
-<html lang={lang} class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth">
+<html lang={lang} class="dark:bg-[#09090b] bg-mint-50/5 font-inter scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <script is:inline>
@@ -130,11 +131,112 @@ const SpeedInsightsComponent = SpeedInsights as any;
   <body class="overflow-x-hidden">
     <SpeedInsightsComponent />
     <div class="blur-circle"></div>
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none -z-2 opacity-60"></canvas>
     <div
-      style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"
+      style="background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"
       class="fixed top-0 left-0 w-full h-full pointer-events-none -z-1"
     >
     </div>
+    
+    <script is:inline>
+      // Interactive Canvas Background
+      const initCanvas = () => {
+        const canvas = document.getElementById('bg-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        let mouse = { x: -9999, y: -9999 };
+        
+        const resize = () => {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = width;
+          canvas.height = height;
+        };
+        
+        window.addEventListener('resize', resize);
+        resize();
+        
+        class Particle {
+          constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 1.5 + 0.5;
+          }
+          
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            
+            if (this.x < 0 || this.x > width) this.vx = -this.vx;
+            if (this.y < 0 || this.y > height) this.vy = -this.vy;
+            
+            // Mouse interaction
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            
+            if (dist < 100) {
+              this.x -= dx * 0.01;
+              this.y -= dy * 0.01;
+            }
+          }
+          
+          draw() {
+            const isDark = document.documentElement.classList.contains('dark');
+            ctx.fillStyle = isDark ? 'rgba(59, 130, 246, 0.5)' : 'rgba(59, 130, 246, 0.2)';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+        
+        for (let i = 0; i < 70; i++) {
+          particles.push(new Particle());
+        }
+        
+        window.addEventListener('mousemove', (e) => {
+          mouse.x = e.x;
+          mouse.y = e.y;
+        });
+        
+        const animate = () => {
+          ctx.clearRect(0, 0, width, height);
+          
+          const isDark = document.documentElement.classList.contains('dark');
+          
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            
+            for (let j = i; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              
+              if (dist < 120) {
+                ctx.beginPath();
+                const alpha = isDark ? (1 - dist/120) * 0.2 : (1 - dist/120) * 0.1;
+                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                ctx.lineWidth = 1;
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animate);
+        };
+        animate();
+      };
+      
+      initCanvas();
+      document.addEventListener('astro:after-swap', initCanvas);
+    </script>
     <Header />
     
     <!-- Reading Progress Bar -->
@@ -204,9 +306,11 @@ const SpeedInsightsComponent = SpeedInsights as any;
       <slot />
     </div>
 
+    <TerminalEasterEgg />
     <Footer />
     <script>
       import "../scripts/menu.js";
+      console.log("%cPsst! Try pressing Ctrl + \\ (or Cmd + \\)", "color: #3b82f6; font-size: 14px; font-weight: bold;");
     </script>
   </body>
 </html>
