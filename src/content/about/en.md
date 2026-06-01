@@ -8,27 +8,34 @@ image:
 
 # Hello, I'm Jonatthan Medalla!
 
-Programmer Analyst specializing in Full Stack Development, Data Analysis, and IT Support. With expertise grounded in over **20 years of work experience**, providing a solid and invaluable foundation in solving complex problems and optimizing system operational continuity.
+Programmer Analyst with an educational background in Computer Engineering and over **22 years of experience in IT**. I combine a solid foundation in full stack development with skills in SQL, Python, and Power BI to build robust, data-centric solutions.
 
-Committed to efficient execution, I possess demonstrated skills in the integration and processing of data sets (structured and unstructured), with mastery of **SQL**, **Power BI**, and **Python** libraries to apply a developer and analyst vision to operational challenges.
+During my internship at Soprole, I led the migration of 22 Excel reports to Power BI, reducing the technical debt of the Data Consistency area. I am proficient in Django, React, Node.js, and AWS, and currently in my final year of Computer Engineering at INACAP.
+
+I am seeking opportunities as a developer where I can apply my analytical vision and multidisciplinary experience to create high-impact software.
 
 ## 🎓 Education
 
-- **Programmer Analyst** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
-- **Telecommunications Technician** - Liceo Industrial Hardware (Mar 1999 – Dec 2002)
+- **Computer Engineering** - INACAP Professional Institute (2023 – Present)
+- **Programmer Analyst** - INACAP Professional Institute (Mar 2023 – Dec 2024)
+- **Telecommunications Technician** - Hardware Industrial High School (Mar 1999 – Dec 2002)
 
 ## 🏆 Certifications
 
-- **Cloud Architecture Certification** - Instituto Profesional INACAP (Mar 2024 – Dec 2025)
-- **Full Stack Development Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
-- **DB Design and Management Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
-- **Agile Systems Design Certification** - Instituto Profesional INACAP (Mar 2023 – Dec 2024)
-- **Systems Administration and Support Certification** - Instituto Profesional DUOC UC (Mar 2017 – Dec 2018)
+- **Digital Competences: Microsoft Excel** - UAB (2026)
+- **Introduction to Data Visualization** - PUC (2026)
+- **Google Cloud Essentials** - Google (2026)
+- **AWS Cloud Quest: Cloud Practitioner** - AWS (2025)
+- **AWS Cloud Quest: Generative AI Practitioner** - AWS (2025)
+- **Cloud Architecture** - INACAP (2024)
+- **Full Stack Development** - INACAP (2023)
+- **Agile Systems Design** - INACAP (2023)
+- **Database Design and Management** - INACAP (2023)
+- **Systems Administration and Support** - Duoc UC (2017)
 
 ## 🛠 Skills & Technologies
 
-- **Languages:** Python, JavaScript, SQL, HTML, CSS, R.
-- **Frameworks & Techs:** Django, React, Node.js, MongoDB, Power BI, Docker.
-- **Tools & Platforms:** Github, VSCode, Jira, Taiga, Overleaf, Miro.
-- **Soft Skills:** Teamwork, Problem Solving, Adaptability, Effective Communication, Analytical Thinking, Continuous Learning.
+- **Languages:** Python, JavaScript, SQL, PL/SQL, NoSQL, R, HTML5, CSS3.
+- **Frameworks & Techs:** Django, React, Node.js, Bootstrap, Tailwind, jQuery.
+- **Tools & Platforms:** Power BI, Git, AWS, Linux, VS Code, Jira, MongoDB, MySQL.
 - **Languages:** Spanish (Native), English (B2).

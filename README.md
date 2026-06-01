@@ -9,6 +9,13 @@ This repository adheres to the **Meta Project Standard**. All development progre
 
 > 📋 **Development Log**: Check out the [Bitacora.md](Bitacora.md) to see the latest updates and roadmap.
 
+## 🚀 Latest Updates
+
+- **Data-Centric Profile**: Content and CV updated to reflect over 22 years of IT trajectory, combining Full Stack development with Data Analysis (Power BI, Python, SQL).
+- **Interactive Easter Egg**: Press `Ctrl + \` (or `Cmd + \`) anywhere to open a fully functional hidden Terminal.
+- **Next-Gen UI/UX**: Re-engineered with native CSS scroll-driven animations (`animation-timeline: view()`), interactive 3D particle Canvas background, and high-performance Glassmorphism hover states.
+- **Performance Optimized**: Images eagerly loaded with `fetchpriority="high"` for instant Largest Contentful Paint (LCP).
+
 ## 📁 Project Structure
 
 └── 📁PortfolioMedalcode

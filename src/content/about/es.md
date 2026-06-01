@@ -8,27 +8,34 @@ image:
 
 # ¡Hola, soy Jonatthan Medalla!
 
-Analista Programador especializado en Desarrollo Full Stack, Análisis de Datos y Soporte TI. Con una expertiz que se asienta sobre más de **20 años de experiencia laboral**, proporcionando una base sólida e invaluable en la resolución de problemas complejos y la optimización de la continuidad operativa de sistemas.
+Analista Programador con formación en Ingeniería Informática y más de **22 años de trayectoria en TI**. Combino una sólida base en desarrollo full stack con habilidades en SQL, Python y Power BI para construir soluciones robustas y centradas en datos.
 
-Comprometido con la ejecución eficiente, poseo habilidades demostradas en la integración y procesamiento de conjuntos de datos (estructurados y no estructurados), con dominio de **SQL**, **Power BI** y librerías de **Python** para aplicar una visión de desarrollador y analista a los desafíos operativos.
+Durante mi práctica en Soprole lideré la migración de 22 reportes de Excel a Power BI, reduciendo la deuda técnica del área de Consistencia de Datos. Manejo Django, React, Node.js y AWS, y curso el último año de Ingeniería en Informática en INACAP.
+
+Busco oportunidades como desarrollador donde pueda aplicar mi visión analítica y experiencia multidisciplinaria para crear software de alto impacto.
 
 ## 🎓 Educación
 
+- **Ingeniería en Informática** - Instituto Profesional INACAP (2023 – Actualidad)
 - **Analista Programador** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
 - **Técnico en Telecomunicaciones** - Liceo Industrial Hardware (Mar 1999 – Dic 2002)
 
 ## 🏆 Certificaciones
 
-- **Certificación en Arquitectura Cloud** - Instituto Profesional INACAP (Mar 2024 – Dic 2025)
-- **Certificación en Desarrollo Full Stack** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
-- **Certificación en Diseño y Gestión de BD** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
-- **Certificación en Diseño Ágil de Sistemas** - Instituto Profesional INACAP (Mar 2023 – Dic 2024)
-- **Certificación en Administración y Soporte de Sistemas** - Instituto Profesional DUOC UC (Mar 2017 – Dic 2018)
+- **Competencias digitales: Microsoft Excel** - UAB (2026)
+- **Introducción a la visualización de datos** - PUC (2026)
+- **Google Cloud Essentials** - Google (2026)
+- **AWS Cloud Quest: Cloud Practitioner** - AWS (2025)
+- **AWS Cloud Quest: Generative AI Practitioner** - AWS (2025)
+- **Arquitectura Cloud** - INACAP (2024)
+- **Desarrollo Full Stack** - INACAP (2023)
+- **Diseño Ágil de Sistemas** - INACAP (2023)
+- **Diseño y Gestión de Base de Datos** - INACAP (2023)
+- **Administración y Soporte de Sistemas** - Duoc UC (2017)
 
 ## 🛠 Habilidades y Tecnologías
 
-- **Lenguajes:** Python, JavaScript, SQL, HTML, CSS, R.
-- **Frameworks y Tecnologías:** Django, React, Node.js, MongoDB, Power BI, Docker.
-- **Herramientas y Plataformas:** Github, VSCode, Jira, Taiga, Overleaf, Miro.
-- **Soft Skills:** Trabajo en Equipo, Resolución de Problemas, Adaptabilidad, Comunicación Efectiva, Pensamiento Analítico, Aprendizaje Continuo.
+- **Lenguajes:** Python, JavaScript, SQL, PL/SQL, NoSQL, R, HTML5, CSS3.
+- **Frameworks y Tecnologías:** Django, React, Node.js, Bootstrap, Tailwind, jQuery.
+- **Herramientas y Plataformas:** Power BI, Git, AWS, Linux, VS Code, Jira, MongoDB, MySQL.
 - **Idiomas:** Español (Nativo), Inglés (B2).
