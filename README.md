@@ -272,10 +272,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🧾 Proyectos añadidos recientemente
+## 🏆 Elite Data-Centric & AI Projects
 
-- **GitSpy** — API intermedia para GitHub con sistema de caché (Redis), cola de eventos (BullMQ), control de rate limits y una suite de tests completa. Ficha de contenido añadida en `src/content/projects/en/gitspy.md` y `src/content/projects/es/gitspy.md`. Repositorio: [GitHub](https://github.com/Medalcode/GitSpy)
-- **Colabb** — Terminal Linux moderna escrita en C++ con GTK3, integrando asistencia de IA (Totem) para sugerencias contextuales y explicación de errores en tiempo real. Ficha de contenido añadida. Repositorio: [GitHub](https://github.com/Medalcode/Colabb)
-- **AutoKanban** — Visualizador estático que transforma archivos `Bitacora.md` de GitHub en tableros Kanban interactivos usando la API de GitSpy. Repositorio: [GitHub](https://github.com/Medalcode/AutoKanban)
-- **Pathwise** — (Ex-Panoptes) Ecosistema de navegación profesional inteligente con Dashboard Web, Extensión y Motor IA para optimizar la búsqueda de empleo. Repositorio: [GitHub](https://github.com/Medalcode/Pathwise)
-- **FinLogic** — Plataforma de ingeniería de datos financieros con arquitectura "Lightweight Ingest, Heavy Analysis" usando DuckDB y FastAPI. Repositorio: [GitHub](https://github.com/Medalcode/FinLogic)
+The portfolio now showcases top-tier engineering projects focused on AI, Data Engineering, and robust Backend architecture:
+
+- **DocuMind**: 100% offline, privacy-first Local AI Document Assistant using RAG and Ollama.
+- **MCP Ecosystem**: A suite of Model Context Protocol servers (BrowserMCP, ScrapeMCP, RouteMCP, DocMCP) for expanding LLM agent capabilities.
+- **DataWeaver**: Parametric rule engine replacing Excel/VBA with FastAPI and Pandas pipelines.
+- **FraudSense**: Real-time Machine Learning (XGBoost) fraud detection system for digital payments.
+- **FinLogic**: Financial data engineering platform with DuckDB and FastAPI.
+- **Colabb**: Modern Linux Terminal in C++ powered by AI.
