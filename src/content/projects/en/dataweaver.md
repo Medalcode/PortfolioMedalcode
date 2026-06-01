@@ -2,7 +2,7 @@
 title: "DataWeaver"
 description: "Parametric rule engine that transforms fragile Excel/VBA workflows into scalable, structured, and versionable data assets."
 image:
-  url: "/images/projects/dataweaver.webp"
+  url: "/images/projects/dataweaver.png"
   alt: "DataWeaver Pipeline Interface"
 github: "https://github.com/Medalcode/DataWeaver"
 pubDate: 2026-02-20

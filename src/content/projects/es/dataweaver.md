@@ -2,7 +2,7 @@
 title: "DataWeaver"
 description: "Motor de reglas paramétrico que transforma flujos de trabajo frágiles de Excel/VBA en activos de datos escalables, estructurados y versionables."
 image:
-  url: "/images/projects/dataweaver.webp"
+  url: "/images/projects/dataweaver.png"
   alt: "DataWeaver Pipeline Interface"
 github: "https://github.com/Medalcode/DataWeaver"
 pubDate: 2026-02-20

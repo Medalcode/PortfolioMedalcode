@@ -2,7 +2,7 @@
 title: "FraudSense"
 description: "Plataforma de análisis financiero en tiempo real que utiliza Machine Learning (XGBoost) para detectar transacciones sospechosas en sistemas de pagos digitales."
 image:
-  url: "/images/projects/fraudsense.webp"
+  url: "/images/projects/fraudsense.png"
   alt: "FraudSense Detection Dashboard"
 github: "https://github.com/Medalcode/FraudSense"
 pubDate: 2025-11-10

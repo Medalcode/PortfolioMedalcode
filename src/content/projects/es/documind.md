@@ -2,7 +2,7 @@
 title: "DocuMind"
 description: "Sistema de Inteligencia Artificial local offline que permite interactuar y consultar colecciones de documentos PDF usando lenguaje natural con privacidad total."
 image:
-  url: "/images/projects/documind.webp"
+  url: "/images/projects/documind.png"
   alt: "DocuMind Interface"
 github: "https://github.com/Medalcode/DocuMind"
 pubDate: 2026-03-15

@@ -2,7 +2,7 @@
 title: "MCP Ecosystem"
 description: "Suite of Model Context Protocol (MCP) servers that expand the capabilities of AI Agents, including browser automation, advanced web scraping, and document manipulation."
 image:
-  url: "/images/projects/mcp-ecosystem.webp"
+  url: "/images/projects/mcp-ecosystem.png"
   alt: "MCP Ecosystem Architecture"
 github: "https://github.com/Medalcode"
 pubDate: 2026-04-10
