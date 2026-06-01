@@ -107,14 +107,14 @@
         
         if (cmd) {
           // Echo command
-          output.innerHTML += \`<div class="mt-2"><span class="text-mint-400">➜</span> <span class="text-blue-400">~</span> <span class="text-zinc-100">\${cmd}</span></div>\`;
+          output.innerHTML += `<div class="mt-2"><span class="text-mint-400">➜</span> <span class="text-blue-400">~</span> <span class="text-zinc-100">${cmd}</span></div>`;
           
           if (cmd === 'clear') {
             output.innerHTML = '';
           } else if (commands[cmd]) {
-            output.innerHTML += \`<div class="text-zinc-300 whitespace-pre-wrap mt-1">\${commands[cmd]}</div>\`;
+            output.innerHTML += `<div class="text-zinc-300 whitespace-pre-wrap mt-1">${commands[cmd]}</div>`;
           } else {
-            output.innerHTML += \`<div class="text-red-400 mt-1">Command not found: \${cmd}. Type 'help' for available commands.</div>\`;
+            output.innerHTML += `<div class="text-red-400 mt-1">Command not found: ${cmd}. Type 'help' for available commands.</div>`;
           }
           
           output.scrollTop = output.scrollHeight;

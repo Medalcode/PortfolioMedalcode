@@ -31,7 +31,7 @@ const tweetText = encodeURIComponent(
 const readingTimeLabel = lang === "en" ? "min read" : "min de lectura";
 
 // OG image fallback: use staticData default if frontmatter has no image
-const ogImage = frontmatter.image ?? OGImage;
+const ogImage = (frontmatter.image ?? OGImage) as any;
 ---
 
 <script>
