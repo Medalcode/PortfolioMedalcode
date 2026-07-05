@@ -6,6 +6,8 @@
 
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-outfit: "Outfit", sans-serif;
   --color-blacktext: #171717;

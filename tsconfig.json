@@ -2,6 +2,11 @@
   "include": [".astro/types.d.ts", "src/**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": false,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "baseUrl": ".",

@@ -15,6 +15,9 @@ This repository adheres to the **Meta Project Standard**. All development progre
 - **Interactive Easter Egg**: Press `Ctrl + \` (or `Cmd + \`) anywhere to open a fully functional hidden Terminal.
 - **Next-Gen UI/UX**: Re-engineered with native CSS scroll-driven animations (`animation-timeline: view()`), interactive 3D particle Canvas background, and high-performance Glassmorphism hover states.
 - **Performance Optimized**: Images eagerly loaded with `fetchpriority="high"` for instant Largest Contentful Paint (LCP).
+- **Tailwind v4 Migration**: Removed legacy `tailwind.config.mjs`. All design tokens now live in CSS `@theme` blocks via `global.css` (Tailwind v4 native).
+- **TypeScript Strict Mode**: Enabled `strict`, `noUnusedLocals`, `noUnusedParameters` for compile-time safety.
+- **Knowledge Graph**: `graphify-out/` generado con 129 nodos para que agentes AI comprendan la arquitectura sin escanear archivos.
 
 ## 📁 Project Structure
 
