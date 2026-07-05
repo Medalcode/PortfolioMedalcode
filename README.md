@@ -29,9 +29,21 @@ This repository adheres to the **Meta Project Standard**. All development progre
         ├── 📄 agents.md     # AI Agent Roles
         ├── 📄 skills.md     # Parametric AI Skills
         └── 📄 ARCHITECTURE.md
+    └── 📁graphify-out        # Knowledge Graph (129 nodes, 188 edges)
     ├── astro.config.mjs
     ├── package.json
     └── tsconfig.json
+
+## 🧠 Knowledge Graph
+
+El proyecto incluye un knowledge graph pre-computado en `graphify-out/` con **129 nodos, 188 aristas, 12 comunidades**. Generado mediante análisis AST del código fuente, permite a agentes AI comprender la arquitectura sin escanear archivos manualmente.
+
+| Insight | Findings |
+|---|---|
+| **God Nodes** | `<Icon>` (29 edges), `<Heading>` (21), `HeroIndex.astro` (15) |
+| **Comunidad principal** | `src/features/` — 57 nodos (componentes + layouts) |
+| **Componentes compartidos** | `src/shared/` — 31 nodos (Header, Footer, Social, Navbar) |
+| **Tests** | `src/test/` — 5 nodos (4 test files + setup) |
 
 ## 🛠️ Technology Stack
 
