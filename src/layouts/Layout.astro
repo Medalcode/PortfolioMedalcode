@@ -3,7 +3,6 @@ import "@shared/styles/global.css";
 import Header from "@shared/components/layout/Header.astro";
 import Footer from "@shared/components/layout/Footer.astro";
 import TerminalEasterEgg from "@shared/components/ui/TerminalEasterEgg.astro";
-import SpeedInsights from "@vercel/speed-insights/astro";
 import { ClientRouter } from "astro:transitions";
 interface Props {
   pageTitle?: string;
@@ -34,7 +33,6 @@ const SEO = {
 
 const { lang = "en" } = Astro.params;
 const twitterimage = `${siteUrl}${ogimage.url}`;
-const SpeedInsightsComponent = SpeedInsights as any;
 ---
 
 <html lang={lang} class="dark:bg-[#09090b] bg-mint-50/5 font-inter scroll-smooth">
@@ -129,7 +127,6 @@ const SpeedInsightsComponent = SpeedInsights as any;
     <ClientRouter />
   </head>
   <body class="overflow-x-hidden">
-    <SpeedInsightsComponent />
     <div class="blur-circle"></div>
     <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none -z-2 opacity-60"></canvas>
     <div

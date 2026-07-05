@@ -3,13 +3,10 @@ import ExperienceItem from "./ExperienceItem.astro";
 import Heading from "@shared/components/ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
 const { lang } = Astro.params;
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry =
-  staticDataCollection.find((entry) => entry.id === lang) ||
-  staticDataCollection.find((entry) => entry.id === "es");
-const { experienceTitle, experienceGradient } = staticDataEntry.data;
+const { experienceTitle, experienceGradient } = await getStaticData(lang!);
 
 const allExperience = await getCollection("experience", ({ id }) => {
   return id.startsWith(`${lang}/`);
@@ -35,10 +32,10 @@ allExperience.sort((a, b) => a.data.order - b.data.order);
                   aria-describedby={`experience-title-${index}`}
                 >
                   <ExperienceItem
-                    title={experience.data.title as string}
-                    company={experience.data.company as string}
-                    description={experience.data.description as string}
-                    date={experience.data.date as string}
+                    title={experience.data.title}
+                    company={experience.data.company}
+                    description={experience.data.description}
+                    date={experience.data.date}
                   />
                 </div>
               </article>

@@ -4,7 +4,7 @@ import Experience from "@features/portfolio/components/Experience.astro";
 import HeroIndex from "@features/portfolio/components/HeroIndex.astro";
 import Contact from "@features/portfolio/components/Contact.astro";
 import ListProjects from "@features/portfolio/components/ListProjects.astro";
-import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
 export async function getStaticPaths() {
   return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
@@ -12,9 +12,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry = staticDataCollection.find((entry) => entry.id === lang);
-const { pageTitle, pageDescription, OGImage } = staticDataEntry.data;
+const { pageTitle, pageDescription, OGImage } = await getStaticData(lang!);
 ---
 
 <Layout

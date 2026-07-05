@@ -4,11 +4,10 @@ import LastPost from "./LastPost.astro";
 import Languages from "./Languages.astro";
 import { Icon } from "astro-icon/components";
 import Heading from "@shared/components/ui/Heading.astro";
-import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
 const { lang } = Astro.params;
-const allStaticData = await getCollection("staticData");
-const staticData = allStaticData.find((entry) => entry.id === lang);
+const staticData = await getStaticData(lang!);
 const {
   techsTitle,
   github,
@@ -19,7 +18,7 @@ const {
   profileTitle,
   profileName,
   aboutButtonText,
-} = staticData.data;
+} = staticData;
 
 const fullProfileLink = `/${lang}/${profileLink}`;
 console.log(`[Hero] Generated profile link for lang '${lang}': ${fullProfileLink}`);

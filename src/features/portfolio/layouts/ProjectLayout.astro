@@ -12,7 +12,7 @@ import { getStaticData } from "@shared/utils/getStaticData";
 const { frontmatter } = Astro.props as { frontmatter: ProjectFrontmatter };
 const { lang = "es" } = Astro.params;
 const { OGImage } = await getStaticData(lang);
-const ogImage = (frontmatter.image ?? OGImage) as any;
+const ogImage = frontmatter.image ?? OGImage;
 ---
 
 <script>

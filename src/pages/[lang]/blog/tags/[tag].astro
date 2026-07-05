@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import BlogPost from "@features/blog/components/BlogPost.astro";
 import Heading from "@shared/components/ui/Heading.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
@@ -48,7 +48,7 @@ const { posts } = Astro.props;
     <div class="flex flex-col gap-8 max-w-4xl mx-auto">
       <Heading text="Posts about" textGradient={tag} />
       {
-        posts.map((post: any) => {
+        posts.map((post: CollectionEntry<"blog">) => {
           const [_, ...slugParts] = post.slug.split("/");
           const cleanSlug = slugParts.join("/");
           return (

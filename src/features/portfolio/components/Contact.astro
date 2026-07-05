@@ -2,20 +2,15 @@
 import Heading from "@shared/components/ui/Heading.astro";
 import ContactForm from "@shared/components/ui/ContactForm.astro";
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
+import { getStaticData } from "@shared/utils/getStaticData";
 
 const { lang } = Astro.params;
-const staticDataCollection = await getCollection("staticData");
-const staticDataEntry =
-  staticDataCollection.find((entry) => entry.id === lang) ||
-  staticDataCollection.find((entry) => entry.id === "es");
 const {
   contactSectionTitle,
   contactSectionSubtitle,
-
   email,
   contactSectionButtonIcon,
-} = staticDataEntry.data;
+} = await getStaticData(lang!);
 ---
 
 <section id="contact" class="relative overflow-hidden animate-fade-up animate-once animate-duration-1000 animate-delay-300">
